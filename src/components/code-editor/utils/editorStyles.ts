@@ -12,6 +12,11 @@ export const getEditorLoadingStyles = (isDarkMode: boolean) => {
 
 export const getEditorStyles = (isDarkMode: boolean) => {
   return `
+    /* Use the app's default font instead of monospace for editor text */
+    .cm-editor .cm-content {
+      font-family: "Encode Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif !important;
+    }
+
     .cm-deletedChunk {
       background-color: ${isDarkMode ? 'rgba(239, 68, 68, 0.15)' : 'rgba(255, 235, 235, 1)'} !important;
       border-left: 3px solid ${isDarkMode ? 'rgba(239, 68, 68, 0.6)' : 'rgb(239, 68, 68)'} !important;

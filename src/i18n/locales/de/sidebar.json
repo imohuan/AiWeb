@@ -50,7 +50,9 @@
     "cancel": "Abbrechen",
     "clearSearch": "Suche leeren",
     "openCommandPalette": "Befehlspalette öffnen",
-    "attentionRequiredIndicator": "Sitzung erfordert Aufmerksamkeit"
+    "attentionRequiredIndicator": "Sitzung erfordert Aufmerksamkeit",
+    "processingSessionIndicator": "Sitzung wird verarbeitet",
+    "deleteSessionOptions": "Sitzung archivieren oder endgültig löschen"
   },
   "navigation": {
     "chat": "Chat",
@@ -129,7 +131,14 @@
     "matches_one": "{{count}} Treffer",
     "matches_other": "{{count}} Treffer",
     "projectsScanned_one": "{{count}} Projekt durchsucht",
-    "projectsScanned_other": "{{count}} Projekte durchsucht"
+    "projectsScanned_other": "{{count}} Projekte durchsucht",
+    "modeRunning": "Laufend",
+    "matches": "Treffer",
+    "projectsScanned": "Projekte gescannt",
+    "archiveOnlyTooltip": "Nur Archiv",
+    "archivedPlaceholder": "Archivierte Sitzungen durchsuchen...",
+    "runningPlaceholder": "Laufende Sitzungen durchsuchen...",
+    "runningTooltip": "Laufende Sitzungen"
   },
   "deleteConfirmation": {
     "deleteProject": "Projekt entfernen",
@@ -140,6 +149,29 @@
     "removeFromSidebar": "Nur aus der Seitenleiste entfernen",
     "deleteAllData": "Alle Daten dauerhaft löschen",
     "allConversationsDeleted": "Das Projekt wird aus der Seitenleiste entfernt. Deine Dateien, Erinnerungen und Sitzungsdaten bleiben erhalten.",
-    "cannotUndo": "Du kannst das Projekt später erneut hinzufügen."
+    "cannotUndo": "Du kannst das Projekt später erneut hinzufügen.",
+    "archiveProject": "Projekt archivieren",
+    "archivedSessionNotice": "Diese Sitzung ist bereits archiviert. Sie können sie ausgeblendet lassen oder endgültig löschen.",
+    "archiveSessionNotice": "Archivieren entfernt die Sitzung aus der aktiven Liste, bewahrt aber den Verlauf.",
+    "archiveSession": "Sitzung archivieren",
+    "deleteSessionPermanently": "Endgültig löschen"
+  },
+  "running": {
+    "title": "Läuft gerade",
+    "emptyTitle": "Keine laufenden Sitzungen",
+    "emptyDescription": "Aktive Arbeit erscheint hier, während ein Anbieter verarbeitet.",
+    "noMatchingSessions": "Keine passenden laufenden Sitzungen."
+  },
+  "archived": {
+    "loadingTitle": "Archiv wird geladen...",
+    "loadingDescription": "Ausgeblendete Arbeitsbereiche und Sitzungen werden abgerufen, die Sie später wiederherstellen können.",
+    "emptyTitle": "Keine archivierten Elemente",
+    "emptyDescription": "Archivierte Arbeitsbereiche und Sitzungen erscheinen hier, wenn Sie sie aus der aktiven Liste ausblenden.",
+    "noMatchingSessions": "Keine passenden archivierten Elemente",
+    "tryDifferentSearch": "Versuchen Sie einen anderen Suchbegriff.",
+    "projectArchived": "Projekt archiviert",
+    "restoreProject": "Arbeitsbereich wiederherstellen",
+    "restore": "Sitzung wiederherstellen",
+    "deletePermanently": "Endgültig löschen"
   }
 }

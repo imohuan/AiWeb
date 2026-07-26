@@ -1,0 +1,159 @@
+{
+  "branches": {
+    "ahead": "en avance",
+    "behind": "en retard",
+    "clearSearch": "Effacer la recherche",
+    "current": "actuel",
+    "delete": "Supprimer",
+    "local": "Local",
+    "localRemoteCount": "{{local}} locale(s){{remote}}",
+    "newBranch": "Nouvelle branche",
+    "noBranchesFound": "Aucune branche trouvée",
+    "noBranchesMatch": "Aucune branche ne correspond à votre recherche",
+    "remote": "Distant",
+    "remoteCount": ", {{count}} distante(s)",
+    "searchPlaceholder": "Rechercher des branches...",
+    "switch": "Basculer",
+    "switchTo": "Basculer vers",
+    "upToDate": "À jour"
+  },
+  "changes": {
+    "allChangesStaged": "Toutes les modifications indexées",
+    "changes": "Modifications",
+    "commit": "Commit",
+    "commitChanges": "Valider les modifications",
+    "commitMobile": "Commit {{count}} fichier",
+    "commitMobile_other": "Commit {{count}} fichiers",
+    "commitPlaceholder": "Message (Ctrl+Entrée pour valider)",
+    "committing": "Commit en cours...",
+    "filesSelected": "{{count}} fichier sélectionné",
+    "filesSelected_other": "{{count}} fichiers sélectionnés",
+    "generateCommitMessage": "Générer un message de commit",
+    "noChanges": "Aucune modification détectée",
+    "noCommits": {
+      "createButton": "Créer le commit initial",
+      "creatingButton": "Création du commit initial...",
+      "description": "Ce dépôt n'a pas encore de commits. Créez votre premier commit pour commencer à suivre les modifications.",
+      "title": "Aucun commit"
+    },
+    "noProject": "Sélectionnez un projet pour voir le contrôle de code source",
+    "noStagedFiles": "Aucun fichier indexé",
+    "stageAll": "Tout indexer",
+    "staged": "Indexé",
+    "unstageAll": "Tout désindexer"
+  },
+  "confirmModal": {
+    "actionLabels": {
+      "commit": "Confirmer",
+      "delete": "Supprimer",
+      "deleteBranch": "Supprimer",
+      "discard": "Abandonner",
+      "publish": "Publier",
+      "pull": "Pull",
+      "push": "Push",
+      "revertLocalCommit": "Annuler le commit"
+    },
+    "cancel": "Annuler",
+    "commitFiles": "Valider {{count}} fichier avec le message : \"{{message}}\" ?",
+    "commitFiles_other": "Valider {{count}} fichiers avec le message : \"{{message}}\" ?",
+    "deleteBranch": "Supprimer la branche \"{{branch}}\" ? Cette action est irréversible.",
+    "deleteFile": "Supprimer le fichier non suivi \"{{file}}\" ? Cette action est irréversible.",
+    "discardFile": "Abandonner toutes les modifications de \"{{file}}\" ? Cette action est irréversible.",
+    "publish": "Publier la branche \"{{branch}}\" vers {{remote}} ?",
+    "pull": "Pull {{count}} commit depuis {{remote}} ?",
+    "pull_other": "Pull {{count}} commits depuis {{remote}} ?",
+    "push": "Push {{count}} commit vers {{remote}} ?",
+    "push_other": "Push {{count}} commits vers {{remote}} ?",
+    "revertLocalCommit": "Annuler le dernier commit local ? Cela supprime le commit mais conserve ses modifications indexées.",
+    "switchBranch": "Basculer vers la branche \"{{branch}}\" ? Assurez-vous de ne pas avoir de modifications non validées.",
+    "titles": {
+      "commit": "Confirmer l'action",
+      "delete": "Supprimer le fichier",
+      "deleteBranch": "Supprimer la branche",
+      "discard": "Abandonner les modifications",
+      "publish": "Publier la branche",
+      "pull": "Confirmer le pull",
+      "push": "Confirmer le push",
+      "revertLocalCommit": "Annuler le commit local"
+    }
+  },
+  "diff": {
+    "noDiff": "Aucun diff disponible",
+    "largePreview": "Aperçu de diff volumineux : le rendu est limité pour garder l'onglet réactif."
+  },
+  "errorState": {
+    "initInstructions": "Exécutez {{command}} dans votre répertoire de projet pour initialiser le contrôle de code source Git.",
+    "tip": "Conseil"
+  },
+  "fileChange": {
+    "collapseDiff": "Réduire le diff",
+    "expandDiff": "Développer le diff",
+    "clickToOpen": "Cliquer pour ouvrir le fichier",
+    "deleteUntracked": "Supprimer le fichier non suivi",
+    "discardChanges": "Abandonner les modifications",
+    "delete": "Supprimer",
+    "discard": "Abandonner",
+    "scroll": "Défilement",
+    "wrap": "Retour",
+    "switchToScroll": "Passer au défilement horizontal",
+    "switchToWrap": "Passer au retour à la ligne"
+  },
+  "fileSelect": {
+    "selectedCount": "{{selected}} sur {{total}} fichiers sélectionnés",
+    "selectAll": "Tout sélectionner",
+    "deselectAll": "Tout désélectionner",
+    "all": "Tout",
+    "none": "Aucun"
+  },
+  "fileStatus": {
+    "added": "Ajouté",
+    "deleted": "Supprimé",
+    "legend": "Guide des statuts de fichier",
+    "modified": "Modifié",
+    "untracked": "Non suivi"
+  },
+  "header": {
+    "clearSearch": "Effacer la recherche",
+    "createNewBranch": "Créer une nouvelle branche",
+    "dismissError": "Fermer l'erreur",
+    "fetch": "Récupérer",
+    "fetching": "Récupération…",
+    "noMatchingBranches": "Aucune branche correspondante",
+    "publish": "Publier",
+    "publishing": "Publication…",
+    "pull": "Pull",
+    "pulling": "Pull…",
+    "push": "Push",
+    "pushing": "Push…",
+    "refreshGitStatus": "Actualiser le statut Git",
+    "revertLocalCommit": "Annuler le dernier commit local",
+    "searchBranches": "Rechercher des branches...",
+    "publishTo": "Publier \"{{branch}}\" vers {{remote}}",
+    "fetchFrom": "Récupérer depuis {{remote}}",
+    "pullCount": "Pull {{count}} depuis {{remote}}",
+    "pushCount": "Push {{count}} vers {{remote}}"
+  },
+  "history": {
+    "added": "Ajouté",
+    "author": "Auteur",
+    "changedFiles": "Fichiers modifiés",
+    "date": "Date",
+    "files": "Fichiers",
+    "noCommits": "Aucun commit trouvé",
+    "removed": "Supprimé"
+  },
+  "newBranchModal": {
+    "branchName": "Nom de la branche",
+    "cancel": "Annuler",
+    "create": "Créer la branche",
+    "creating": "Création...",
+    "description": "Cela créera une nouvelle branche à partir de la branche actuelle ({{branch}})",
+    "placeholder": "feature/nouvelle-fonctionnalité",
+    "title": "Créer une nouvelle branche"
+  },
+  "tabs": {
+    "branches": "Branches",
+    "changes": "Modifications",
+    "commits": "Commits"
+  }
+}

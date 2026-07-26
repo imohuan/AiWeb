@@ -1,239 +1,272 @@
 {
   "buttons": {
-    "save": "Speichern",
+    "browse": "Durchsuchen",
     "cancel": "Abbrechen",
-    "delete": "Löschen",
-    "create": "Erstellen",
-    "edit": "Bearbeiten",
+    "clear": "Leeren",
     "close": "Schließen",
     "confirm": "Bestätigen",
-    "submit": "Absenden",
-    "retry": "Erneut versuchen",
-    "refresh": "Aktualisieren",
-    "search": "Suchen",
-    "clear": "Leeren",
     "copy": "Kopieren",
+    "create": "Erstellen",
+    "delete": "Löschen",
     "download": "Herunterladen",
-    "upload": "Hochladen",
-    "browse": "Durchsuchen"
-  },
-  "tabs": {
-    "chat": "Chat",
-    "shell": "Terminal",
-    "files": "Dateien",
-    "git": "Quellcodeverwaltung",
-    "tasks": "Aufgaben",
-    "browser": "Browser",
-    "computer": "Computer"
-  },
-  "status": {
-    "loading": "Lädt...",
-    "success": "Erfolgreich",
-    "error": "Fehler",
-    "failed": "Fehlgeschlagen",
-    "pending": "Ausstehend",
-    "completed": "Abgeschlossen",
-    "inProgress": "In Bearbeitung"
-  },
-  "messages": {
-    "savedSuccessfully": "Erfolgreich gespeichert",
-    "deletedSuccessfully": "Erfolgreich gelöscht",
-    "updatedSuccessfully": "Erfolgreich aktualisiert",
-    "operationFailed": "Vorgang fehlgeschlagen",
-    "networkError": "Netzwerkfehler. Bitte überprüf deine Verbindung.",
-    "unauthorized": "Nicht autorisiert. Bitte meld dich an.",
-    "notFound": "Nicht gefunden",
-    "invalidInput": "Ungültige Eingabe",
-    "requiredField": "Dieses Feld ist erforderlich",
-    "unknownError": "Ein unbekannter Fehler ist aufgetreten"
-  },
-  "navigation": {
-    "settings": "Einstellungen",
-    "home": "Startseite",
-    "back": "Zurück",
-    "next": "Weiter",
-    "previous": "Zurück",
-    "logout": "Abmelden"
+    "edit": "Bearbeiten",
+    "refresh": "Aktualisieren",
+    "retry": "Erneut versuchen",
+    "save": "Speichern",
+    "search": "Suchen",
+    "submit": "Absenden",
+    "upload": "Hochladen"
   },
   "common": {
-    "language": "Sprache",
-    "theme": "Design",
     "darkMode": "Darkmode",
+    "description": "Beschreibung",
+    "deselectAll": "Alle abwählen",
+    "disabled": "Deaktiviert",
+    "enabled": "Aktiviert",
+    "language": "Sprache",
     "lightMode": "Hellmodus",
     "name": "Name",
-    "description": "Beschreibung",
-    "enabled": "Aktiviert",
-    "disabled": "Deaktiviert",
     "optional": "Optional",
-    "version": "Version",
     "select": "Auswählen",
     "selectAll": "Alle auswählen",
-    "deselectAll": "Alle abwählen"
-  },
-  "time": {
-    "justNow": "Gerade eben",
-    "minutesAgo": "vor {{count}} Min.",
-    "hoursAgo": "vor {{count}} Std.",
-    "daysAgo": "vor {{count}} Tagen",
-    "yesterday": "Gestern"
+    "theme": "Design",
+    "version": "Version",
+    "cancel": "Abbrechen",
+    "done": "Fertig",
+    "failed": "Fehlgeschlagen"
   },
   "fileOperations": {
+    "copyPath": "Pfad kopieren",
+    "move": "Verschieben",
     "newFile": "Neue Datei",
     "newFolder": "Neuer Ordner",
-    "rename": "Umbenennen",
-    "move": "Verschieben",
-    "copyPath": "Pfad kopieren",
-    "openInEditor": "Im Editor öffnen"
-  },
-  "mainContent": {
-    "loading": "CloudCLI wird geladen",
-    "settingUpWorkspace": "Arbeitsbereich wird eingerichtet...",
-    "chooseProject": "Projekt auswählen",
-    "selectProjectDescription": "Wähl ein Projekt aus der Seitenleiste, um mit Claude zu programmieren. Jedes Projekt enthält deine Chat-Sitzungen und den Dateiverlauf.",
-    "tip": "Tipp",
-    "createProjectMobile": "Tipp oben auf die Menüschaltfläche, um auf Projekte zuzugreifen",
-    "createProjectDesktop": "Erstell ein neues Projekt, indem du auf das Ordnersymbol in der Seitenleiste klickst",
-    "newSession": "Neue Sitzung",
-    "untitledSession": "Unbenannte Sitzung",
-    "projectFiles": "Projektdateien"
+    "openInEditor": "Im Editor öffnen",
+    "rename": "Umbenennen"
   },
   "fileTree": {
-    "loading": "Dateien werden geladen...",
-    "files": "Dateien",
-    "simpleView": "Einfache Ansicht",
-    "compactView": "Kompakte Ansicht",
-    "detailedView": "Detailansicht",
-    "searchPlaceholder": "Dateien und Ordner durchsuchen...",
-    "clearSearch": "Suche leeren",
-    "name": "Name",
-    "size": "Größe",
-    "modified": "Geändert",
-    "permissions": "Berechtigungen",
-    "noFilesFound": "Keine Dateien gefunden",
     "checkProjectPath": "Überprüf, ob der Projektpfad zugänglich ist",
-    "noMatchesFound": "Keine Treffer gefunden",
-    "tryDifferentSearch": "Versuch einen anderen Suchbegriff oder leere die Suche",
-    "justNow": "gerade eben",
-    "minAgo": "vor {{count}} Min.",
-    "hoursAgo": "vor {{count}} Std.",
-    "daysAgo": "vor {{count}} Tagen",
-    "newFile": "Neue Datei (Cmd+N)",
-    "newFolder": "Neuer Ordner (Cmd+Shift+N)",
-    "refresh": "Aktualisieren",
+    "clearSearch": "Suche leeren",
     "collapseAll": "Alle einklappen",
+    "compactView": "Kompakte Ansicht",
     "context": {
-      "rename": "Umbenennen",
-      "delete": "Löschen",
       "copyPath": "Pfad kopieren",
+      "delete": "Löschen",
       "download": "Herunterladen",
+      "loading": "Lädt...",
+      "menuLabel": "Datei-Kontextmenü",
       "newFile": "Neue Datei",
       "newFolder": "Neuer Ordner",
       "refresh": "Aktualisieren",
-      "menuLabel": "Datei-Kontextmenü",
-      "loading": "Lädt..."
-    }
-  },
-  "projectWizard": {
-    "title": "Neues Projekt erstellen",
-    "steps": {
-      "type": "Typ",
-      "configure": "Konfigurieren",
-      "confirm": "Bestätigen"
+      "rename": "Umbenennen"
     },
-    "step1": {
-      "question": "Hast du bereits einen Arbeitsbereich, oder möchtest du einen neuen erstellen?",
-      "existing": {
-        "title": "Vorhandener Arbeitsbereich",
-        "description": "Ich habe bereits einen Arbeitsbereich auf meinem Server und möchte ihn nur zur Projektliste hinzufügen"
+    "daysAgo": "vor {{count}} Tagen",
+    "detailedView": "Detailansicht",
+    "files": "Dateien",
+    "hoursAgo": "vor {{count}} Std.",
+    "justNow": "gerade eben",
+    "loading": "Dateien werden geladen...",
+    "minAgo": "vor {{count}} Min.",
+    "modified": "Geändert",
+    "name": "Name",
+    "newFile": "Neue Datei (Cmd+N)",
+    "newFolder": "Neuer Ordner (Cmd+Shift+N)",
+    "noFilesFound": "Keine Dateien gefunden",
+    "noMatchesFound": "Keine Treffer gefunden",
+    "permissions": "Berechtigungen",
+    "refresh": "Aktualisieren",
+    "searchPlaceholder": "Dateien und Ordner durchsuchen...",
+    "simpleView": "Einfache Ansicht",
+    "size": "Größe",
+    "tryDifferentSearch": "Versuch einen anderen Suchbegriff oder leere die Suche"
+  },
+  "mainContent": {
+    "chooseProject": "Projekt auswählen",
+    "createProjectDesktop": "Erstell ein neues Projekt, indem du auf das Ordnersymbol in der Seitenleiste klickst",
+    "createProjectMobile": "Tipp oben auf die Menüschaltfläche, um auf Projekte zuzugreifen",
+    "loading": "CloudCLI wird geladen",
+    "newSession": "Neue Sitzung",
+    "projectFiles": "Projektdateien",
+    "selectProjectDescription": "Wähl ein Projekt aus der Seitenleiste, um mit Claude zu programmieren. Jedes Projekt enthält deine Chat-Sitzungen und den Dateiverlauf.",
+    "settingUpWorkspace": "Arbeitsbereich wird eingerichtet...",
+    "tip": "Tipp",
+    "untitledSession": "Unbenannte Sitzung"
+  },
+  "messages": {
+    "deletedSuccessfully": "Erfolgreich gelöscht",
+    "invalidInput": "Ungültige Eingabe",
+    "networkError": "Netzwerkfehler. Bitte überprüf deine Verbindung.",
+    "notFound": "Nicht gefunden",
+    "operationFailed": "Vorgang fehlgeschlagen",
+    "requiredField": "Dieses Feld ist erforderlich",
+    "savedSuccessfully": "Erfolgreich gespeichert",
+    "unauthorized": "Nicht autorisiert. Bitte meld dich an.",
+    "unknownError": "Ein unbekannter Fehler ist aufgetreten",
+    "updatedSuccessfully": "Erfolgreich aktualisiert"
+  },
+  "navigation": {
+    "back": "Zurück",
+    "home": "Startseite",
+    "logout": "Abmelden",
+    "next": "Weiter",
+    "previous": "Zurück",
+    "settings": "Einstellungen"
+  },
+  "notifications": {
+    "codes": {
+      "agent": {
+        "notification": {
+          "title": "Agent-Benachrichtigung"
+        }
       },
-      "new": {
-        "title": "Neuer Arbeitsbereich",
-        "description": "Einen neuen Arbeitsbereich erstellen, optional aus einem GitHub-Repository klonen"
+      "generic": {
+        "info": {
+          "title": "Benachrichtigung"
+        }
+      },
+      "permission": {
+        "required": {
+          "body": "{{toolName}} wartet auf Ihre Entscheidung.",
+          "title": "Aktion erforderlich"
+        }
+      },
+      "run": {
+        "failed": {
+          "title": "Ausführung fehlgeschlagen"
+        },
+        "stopped": {
+          "body": "Grund: {{reason}}",
+          "title": "Ausführung gestoppt"
+        }
       }
     },
+    "genericTool": "ein Tool"
+  },
+  "projectWizard": {
+    "buttons": {
+      "back": "Zurück",
+      "cancel": "Abbrechen",
+      "cloning": "Wird geklont...",
+      "createProject": "Projekt erstellen",
+      "creating": "Wird erstellt...",
+      "next": "Weiter"
+    },
+    "errors": {
+      "failedToCreate": "Arbeitsbereich konnte nicht erstellt werden",
+      "failedToCreateFolder": "Ordner konnte nicht erstellt werden",
+      "providePath": "Bitte gib einen Arbeitsbereichspfad an",
+      "selectType": "Bitte wähl aus, ob du einen vorhandenen Arbeitsbereich hast oder einen neuen erstellen möchtest"
+    },
+    "step1": {
+      "existing": {
+        "description": "Ich habe bereits einen Arbeitsbereich auf meinem Server und möchte ihn nur zur Projektliste hinzufügen",
+        "title": "Vorhandener Arbeitsbereich"
+      },
+      "new": {
+        "description": "Einen neuen Arbeitsbereich erstellen, optional aus einem GitHub-Repository klonen",
+        "title": "Neuer Arbeitsbereich"
+      },
+      "question": "Hast du bereits einen Arbeitsbereich, oder möchtest du einen neuen erstellen?"
+    },
     "step2": {
-      "existingPath": "Arbeitsbereichspfad",
-      "newPath": "Arbeitsbereichspfad",
-      "existingPlaceholder": "/Pfad/zum/vorhandenen/Arbeitsbereich",
-      "newPlaceholder": "/Pfad/zum/neuen/Arbeitsbereich",
       "existingHelp": "Vollständiger Pfad zu deinem vorhandenen Arbeitsbereichsverzeichnis",
-      "newHelp": "Vollständiger Pfad zu deinem Arbeitsbereichsverzeichnis",
-      "githubUrl": "GitHub-URL (Optional)",
-      "githubPlaceholder": "https://github.com/benutzername/repository",
-      "githubHelp": "Optional: GitHub-URL angeben, um ein Repository zu klonen",
+      "existingPath": "Arbeitsbereichspfad",
+      "existingPlaceholder": "/Pfad/zum/vorhandenen/Arbeitsbereich",
       "githubAuth": "GitHub-Authentifizierung (Optional)",
       "githubAuthHelp": "Nur für private Repositories erforderlich. Öffentliche Repos können ohne Authentifizierung geklont werden.",
+      "githubHelp": "Optional: GitHub-URL angeben, um ein Repository zu klonen",
+      "githubPlaceholder": "https://github.com/benutzername/repository",
+      "githubUrl": "GitHub-URL (Optional)",
       "loadingTokens": "Gespeicherte Token werden geladen...",
-      "storedToken": "Gespeicherter Token",
+      "newHelp": "Vollständiger Pfad zu deinem Arbeitsbereichsverzeichnis",
+      "newPath": "Arbeitsbereichspfad",
+      "newPlaceholder": "/Pfad/zum/neuen/Arbeitsbereich",
       "newToken": "Neuer Token",
+      "noTokensHelp": "Keine gespeicherten Token verfügbar. Du kannst Token unter Einstellungen → API-Schlüssel für einfachere Wiederverwendung hinzufügen.",
       "nonePublic": "Keiner (Öffentlich)",
+      "optionalTokenPublic": "GitHub-Token (Optional für öffentliche Repos)",
+      "publicRepoInfo": "Öffentliche Repositories benötigen keine Authentifizierung. Du kannst das Token beim Klonen eines öffentlichen Repos weglassen.",
       "selectToken": "Token auswählen",
       "selectTokenPlaceholder": "-- Token auswählen --",
-      "tokenPlaceholder": "ghp_xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+      "storedToken": "Gespeicherter Token",
       "tokenHelp": "Dieser Token wird nur für diesen Vorgang verwendet",
-      "publicRepoInfo": "Öffentliche Repositories benötigen keine Authentifizierung. Du kannst das Token beim Klonen eines öffentlichen Repos weglassen.",
-      "noTokensHelp": "Keine gespeicherten Token verfügbar. Du kannst Token unter Einstellungen → API-Schlüssel für einfachere Wiederverwendung hinzufügen.",
-      "optionalTokenPublic": "GitHub-Token (Optional für öffentliche Repos)",
+      "tokenPlaceholder": "ghp_xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
       "tokenPublicPlaceholder": "ghp_xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx (leer lassen für öffentliche Repos)"
     },
     "step3": {
-      "reviewConfig": "Konfiguration überprüfen",
-      "existingWorkspace": "Vorhandener Arbeitsbereich",
-      "newWorkspace": "Neuer Arbeitsbereich",
-      "path": "Pfad:",
-      "cloneFrom": "Klonen von:",
       "authentication": "Authentifizierung:",
-      "usingStoredToken": "Gespeicherter Token wird verwendet:",
-      "usingProvidedToken": "Angegebener Token wird verwendet",
-      "noAuthentication": "Keine Authentifizierung",
-      "sshKey": "SSH-Schlüssel",
+      "cloneFrom": "Klonen von:",
+      "cloningRepository": "Repository wird geklont...",
       "existingInfo": "Der Arbeitsbereich wird zur Projektliste hinzugefügt und steht für Claude/Cursor-Sitzungen zur Verfügung.",
-      "newWithClone": "Das Repository wird aus diesem Ordner geklont.",
+      "existingWorkspace": "Vorhandener Arbeitsbereich",
       "newEmpty": "Der Arbeitsbereich wird zur Projektliste hinzugefügt und steht für Claude/Cursor-Sitzungen zur Verfügung.",
-      "cloningRepository": "Repository wird geklont..."
+      "newWithClone": "Das Repository wird aus diesem Ordner geklont.",
+      "newWorkspace": "Neuer Arbeitsbereich",
+      "noAuthentication": "Keine Authentifizierung",
+      "path": "Pfad:",
+      "reviewConfig": "Konfiguration überprüfen",
+      "sshKey": "SSH-Schlüssel",
+      "usingProvidedToken": "Angegebener Token wird verwendet",
+      "usingStoredToken": "Gespeicherter Token wird verwendet:"
     },
-    "buttons": {
-      "cancel": "Abbrechen",
-      "back": "Zurück",
-      "next": "Weiter",
-      "createProject": "Projekt erstellen",
-      "creating": "Wird erstellt...",
-      "cloning": "Wird geklont..."
+    "steps": {
+      "configure": "Konfigurieren",
+      "confirm": "Bestätigen",
+      "type": "Typ"
     },
-    "errors": {
-      "selectType": "Bitte wähl aus, ob du einen vorhandenen Arbeitsbereich hast oder einen neuen erstellen möchtest",
-      "providePath": "Bitte gib einen Arbeitsbereichspfad an",
-      "failedToCreate": "Arbeitsbereich konnte nicht erstellt werden",
-      "failedToCreateFolder": "Ordner konnte nicht erstellt werden"
-    }
+    "title": "Neues Projekt erstellen"
+  },
+  "status": {
+    "completed": "Abgeschlossen",
+    "error": "Fehler",
+    "failed": "Fehlgeschlagen",
+    "inProgress": "In Bearbeitung",
+    "loading": "Lädt...",
+    "pending": "Ausstehend",
+    "success": "Erfolgreich"
+  },
+  "tabs": {
+    "browser": "Browser",
+    "chat": "Chat",
+    "computer": "Computer",
+    "files": "Dateien",
+    "git": "Quellcodeverwaltung",
+    "shell": "Terminal",
+    "tasks": "Aufgaben"
+  },
+  "time": {
+    "daysAgo": "vor {{count}} Tagen",
+    "hoursAgo": "vor {{count}} Std.",
+    "justNow": "Gerade eben",
+    "minutesAgo": "vor {{count}} Min.",
+    "yesterday": "Gestern"
   },
   "versionUpdate": {
-    "title": "Update verfügbar",
-    "newVersionReady": "Eine neue Version ist verfügbar",
-    "currentVersion": "Aktuelle Version",
-    "latestVersion": "Neueste Version",
-    "whatsNew": "Neuigkeiten:",
-    "viewFullRelease": "Vollständige Version anzeigen",
-    "updateProgress": "Update-Fortschritt:",
-    "manualUpgrade": "Manuelles Upgrade:",
-    "npmUpgradeCommand": "npm install -g @cloudcli-ai/cloudcli@latest",
-    "manualUpgradeHint": "Oder klick auf \"Jetzt aktualisieren\", um das Update automatisch durchzuführen.",
-    "updateCompleted": "Update erfolgreich abgeschlossen!",
-    "restartServer": "Bitte starte den Server neu, um die Änderungen anzuwenden.",
-    "updateFailed": "Update fehlgeschlagen",
+    "ariaLabels": {
+      "closeModal": "Versions-Update-Modal schließen",
+      "closeSidebar": "Seitenleiste schließen",
+      "settings": "Einstellungen",
+      "showSidebar": "Seitenleiste anzeigen",
+      "updateAvailable": "Update verfügbar"
+    },
     "buttons": {
       "close": "Schließen",
-      "later": "Später",
       "copyCommand": "Befehl kopieren",
+      "later": "Später",
       "updateNow": "Jetzt aktualisieren",
       "updating": "Wird aktualisiert..."
     },
-    "ariaLabels": {
-      "closeModal": "Versions-Update-Modal schließen",
-      "showSidebar": "Seitenleiste anzeigen",
-      "settings": "Einstellungen",
-      "updateAvailable": "Update verfügbar",
-      "closeSidebar": "Seitenleiste schließen"
-    }
+    "currentVersion": "Aktuelle Version",
+    "latestVersion": "Neueste Version",
+    "manualUpgrade": "Manuelles Upgrade:",
+    "manualUpgradeHint": "Oder klick auf \"Jetzt aktualisieren\", um das Update automatisch durchzuführen.",
+    "newVersionReady": "Eine neue Version ist verfügbar",
+    "npmUpgradeCommand": "npm install -g @cloudcli-ai/cloudcli@latest",
+    "restartServer": "Bitte starte den Server neu, um die Änderungen anzuwenden.",
+    "title": "Update verfügbar",
+    "updateCompleted": "Update erfolgreich abgeschlossen!",
+    "updateFailed": "Update fehlgeschlagen",
+    "updateProgress": "Update-Fortschritt:",
+    "viewFullRelease": "Vollständige Version anzeigen",
+    "whatsNew": "Neuigkeiten:"
   }
 }

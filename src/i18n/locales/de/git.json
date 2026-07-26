@@ -1,0 +1,159 @@
+{
+  "branches": {
+    "ahead": "voraus",
+    "behind": "zurück",
+    "clearSearch": "Suche löschen",
+    "current": "aktuell",
+    "delete": "Löschen",
+    "local": "Lokal",
+    "localRemoteCount": "{{local}} lokal{{remote}}",
+    "newBranch": "Neuer Branch",
+    "noBranchesFound": "Keine Branches gefunden",
+    "noBranchesMatch": "Keine Branches entsprechen Ihrer Suche",
+    "remote": "Remote",
+    "remoteCount": ", {{count}} remote",
+    "searchPlaceholder": "Branches durchsuchen...",
+    "switch": "Wechseln",
+    "switchTo": "Wechseln zu",
+    "upToDate": "Aktuell"
+  },
+  "changes": {
+    "allChangesStaged": "Alle Änderungen gestaged",
+    "changes": "Änderungen",
+    "commit": "Commit",
+    "commitChanges": "Änderungen committen",
+    "commitMobile": "{{count}} Datei committen",
+    "commitMobile_other": "{{count}} Dateien committen",
+    "commitPlaceholder": "Nachricht (Strg+Enter zum Committen)",
+    "committing": "Committe...",
+    "filesSelected": "{{count}} Datei ausgewählt",
+    "filesSelected_other": "{{count}} Dateien ausgewählt",
+    "generateCommitMessage": "Commit-Nachricht generieren",
+    "noChanges": "Keine Änderungen erkannt",
+    "noCommits": {
+      "createButton": "Ersten Commit erstellen",
+      "creatingButton": "Ersten Commit erstellen...",
+      "description": "Dieses Repository hat noch keine Commits. Erstellen Sie Ihren ersten Commit, um Änderungen zu verfolgen.",
+      "title": "Noch keine Commits"
+    },
+    "noProject": "Projekt auswählen, um Quellcodeverwaltung anzuzeigen",
+    "noStagedFiles": "Keine gestageten Dateien",
+    "stageAll": "Alle stagen",
+    "staged": "Gestaged",
+    "unstageAll": "Alle unstagen"
+  },
+  "confirmModal": {
+    "actionLabels": {
+      "commit": "Bestätigen",
+      "delete": "Löschen",
+      "deleteBranch": "Löschen",
+      "discard": "Verwerfen",
+      "publish": "Veröffentlichen",
+      "pull": "Pull",
+      "push": "Push",
+      "revertLocalCommit": "Commit rückgängig"
+    },
+    "cancel": "Abbrechen",
+    "commitFiles": "{{count}} Datei mit Nachricht \"{{message}}\" committen?",
+    "commitFiles_other": "{{count}} Dateien mit Nachricht \"{{message}}\" committen?",
+    "deleteBranch": "Branch \"{{branch}}\" löschen? Dies kann nicht rückgängig gemacht werden.",
+    "deleteFile": "Nicht verfolgte Datei \"{{file}}\" löschen? Diese Aktion kann nicht rückgängig gemacht werden.",
+    "discardFile": "Alle Änderungen an \"{{file}}\" verwerfen? Diese Aktion kann nicht rückgängig gemacht werden.",
+    "publish": "Branch \"{{branch}}\" nach {{remote}} veröffentlichen?",
+    "pull": "{{count}} Commit von {{remote}} pullen?",
+    "pull_other": "{{count}} Commits von {{remote}} pullen?",
+    "push": "{{count}} Commit nach {{remote}} pushen?",
+    "push_other": "{{count}} Commits nach {{remote}} pushen?",
+    "revertLocalCommit": "Letzten lokalen Commit rückgängig machen? Der Commit wird entfernt, aber die Änderungen bleiben gestaged.",
+    "switchBranch": "Zu Branch \"{{branch}}\" wechseln? Stellen Sie sicher, dass Sie keine nicht committeten Änderungen haben.",
+    "titles": {
+      "commit": "Aktion bestätigen",
+      "delete": "Datei löschen",
+      "deleteBranch": "Branch löschen",
+      "discard": "Änderungen verwerfen",
+      "publish": "Branch veröffentlichen",
+      "pull": "Pull bestätigen",
+      "push": "Push bestätigen",
+      "revertLocalCommit": "Lokalen Commit rückgängig machen"
+    }
+  },
+  "diff": {
+    "noDiff": "Kein Diff verfügbar",
+    "largePreview": "Große Diff-Vorschau: Die Darstellung ist eingeschränkt, um den Tab reaktionsfähig zu halten."
+  },
+  "errorState": {
+    "initInstructions": "Führen Sie {{command}} in Ihrem Projektverzeichnis aus, um die Git-Quellcodeverwaltung zu initialisieren.",
+    "tip": "Tipp"
+  },
+  "fileChange": {
+    "collapseDiff": "Diff einklappen",
+    "expandDiff": "Diff ausklappen",
+    "clickToOpen": "Zum Öffnen klicken",
+    "deleteUntracked": "Nicht verfolgte Datei löschen",
+    "discardChanges": "Änderungen verwerfen",
+    "delete": "Löschen",
+    "discard": "Verwerfen",
+    "scroll": "Scrollen",
+    "wrap": "Umbrechen",
+    "switchToScroll": "Zu horizontalem Scrollen wechseln",
+    "switchToWrap": "Zu Zeilenumbruch wechseln"
+  },
+  "fileSelect": {
+    "selectedCount": "{{selected}} von {{total}} Dateien ausgewählt",
+    "selectAll": "Alle auswählen",
+    "deselectAll": "Auswahl aufheben",
+    "all": "Alle",
+    "none": "Keine"
+  },
+  "fileStatus": {
+    "added": "Hinzugefügt",
+    "deleted": "Gelöscht",
+    "legend": "Dateistatus-Legende",
+    "modified": "Geändert",
+    "untracked": "Nicht verfolgt"
+  },
+  "header": {
+    "clearSearch": "Suche löschen",
+    "createNewBranch": "Neuen Branch erstellen",
+    "dismissError": "Fehler schließen",
+    "fetch": "Abrufen",
+    "fetching": "Rufe ab…",
+    "noMatchingBranches": "Keine passenden Branches",
+    "publish": "Veröffentlichen",
+    "publishing": "Veröffentliche…",
+    "pull": "Pull",
+    "pulling": "Pulle…",
+    "push": "Push",
+    "pushing": "Pushe…",
+    "refreshGitStatus": "Git-Status aktualisieren",
+    "revertLocalCommit": "Letzten lokalen Commit rückgängig machen",
+    "searchBranches": "Branches durchsuchen...",
+    "publishTo": "\"{{branch}}\" auf {{remote}} veröffentlichen",
+    "fetchFrom": "Von {{remote}} abrufen",
+    "pullCount": "{{count}} von {{remote}} pullen",
+    "pushCount": "{{count}} nach {{remote}} pushen"
+  },
+  "history": {
+    "added": "Hinzugefügt",
+    "author": "Autor",
+    "changedFiles": "Geänderte Dateien",
+    "date": "Datum",
+    "files": "Dateien",
+    "noCommits": "Keine Commits gefunden",
+    "removed": "Entfernt"
+  },
+  "newBranchModal": {
+    "branchName": "Branch-Name",
+    "cancel": "Abbrechen",
+    "create": "Branch erstellen",
+    "creating": "Erstelle...",
+    "description": "Dies erstellt einen neuen Branch vom aktuellen Branch ({{branch}})",
+    "placeholder": "feature/neues-feature",
+    "title": "Neuen Branch erstellen"
+  },
+  "tabs": {
+    "branches": "Branches",
+    "changes": "Änderungen",
+    "commits": "Commits"
+  }
+}

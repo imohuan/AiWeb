@@ -1,36 +1,42 @@
 {
-  "toolbar": {
-    "changes": "modifications",
-    "previousChange": "Modification précédente",
-    "nextChange": "Modification suivante",
-    "hideDiff": "Masquer la mise en évidence des différences",
-    "showDiff": "Afficher la mise en évidence des différences",
-    "settings": "Paramètres de l'éditeur",
-    "collapse": "Réduire l'éditeur",
-    "expand": "Étendre l'éditeur en pleine largeur"
+  "actions": {
+    "close": "Fermer",
+    "download": "Télécharger le fichier",
+    "editMarkdown": "Modifier le markdown",
+    "exitFullscreen": "Quitter le plein écran",
+    "fullscreen": "Plein écran",
+    "previewMarkdown": "Aperçu markdown",
+    "save": "Enregistrer",
+    "saved": "Enregistré !",
+    "saving": "Enregistrement...",
+    "previewHtml": "Ouvrir l'aperçu HTML dans un nouvel onglet"
   },
-  "loading": "Chargement de {{fileName}}...",
+  "binaryFile": {
+    "message": "Le fichier \"{{fileName}}\" ne peut pas être affiché dans l'éditeur de texte car c'est un fichier binaire.",
+    "title": "Fichier binaire"
+  },
+  "filePreview": {
+    "error": "Impossible d'afficher ce fichier.",
+    "loading": "Chargement de l'aperçu...",
+    "openInNewTab": "Ouvrir dans un nouvel onglet"
+  },
+  "footer": {
+    "characters": "Caractères :",
+    "lines": "Lignes :",
+    "shortcuts": "Ctrl+S pour enregistrer • Échap pour fermer"
+  },
   "header": {
     "showingChanges": "Affichage des modifications"
   },
-  "actions": {
-    "download": "Télécharger le fichier",
-    "save": "Enregistrer",
-    "saving": "Enregistrement...",
-    "saved": "Enregistré !",
-    "exitFullscreen": "Quitter le plein écran",
-    "fullscreen": "Plein écran",
-    "close": "Fermer",
-    "previewMarkdown": "Aperçu markdown",
-    "editMarkdown": "Modifier le markdown"
-  },
-  "footer": {
-    "lines": "Lignes :",
-    "characters": "Caractères :",
-    "shortcuts": "Ctrl+S pour enregistrer • Échap pour fermer"
-  },
-  "binaryFile": {
-    "title": "Fichier binaire",
-    "message": "Le fichier \"{{fileName}}\" ne peut pas être affiché dans l'éditeur de texte car c'est un fichier binaire."
+  "loading": "Chargement de {{fileName}}...",
+  "toolbar": {
+    "changes": "modifications",
+    "collapse": "Réduire l'éditeur",
+    "expand": "Étendre l'éditeur en pleine largeur",
+    "hideDiff": "Masquer la mise en évidence des différences",
+    "nextChange": "Modification suivante",
+    "previousChange": "Modification précédente",
+    "settings": "Paramètres de l'éditeur",
+    "showDiff": "Afficher la mise en évidence des différences"
   }
 }

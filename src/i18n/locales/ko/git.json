@@ -1,0 +1,159 @@
+{
+  "branches": {
+    "ahead": "앞섬",
+    "behind": "뒤처짐",
+    "clearSearch": "검색 지우기",
+    "current": "현재",
+    "delete": "삭제",
+    "local": "로컬",
+    "localRemoteCount": "{{local}} 로컬{{remote}}",
+    "newBranch": "새 브랜치",
+    "noBranchesFound": "브랜치를 찾을 수 없음",
+    "noBranchesMatch": "검색과 일치하는 브랜치 없음",
+    "remote": "원격",
+    "remoteCount": ", {{count}} 원격",
+    "searchPlaceholder": "브랜치 검색...",
+    "switch": "전환",
+    "switchTo": "전환 대상",
+    "upToDate": "최신 상태"
+  },
+  "changes": {
+    "allChangesStaged": "모든 변경사항 스테이징됨",
+    "changes": "변경사항",
+    "commit": "커밋",
+    "commitChanges": "변경사항 커밋",
+    "commitMobile": "{{count}}개 파일 커밋",
+    "commitMobile_other": "{{count}}개 파일 커밋",
+    "commitPlaceholder": "메시지 (Ctrl+Enter로 커밋)",
+    "committing": "커밋 중...",
+    "filesSelected": "{{count}}개 파일 선택됨",
+    "filesSelected_other": "{{count}}개 파일 선택됨",
+    "generateCommitMessage": "커밋 메시지 생성",
+    "noChanges": "변경 사항이 감지되지 않음",
+    "noCommits": {
+      "createButton": "초기 커밋 만들기",
+      "creatingButton": "초기 커밋 만드는 중...",
+      "description": "이 저장소에는 아직 커밋이 없습니다. 첫 번째 커밋을 만들어 변경 사항 추적을 시작하세요.",
+      "title": "아직 커밋 없음"
+    },
+    "noProject": "소스 제어를 보려면 프로젝트를 선택하세요",
+    "noStagedFiles": "스테이징된 파일 없음",
+    "stageAll": "모두 스테이징",
+    "staged": "스테이징됨",
+    "unstageAll": "모두 언스테이징"
+  },
+  "confirmModal": {
+    "actionLabels": {
+      "commit": "확인",
+      "delete": "삭제",
+      "deleteBranch": "삭제",
+      "discard": "폐기",
+      "publish": "게시",
+      "pull": "풀",
+      "push": "푸시",
+      "revertLocalCommit": "커밋 되돌리기"
+    },
+    "cancel": "취소",
+    "commitFiles": "{{count}}개 파일을 \"{{message}}\" 메시지로 커밋하시겠습니까?",
+    "commitFiles_other": "{{count}}개 파일을 \"{{message}}\" 메시지로 커밋하시겠습니까?",
+    "deleteBranch": "\"{{branch}}\" 브랜치를 삭제하시겠습니까? 이 작업은 취소할 수 없습니다.",
+    "deleteFile": "추적되지 않은 파일 \"{{file}}\"을(를) 삭제하시겠습니까? 이 작업은 취소할 수 없습니다.",
+    "discardFile": "\"{{file}}\"의 모든 변경 사항을 폐기하시겠습니까? 이 작업은 취소할 수 없습니다.",
+    "publish": "\"{{branch}}\" 브랜치를 {{remote}}에 게시하시겠습니까?",
+    "pull": "{{remote}}에서 {{count}}개 커밋을 풀하시겠습니까?",
+    "pull_other": "{{remote}}에서 {{count}}개 커밋을 풀하시겠습니까?",
+    "push": "{{count}}개 커밋을 {{remote}}에 푸시하시겠습니까?",
+    "push_other": "{{count}}개 커밋을 {{remote}}에 푸시하시겠습니까?",
+    "revertLocalCommit": "최근 로컬 커밋을 되돌리시겠습니까? 커밋은 제거되지만 변경 사항은 스테이징된 상태로 유지됩니다.",
+    "switchBranch": "\"{{branch}}\" 브랜치로 전환하시겠습니까? 커밋되지 않은 변경 사항이 없는지 확인하세요.",
+    "titles": {
+      "commit": "작업 확인",
+      "delete": "파일 삭제",
+      "deleteBranch": "브랜치 삭제",
+      "discard": "변경 사항 폐기",
+      "publish": "브랜치 게시",
+      "pull": "풀 확인",
+      "push": "푸시 확인",
+      "revertLocalCommit": "로컬 커밋 되돌리기"
+    }
+  },
+  "diff": {
+    "noDiff": "사용 가능한 차이가 없습니다",
+    "largePreview": "대용량 차이 미리보기: 탭 응답성을 유지하기 위해 렌더링이 제한됩니다."
+  },
+  "errorState": {
+    "initInstructions": "프로젝트 디렉토리에서 {{command}}을(를) 실행하여 Git 소스 제어를 초기화하세요.",
+    "tip": "팁"
+  },
+  "fileChange": {
+    "collapseDiff": "차이 접기",
+    "expandDiff": "차이 펼치기",
+    "clickToOpen": "클릭하여 파일 열기",
+    "deleteUntracked": "추적되지 않은 파일 삭제",
+    "discardChanges": "변경 사항 폐기",
+    "delete": "삭제",
+    "discard": "폐기",
+    "scroll": "스크롤",
+    "wrap": "줄바꿈",
+    "switchToScroll": "가로 스크롤로 전환",
+    "switchToWrap": "텍스트 줄바꿈으로 전환"
+  },
+  "fileSelect": {
+    "selectedCount": "{{selected}} / {{total}}개 파일 선택됨",
+    "selectAll": "전체 선택",
+    "deselectAll": "선택 해제",
+    "all": "전체",
+    "none": "없음"
+  },
+  "fileStatus": {
+    "added": "추가됨",
+    "deleted": "삭제됨",
+    "legend": "파일 상태 안내",
+    "modified": "수정됨",
+    "untracked": "추적 안 됨"
+  },
+  "header": {
+    "clearSearch": "검색 지우기",
+    "createNewBranch": "새 브랜치 만들기",
+    "dismissError": "오류 닫기",
+    "fetch": "가져오기",
+    "fetching": "가져오는 중…",
+    "noMatchingBranches": "일치하는 브랜치 없음",
+    "publish": "게시",
+    "publishing": "게시 중…",
+    "pull": "풀",
+    "pulling": "풀 중…",
+    "push": "푸시",
+    "pushing": "푸시 중…",
+    "refreshGitStatus": "Git 상태 새로고침",
+    "revertLocalCommit": "최근 로컬 커밋 되돌리기",
+    "searchBranches": "브랜치 검색...",
+    "publishTo": "\"{{branch}}\"을(를) {{remote}}에 게시",
+    "fetchFrom": "{{remote}}에서 가져오기",
+    "pullCount": "{{remote}}에서 {{count}}개 풀",
+    "pushCount": "{{count}}개를 {{remote}}에 푸시"
+  },
+  "history": {
+    "added": "추가됨",
+    "author": "작성자",
+    "changedFiles": "변경된 파일",
+    "date": "날짜",
+    "files": "파일",
+    "noCommits": "커밋을 찾을 수 없음",
+    "removed": "삭제됨"
+  },
+  "newBranchModal": {
+    "branchName": "브랜치 이름",
+    "cancel": "취소",
+    "create": "브랜치 만들기",
+    "creating": "만드는 중...",
+    "description": "현재 브랜치({{branch}})에서 새 브랜치를 만듭니다",
+    "placeholder": "feature/새기능",
+    "title": "새 브랜치 만들기"
+  },
+  "tabs": {
+    "branches": "브랜치",
+    "changes": "변경사항",
+    "commits": "커밋"
+  }
+}

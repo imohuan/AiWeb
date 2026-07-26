@@ -1,0 +1,159 @@
+{
+  "branches": {
+    "ahead": "ileride",
+    "behind": "geride",
+    "clearSearch": "Aramayı temizle",
+    "current": "mevcut",
+    "delete": "Sil",
+    "local": "Yerel",
+    "localRemoteCount": "{{local}} yerel{{remote}}",
+    "newBranch": "Yeni dal",
+    "noBranchesFound": "Dal bulunamadı",
+    "noBranchesMatch": "Aramanızla eşleşen dal yok",
+    "remote": "Uzak",
+    "remoteCount": ", {{count}} uzak",
+    "searchPlaceholder": "Dal ara...",
+    "switch": "Geç",
+    "switchTo": "Geçiş yap",
+    "upToDate": "Güncel"
+  },
+  "changes": {
+    "allChangesStaged": "Tüm değişiklikler hazırlandı",
+    "changes": "Değişiklikler",
+    "commit": "Commit",
+    "commitChanges": "Değişiklikleri Commit Et",
+    "commitMobile": "{{count}} dosyayı commit et",
+    "commitMobile_other": "{{count}} dosyayı commit et",
+    "commitPlaceholder": "Mesaj (Ctrl+Enter ile commit)",
+    "committing": "Commit ediliyor...",
+    "filesSelected": "{{count}} dosya seçildi",
+    "filesSelected_other": "{{count}} dosya seçildi",
+    "generateCommitMessage": "Commit mesajı oluştur",
+    "noChanges": "Değişiklik algılanmadı",
+    "noCommits": {
+      "createButton": "İlk Commit Oluştur",
+      "creatingButton": "İlk Commit Oluşturuluyor...",
+      "description": "Bu depoda henüz commit yok. Değişiklikleri izlemeye başlamak için ilk commitinizi oluşturun.",
+      "title": "Henüz commit yok"
+    },
+    "noProject": "Kaynak kontrolünü görüntülemek için bir proje seçin",
+    "noStagedFiles": "Hazırlanmış dosya yok",
+    "stageAll": "Tümünü Hazırla",
+    "staged": "Hazırlandı",
+    "unstageAll": "Tümünü Hazırlıktan Çıkar"
+  },
+  "confirmModal": {
+    "actionLabels": {
+      "commit": "Onayla",
+      "delete": "Sil",
+      "deleteBranch": "Sil",
+      "discard": "İptal Et",
+      "publish": "Yayınla",
+      "pull": "Çek",
+      "push": "Gönder",
+      "revertLocalCommit": "Commiti Geri Al"
+    },
+    "cancel": "İptal",
+    "commitFiles": "\"{{message}}\" mesajıyla {{count}} dosya commit edilsin mi?",
+    "commitFiles_other": "\"{{message}}\" mesajıyla {{count}} dosya commit edilsin mi?",
+    "deleteBranch": "\"{{branch}}\" dalı silinsin mi? Bu işlem geri alınamaz.",
+    "deleteFile": "İzlenmeyen \"{{file}}\" dosyası silinsin mi? Bu işlem geri alınamaz.",
+    "discardFile": "\"{{file}}\" dosyasındaki tüm değişiklikler iptal edilsin mi? Bu işlem geri alınamaz.",
+    "publish": "\"{{branch}}\" dalı {{remote}} kaynağına yayınlansın mı?",
+    "pull": "{{remote}} kaynağından {{count}} commit çekilsin mi?",
+    "pull_other": "{{remote}} kaynağından {{count}} commit çekilsin mi?",
+    "push": "{{count}} commit {{remote}} kaynağına gönderilsin mi?",
+    "push_other": "{{count}} commit {{remote}} kaynağına gönderilsin mi?",
+    "revertLocalCommit": "Son yerel commit geri alınsın mı? Bu, commiti kaldırır ancak değişiklikleri hazırlanmış olarak tutar.",
+    "switchBranch": "\"{{branch}}\" dalına geçilsin mi? Commit edilmemiş değişiklik olmadığından emin olun.",
+    "titles": {
+      "commit": "İşlemi Onayla",
+      "delete": "Dosyayı Sil",
+      "deleteBranch": "Dalı Sil",
+      "discard": "Değişiklikleri İptal Et",
+      "publish": "Dalı Yayınla",
+      "pull": "Çekmeyi Onayla",
+      "push": "Göndermeyi Onayla",
+      "revertLocalCommit": "Yerel Commit Geri Al"
+    }
+  },
+  "diff": {
+    "noDiff": "Fark mevcut değil",
+    "largePreview": "Büyük fark önizlemesi: sekmenin duyarlı kalması için işleme sınırlandırılmıştır."
+  },
+  "errorState": {
+    "initInstructions": "Git kaynak kontrolünü başlatmak için proje dizininde {{command}} komutunu çalıştırın.",
+    "tip": "İpucu"
+  },
+  "fileChange": {
+    "collapseDiff": "Farkı daralt",
+    "expandDiff": "Farkı genişlet",
+    "clickToOpen": "Dosyayı açmak için tıklayın",
+    "deleteUntracked": "İzlenmeyen dosyayı sil",
+    "discardChanges": "Değişiklikleri iptal et",
+    "delete": "Sil",
+    "discard": "İptal",
+    "scroll": "Kaydır",
+    "wrap": "Kaydırmalı",
+    "switchToScroll": "Yatay kaydırmaya geç",
+    "switchToWrap": "Metin kaydırmaya geç"
+  },
+  "fileSelect": {
+    "selectedCount": "{{selected}} / {{total}} dosya seçildi",
+    "selectAll": "Tümünü Seç",
+    "deselectAll": "Seçimi Kaldır",
+    "all": "Tümü",
+    "none": "Hiçbiri"
+  },
+  "fileStatus": {
+    "added": "Eklendi",
+    "deleted": "Silindi",
+    "legend": "Dosya Durumu Rehberi",
+    "modified": "Değiştirildi",
+    "untracked": "İzlenmiyor"
+  },
+  "header": {
+    "clearSearch": "Aramayı temizle",
+    "createNewBranch": "Yeni dal oluştur",
+    "dismissError": "Hatayı kapat",
+    "fetch": "Getir",
+    "fetching": "Getiriliyor…",
+    "noMatchingBranches": "Eşleşen dal yok",
+    "publish": "Yayınla",
+    "publishing": "Yayınlanıyor…",
+    "pull": "Çek",
+    "pulling": "Çekiliyor…",
+    "push": "Gönder",
+    "pushing": "Gönderiliyor…",
+    "refreshGitStatus": "Git durumunu yenile",
+    "revertLocalCommit": "Son yerel commiti geri al",
+    "searchBranches": "Dal ara...",
+    "publishTo": "\"{{branch}}\" dalını {{remote}} kaynağına yayınla",
+    "fetchFrom": "{{remote}} kaynağından getir",
+    "pullCount": "{{remote}} kaynağından {{count}} çek",
+    "pushCount": "{{count}} adedi {{remote}} kaynağına gönder"
+  },
+  "history": {
+    "added": "Eklendi",
+    "author": "Yazar",
+    "changedFiles": "Değişen Dosyalar",
+    "date": "Tarih",
+    "files": "Dosyalar",
+    "noCommits": "Commit bulunamadı",
+    "removed": "Kaldırıldı"
+  },
+  "newBranchModal": {
+    "branchName": "Dal Adı",
+    "cancel": "İptal",
+    "create": "Dal Oluştur",
+    "creating": "Oluşturuluyor...",
+    "description": "Bu, mevcut daldan ({{branch}}) yeni bir dal oluşturacak",
+    "placeholder": "feature/yeni-ozellik",
+    "title": "Yeni Dal Oluştur"
+  },
+  "tabs": {
+    "branches": "Dallar",
+    "changes": "Değişiklikler",
+    "commits": "Commitler"
+  }
+}

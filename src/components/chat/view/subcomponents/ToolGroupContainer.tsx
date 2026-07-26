@@ -123,7 +123,7 @@ export default function ToolGroupContainer({
       </button>
 
       {isExpanded && (
-        <div className="mt-2 space-y-3 sm:space-y-4">
+        <div className="mt-2 space-y-3 sm:space-y-4 pb-1">
           {group.messages.map((message, index) => (
             <MessageComponent
               key={getMessageKey(message)}

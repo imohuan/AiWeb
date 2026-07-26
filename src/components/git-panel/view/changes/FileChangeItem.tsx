@@ -1,4 +1,5 @@
 import { ChevronRight, Trash2 } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 import type { FileStatusCode } from '../../types/types';
 import { getStatusBadgeClass, getStatusLabel } from '../../utils/gitPanelUtils';
 import GitDiffViewer from '../shared/GitDiffViewer';
@@ -32,6 +33,7 @@ export default function FileChangeItem({
   onToggleWrapText,
   onRequestFileAction,
 }: FileChangeItemProps) {
+  const { t } = useTranslation();
   const statusLabel = getStatusLabel(status);
   const badgeClass = getStatusBadgeClass(status);
 
@@ -53,7 +55,7 @@ export default function FileChangeItem({
               onToggleExpanded(filePath);
             }}
             className={`cursor-pointer rounded p-0.5 hover:bg-accent ${isMobile ? 'mr-1' : 'mr-2'}`}
-            title={isExpanded ? 'Collapse diff' : 'Expand diff'}
+            title={isExpanded ? t('git:fileChange.collapseDiff') : t('git:fileChange.expandDiff')}
           >
             <ChevronRight className={`h-3 w-3 transition-transform duration-200 ease-in-out ${isExpanded ? 'rotate-90' : 'rotate-0'}`} />
           </button>
@@ -64,7 +66,7 @@ export default function FileChangeItem({
               event.stopPropagation();
               onOpenFile(filePath);
             }}
-            title="Click to open file"
+            title={t('git:fileChange.clickToOpen')}
           >
             {filePath}
           </span>
@@ -77,10 +79,10 @@ export default function FileChangeItem({
                   onRequestFileAction(filePath, status);
                 }}
                 className={`${isMobile ? 'px-2 py-1 text-xs' : 'p-1'} flex items-center gap-1 rounded font-medium text-destructive hover:bg-destructive/10`}
-                title={status === 'U' ? 'Delete untracked file' : 'Discard changes'}
+                title={status === 'U' ? t('git:fileChange.deleteUntracked') : t('git:fileChange.discardChanges')}
               >
                 <Trash2 className="h-3 w-3" />
-                {isMobile && <span>{status === 'U' ? 'Delete' : 'Discard'}</span>}
+                {isMobile && <span>{status === 'U' ? t('git:fileChange.delete') : t('git:fileChange.discard')}</span>}
               </button>
             )}
 
@@ -112,9 +114,9 @@ export default function FileChangeItem({
                 onToggleWrapText();
               }}
               className="text-sm text-muted-foreground transition-colors hover:text-foreground"
-              title={wrapText ? 'Switch to horizontal scroll' : 'Switch to text wrap'}
+              title={wrapText ? t('git:fileChange.switchToScroll') : t('git:fileChange.switchToWrap')}
             >
-              {wrapText ? 'Scroll' : 'Wrap'}
+              {wrapText ? t('git:fileChange.scroll') : t('git:fileChange.wrap')}
             </button>
           )}
         </div>

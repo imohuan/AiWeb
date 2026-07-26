@@ -1,0 +1,159 @@
+{
+  "branches": {
+    "ahead": "先行",
+    "behind": "遅延",
+    "clearSearch": "検索をクリア",
+    "current": "現在",
+    "delete": "削除",
+    "local": "ローカル",
+    "localRemoteCount": "{{local}} ローカル{{remote}}",
+    "newBranch": "新しいブランチ",
+    "noBranchesFound": "ブランチが見つかりません",
+    "noBranchesMatch": "検索に一致するブランチがありません",
+    "remote": "リモート",
+    "remoteCount": "、{{count}} リモート",
+    "searchPlaceholder": "ブランチを検索...",
+    "switch": "切り替え",
+    "switchTo": "切り替え先",
+    "upToDate": "最新"
+  },
+  "changes": {
+    "allChangesStaged": "すべての変更がステージ済み",
+    "changes": "変更",
+    "commit": "コミット",
+    "commitChanges": "変更をコミット",
+    "commitMobile": "{{count}} ファイルをコミット",
+    "commitMobile_other": "{{count}} ファイルをコミット",
+    "commitPlaceholder": "メッセージ（Ctrl+Enter でコミット）",
+    "committing": "コミット中...",
+    "filesSelected": "{{count}} 個のファイルを選択",
+    "filesSelected_other": "{{count}} 個のファイルを選択",
+    "generateCommitMessage": "コミットメッセージを生成",
+    "noChanges": "変更は検出されませんでした",
+    "noCommits": {
+      "createButton": "最初のコミットを作成",
+      "creatingButton": "最初のコミットを作成中...",
+      "description": "このリポジトリにはまだコミットがありません。最初のコミットを作成して変更の追跡を開始してください。",
+      "title": "まだコミットがありません"
+    },
+    "noProject": "プロジェクトを選択してソース管理を表示",
+    "noStagedFiles": "ステージ済みファイルはありません",
+    "stageAll": "すべてステージ",
+    "staged": "ステージ済み",
+    "unstageAll": "すべてアンステージ"
+  },
+  "confirmModal": {
+    "actionLabels": {
+      "commit": "確認",
+      "delete": "削除",
+      "deleteBranch": "削除",
+      "discard": "破棄",
+      "publish": "公開",
+      "pull": "プル",
+      "push": "プッシュ",
+      "revertLocalCommit": "コミットを元に戻す"
+    },
+    "cancel": "キャンセル",
+    "commitFiles": "{{count}} 個のファイルをメッセージ \"{{message}}\" でコミットしますか？",
+    "commitFiles_other": "{{count}} 個のファイルをメッセージ \"{{message}}\" でコミットしますか？",
+    "deleteBranch": "ブランチ \"{{branch}}\" を削除しますか？この操作は元に戻せません。",
+    "deleteFile": "未追跡ファイル \"{{file}}\" を削除しますか？この操作は元に戻せません。",
+    "discardFile": "\"{{file}}\" のすべての変更を破棄しますか？この操作は元に戻せません。",
+    "publish": "ブランチ \"{{branch}}\" を {{remote}} に公開しますか？",
+    "pull": "{{remote}} から {{count}} コミットをプルしますか？",
+    "pull_other": "{{remote}} から {{count}} コミットをプルしますか？",
+    "push": "{{count}} コミットを {{remote}} にプッシュしますか？",
+    "push_other": "{{count}} コミットを {{remote}} にプッシュしますか？",
+    "revertLocalCommit": "最新のローカルコミットを元に戻しますか？コミットは削除されますが、変更はステージングされたままになります。",
+    "switchBranch": "ブランチ \"{{branch}}\" に切り替えますか？コミットされていない変更がないことを確認してください。",
+    "titles": {
+      "commit": "操作を確認",
+      "delete": "ファイルを削除",
+      "deleteBranch": "ブランチを削除",
+      "discard": "変更を破棄",
+      "publish": "ブランチを公開",
+      "pull": "プルを確認",
+      "push": "プッシュを確認",
+      "revertLocalCommit": "ローカルコミットを元に戻す"
+    }
+  },
+  "diff": {
+    "noDiff": "差分はありません",
+    "largePreview": "大きな差分のプレビュー：タブの応答性を保つため、レンダリングが制限されています。"
+  },
+  "errorState": {
+    "initInstructions": "プロジェクトディレクトリで {{command}} を実行して Git ソース管理を初期化してください。",
+    "tip": "ヒント"
+  },
+  "fileChange": {
+    "collapseDiff": "差分を折りたたむ",
+    "expandDiff": "差分を展開",
+    "clickToOpen": "クリックでファイルを開く",
+    "deleteUntracked": "未追跡ファイルを削除",
+    "discardChanges": "変更を破棄",
+    "delete": "削除",
+    "discard": "破棄",
+    "scroll": "スクロール",
+    "wrap": "折り返し",
+    "switchToScroll": "横スクロールに切り替え",
+    "switchToWrap": "テキスト折り返しに切り替え"
+  },
+  "fileSelect": {
+    "selectedCount": "{{selected}} / {{total}} ファイル選択中",
+    "selectAll": "すべて選択",
+    "deselectAll": "選択解除",
+    "all": "すべて",
+    "none": "なし"
+  },
+  "fileStatus": {
+    "added": "追加済み",
+    "deleted": "削除済み",
+    "legend": "ファイルステータスガイド",
+    "modified": "変更済み",
+    "untracked": "未追跡"
+  },
+  "header": {
+    "clearSearch": "検索をクリア",
+    "createNewBranch": "新しいブランチを作成",
+    "dismissError": "エラーを閉じる",
+    "fetch": "フェッチ",
+    "fetching": "フェッチ中…",
+    "noMatchingBranches": "一致するブランチがありません",
+    "publish": "公開",
+    "publishing": "公開中…",
+    "pull": "プル",
+    "pulling": "プル中…",
+    "push": "プッシュ",
+    "pushing": "プッシュ中…",
+    "refreshGitStatus": "Git ステータスを更新",
+    "revertLocalCommit": "最新のローカルコミットを元に戻す",
+    "searchBranches": "ブランチを検索...",
+    "publishTo": "\"{{branch}}\" を {{remote}} に公開",
+    "fetchFrom": "{{remote}} からフェッチ",
+    "pullCount": "{{remote}} から {{count}} プル",
+    "pushCount": "{{count}} を {{remote}} にプッシュ"
+  },
+  "history": {
+    "added": "追加",
+    "author": "作成者",
+    "changedFiles": "変更されたファイル",
+    "date": "日付",
+    "files": "ファイル",
+    "noCommits": "コミットが見つかりません",
+    "removed": "削除"
+  },
+  "newBranchModal": {
+    "branchName": "ブランチ名",
+    "cancel": "キャンセル",
+    "create": "ブランチを作成",
+    "creating": "作成中...",
+    "description": "現在のブランチ（{{branch}}）から新しいブランチを作成します",
+    "placeholder": "feature/新機能",
+    "title": "新しいブランチを作成"
+  },
+  "tabs": {
+    "branches": "ブランチ",
+    "changes": "変更",
+    "commits": "コミット"
+  }
+}

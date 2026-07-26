@@ -68,7 +68,10 @@
     "version": "バージョン",
     "select": "選択",
     "selectAll": "すべて選択",
-    "deselectAll": "すべて解除"
+    "deselectAll": "すべて解除",
+    "cancel": "キャンセル",
+    "done": "完了",
+    "failed": "失敗"
   },
   "time": {
     "justNow": "たった今",

@@ -1,0 +1,159 @@
+{
+  "branches": {
+    "ahead": "領先",
+    "behind": "落後",
+    "clearSearch": "清除搜尋",
+    "current": "目前",
+    "delete": "刪除",
+    "local": "本地",
+    "localRemoteCount": "{{local}} 個本地{{remote}}",
+    "newBranch": "新建分支",
+    "noBranchesFound": "找不到分支",
+    "noBranchesMatch": "沒有符合搜尋的分支",
+    "remote": "遠端",
+    "remoteCount": "，{{count}} 個遠端",
+    "searchPlaceholder": "搜尋分支...",
+    "switch": "切換",
+    "switchTo": "切換到",
+    "upToDate": "已是最新"
+  },
+  "changes": {
+    "allChangesStaged": "所有變更已暫存",
+    "changes": "變更",
+    "commit": "提交",
+    "commitChanges": "提交變更",
+    "commitMobile": "提交 {{count}} 個檔案",
+    "commitMobile_other": "提交 {{count}} 個檔案",
+    "commitPlaceholder": "訊息（Ctrl+Enter 提交）",
+    "committing": "提交中...",
+    "filesSelected": "已選擇 {{count}} 個檔案",
+    "filesSelected_other": "已選擇 {{count}} 個檔案",
+    "generateCommitMessage": "產生提交訊息",
+    "noChanges": "未偵測到變更",
+    "noCommits": {
+      "createButton": "建立初始提交",
+      "creatingButton": "正在建立初始提交...",
+      "description": "此儲存庫還沒有任何提交。建立您的首次提交以開始追蹤變更。",
+      "title": "尚無提交"
+    },
+    "noProject": "選擇一個專案以檢視原始碼控制",
+    "noStagedFiles": "沒有已暫存的檔案",
+    "stageAll": "暫存全部",
+    "staged": "已暫存",
+    "unstageAll": "取消暫存全部"
+  },
+  "confirmModal": {
+    "actionLabels": {
+      "commit": "確認",
+      "delete": "刪除",
+      "deleteBranch": "刪除",
+      "discard": "放棄",
+      "publish": "發佈",
+      "pull": "拉取",
+      "push": "推送",
+      "revertLocalCommit": "還原提交"
+    },
+    "cancel": "取消",
+    "commitFiles": "提交 {{count}} 個檔案，訊息為：「{{message}}」？",
+    "commitFiles_other": "提交 {{count}} 個檔案，訊息為：「{{message}}」？",
+    "deleteBranch": "刪除分支「{{branch}}」？此操作無法還原。",
+    "deleteFile": "刪除未追蹤的檔案「{{file}}」？此操作無法還原。",
+    "discardFile": "放棄對「{{file}}」的所有變更？此操作無法還原。",
+    "publish": "將分支「{{branch}}」發佈到 {{remote}}？",
+    "pull": "從 {{remote}} 拉取 {{count}} 個提交？",
+    "pull_other": "從 {{remote}} 拉取 {{count}} 個提交？",
+    "push": "推送 {{count}} 個提交到 {{remote}}？",
+    "push_other": "推送 {{count}} 個提交到 {{remote}}？",
+    "revertLocalCommit": "還原最近的本地提交？這將移除該提交但保留其變更在暫存區。",
+    "switchBranch": "切換到分支「{{branch}}」？請確保您沒有未提交的變更。",
+    "titles": {
+      "commit": "確認操作",
+      "delete": "刪除檔案",
+      "deleteBranch": "刪除分支",
+      "discard": "放棄變更",
+      "publish": "發佈分支",
+      "pull": "確認拉取",
+      "push": "確認推送",
+      "revertLocalCommit": "還原本地提交"
+    }
+  },
+  "diff": {
+    "noDiff": "無可用差異",
+    "largePreview": "大型差異預覽：為保持分頁回應性，渲染內容已限制。"
+  },
+  "errorState": {
+    "initInstructions": "在專案目錄中執行 {{command}} 來初始化 Git 原始碼控制。",
+    "tip": "提示"
+  },
+  "fileChange": {
+    "collapseDiff": "摺疊差異",
+    "expandDiff": "展開差異",
+    "clickToOpen": "點擊開啟檔案",
+    "deleteUntracked": "刪除未追蹤檔案",
+    "discardChanges": "放棄變更",
+    "delete": "刪除",
+    "discard": "放棄",
+    "scroll": "捲動",
+    "wrap": "換行",
+    "switchToScroll": "切換為橫向捲動",
+    "switchToWrap": "切換為自動換行"
+  },
+  "fileSelect": {
+    "selectedCount": "已選擇 {{selected}} / {{total}} 個檔案",
+    "selectAll": "全選",
+    "deselectAll": "取消全選",
+    "all": "全部",
+    "none": "無"
+  },
+  "fileStatus": {
+    "added": "已新增",
+    "deleted": "已刪除",
+    "legend": "檔案狀態說明",
+    "modified": "已修改",
+    "untracked": "未追蹤"
+  },
+  "header": {
+    "clearSearch": "清除搜尋",
+    "createNewBranch": "建立新分支",
+    "dismissError": "關閉錯誤",
+    "fetch": "擷取",
+    "fetching": "擷取中…",
+    "noMatchingBranches": "沒有匹配的分支",
+    "publish": "發佈",
+    "publishing": "發佈中…",
+    "pull": "拉取",
+    "pulling": "拉取中…",
+    "push": "推送",
+    "pushing": "推送中…",
+    "refreshGitStatus": "重新整理 Git 狀態",
+    "revertLocalCommit": "還原最近的本地提交",
+    "searchBranches": "搜尋分支...",
+    "publishTo": "將「{{branch}}」發佈到 {{remote}}",
+    "fetchFrom": "從 {{remote}} 擷取",
+    "pullCount": "從 {{remote}} 拉取 {{count}} 個",
+    "pushCount": "推送 {{count}} 個到 {{remote}}"
+  },
+  "history": {
+    "added": "新增",
+    "author": "作者",
+    "changedFiles": "已變更的檔案",
+    "date": "日期",
+    "files": "檔案",
+    "noCommits": "找不到提交記錄",
+    "removed": "刪除"
+  },
+  "newBranchModal": {
+    "branchName": "分支名稱",
+    "cancel": "取消",
+    "create": "建立分支",
+    "creating": "建立中...",
+    "description": "這將從目前分支（{{branch}}）建立新分支",
+    "placeholder": "feature/新功能",
+    "title": "建立新分支"
+  },
+  "tabs": {
+    "branches": "分支",
+    "changes": "變更",
+    "commits": "提交"
+  }
+}

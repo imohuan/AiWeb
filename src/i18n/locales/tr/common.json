@@ -68,7 +68,10 @@
     "version": "Sürüm",
     "select": "Seç",
     "selectAll": "Tümünü Seç",
-    "deselectAll": "Tümünün Seçimini Kaldır"
+    "deselectAll": "Tümünün Seçimini Kaldır",
+    "cancel": "İptal",
+    "done": "Tamam",
+    "failed": "Başarısız"
   },
   "time": {
     "justNow": "Az önce",

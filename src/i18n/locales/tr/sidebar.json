@@ -50,7 +50,9 @@
     "cancel": "İptal",
     "clearSearch": "Aramayı temizle",
     "openCommandPalette": "Komut paletini aç",
-    "attentionRequiredIndicator": "Oturum ilgi bekliyor"
+    "attentionRequiredIndicator": "Oturum ilgi bekliyor",
+    "processingSessionIndicator": "İşlenen oturum",
+    "deleteSessionOptions": "Oturumu arşivle veya kalıcı olarak sil"
   },
   "navigation": {
     "chat": "Sohbet",
@@ -129,7 +131,14 @@
     "matches_one": "{{count}} eşleşme",
     "matches_other": "{{count}} eşleşme",
     "projectsScanned_one": "{{count}} proje tarandı",
-    "projectsScanned_other": "{{count}} proje tarandı"
+    "projectsScanned_other": "{{count}} proje tarandı",
+    "modeRunning": "Çalışıyor",
+    "matches": "eşleşme",
+    "projectsScanned": "proje tarandı",
+    "archiveOnlyTooltip": "Yalnızca arşiv",
+    "archivedPlaceholder": "Arşivlenmiş oturumlarda ara...",
+    "runningPlaceholder": "Çalışan oturumlarda ara...",
+    "runningTooltip": "Çalışan oturumlar"
   },
   "deleteConfirmation": {
     "deleteProject": "Projeyi Kaldır",
@@ -140,6 +149,29 @@
     "removeFromSidebar": "Yalnızca kenar çubuğundan kaldır",
     "deleteAllData": "Tüm veriyi kalıcı olarak sil",
     "allConversationsDeleted": "Proje kenar çubuğundan kaldırılacak. Dosyaların, bellek verilerin ve oturum verilerin korunacak.",
-    "cannotUndo": "Projeyi sonra tekrar ekleyebilirsin."
+    "cannotUndo": "Projeyi sonra tekrar ekleyebilirsin.",
+    "archiveProject": "Projeyi arşivle",
+    "archivedSessionNotice": "Bu oturum zaten arşivlenmiş. Gizli tutabilir veya kalıcı olarak silebilirsiniz.",
+    "archiveSessionNotice": "Arşivleme, oturumu aktif listeden çıkarır ancak geçmişini korur.",
+    "archiveSession": "Oturumu arşivle",
+    "deleteSessionPermanently": "Kalıcı olarak sil"
+  },
+  "running": {
+    "title": "Çalışıyor",
+    "emptyTitle": "Çalışan oturum yok",
+    "emptyDescription": "Bir sağlayıcı işlem yaparken aktif çalışma burada görünecektir.",
+    "noMatchingSessions": "Eşleşen çalışan oturum yok."
+  },
+  "archived": {
+    "loadingTitle": "Arşiv yükleniyor...",
+    "loadingDescription": "Daha sonra geri yükleyebileceğiniz gizli çalışma alanları ve oturumlar getiriliyor.",
+    "emptyTitle": "Arşivlenmiş öğe yok",
+    "emptyDescription": "Aktif listeden gizlediğiniz çalışma alanları ve oturumlar burada görünecektir.",
+    "noMatchingSessions": "Eşleşen arşivlenmiş öğe yok",
+    "tryDifferentSearch": "Farklı bir arama terimi deneyin.",
+    "projectArchived": "Proje arşivlendi",
+    "restoreProject": "Çalışma alanını geri yükle",
+    "restore": "Oturumu geri yükle",
+    "deletePermanently": "Kalıcı olarak sil"
   }
 }

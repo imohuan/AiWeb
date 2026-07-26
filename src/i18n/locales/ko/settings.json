@@ -1,484 +1,616 @@
 {
-  "title": "설정",
-  "tabs": {
-    "account": "계정",
-    "permissions": "권한",
-    "mcpServers": "MCP 서버",
-    "appearance": "외관"
+  "about": {
+    "docs": "문서",
+    "hostedCta": {
+      "description": "팀 협업, 공유 MCP 구성, 환경 간 설정 동기화, 관리형 인프라.",
+      "learnMore": "자세히 알아보기",
+      "title": "CloudCLI 호스팅 사용해보기"
+    },
+    "license": "AGPL-3.0 라이선스",
+    "proFeatures": {
+      "syncSettings": {
+        "description": "모든 환경에서 환경 설정, MCP 구성, 테마를 동기화합니다.",
+        "title": "설정 동기화"
+      },
+      "teamManagement": {
+        "description": "다중 사용자, 역할 기반 액세스, 팀을 위한 공유 프로젝트.",
+        "title": "팀 관리"
+      },
+      "title": "CloudCLI Pro 기능"
+    },
+    "starOnGithub": "GitHub에서 스타 주기",
+    "tagline": "오픈소스 AI 코딩 어시스턴트 인터페이스"
   },
   "account": {
-    "title": "계정",
-    "language": "언어",
-    "languageLabel": "표시 언어",
-    "languageDescription": "인터페이스에 사용할 언어를 선택하세요",
-    "username": "사용자명",
+    "changePassword": "비밀번호 변경",
     "email": "이메일",
+    "language": "언어",
+    "languageDescription": "인터페이스에 사용할 언어를 선택하세요",
+    "languageLabel": "표시 언어",
     "profile": "프로필",
-    "changePassword": "비밀번호 변경"
+    "title": "계정",
+    "username": "사용자명"
   },
-  "mcp": {
-    "title": "MCP 서버",
-    "addServer": "서버 추가",
-    "editServer": "서버 편집",
-    "deleteServer": "서버 삭제",
-    "serverName": "서버 이름",
-    "serverType": "서버 유형",
-    "config": "설정",
-    "testConnection": "연결 테스트",
-    "status": "상태",
-    "connected": "연결됨",
-    "disconnected": "연결 끊김",
-    "scope": {
-      "label": "범위",
-      "user": "사용자",
-      "project": "프로젝트"
+  "actions": {
+    "cancelChanges": "변경 취소",
+    "resetToDefaults": "기본값으로 초기화",
+    "saveChanges": "변경사항 저장"
+  },
+  "agents": {
+    "account": {
+      "claude": {
+        "description": "Anthropic Claude AI 어시스턴트"
+      },
+      "codex": {
+        "description": "OpenAI Codex AI 어시스턴트"
+      },
+      "cursor": {
+        "description": "Cursor AI 기반 코드 에디터"
+      },
+      "opencode": {
+        "description": "OpenCode CLI 어시스턴트"
+      }
+    },
+    "authStatus": {
+      "authenticatedUser": "인증된 사용자",
+      "checking": "확인 중...",
+      "checkingAuth": "인증 상태 확인 중...",
+      "connected": "연결됨",
+      "disconnected": "연결 끊김",
+      "loggedInAs": "{{email}}(으)로 로그인됨",
+      "notConnected": "연결되지 않음"
+    },
+    "connectionStatus": "연결 상태",
+    "error": "오류: {{error}}",
+    "login": {
+      "button": "로그인",
+      "description": "AI 기능을 활성화하려면 {{agent}} 계정에 로그인하세요",
+      "reAuthDescription": "다른 계정으로 로그인하거나 자격 증명을 새로고침하세요",
+      "reAuthenticate": "재인증",
+      "reLoginButton": "재로그인",
+      "title": "로그인"
+    }
+  },
+  "apiKeys": {
+    "apiDocsLink": "API 문서",
+    "confirmDelete": "이 API 키를 삭제하시겠습니까?",
+    "description": "다른 애플리케이션에서 외부 API에 접근하기 위한 API 키를 생성합니다.",
+    "documentation": {
+      "description": "외부 API를 사용하여 애플리케이션에서 Claude/Cursor 세션을 트리거하는 방법을 알아보세요.",
+      "title": "외부 API 문서",
+      "viewLink": "API 문서 보기 →"
+    },
+    "empty": "생성된 API 키가 없습니다.",
+    "form": {
+      "cancelButton": "취소",
+      "createButton": "생성",
+      "placeholder": "API 키 이름 (예: Production Server)"
+    },
+    "github": {
+      "addButton": "토큰 추가",
+      "added": "추가일:",
+      "confirmDelete": "이 GitHub 토큰을 삭제하시겠습니까?",
+      "description": "외부 API를 통해 비공개 저장소를 clone하기 위한 GitHub Personal Access Token을 추가합니다.",
+      "descriptionAlt": "비공개 저장소를 clone하기 위한 GitHub Personal Access Token을 추가합니다. 저장하지 않고 API 요청에 직접 토큰을 전달할 수도 있습니다.",
+      "empty": "추가된 GitHub 토큰이 없습니다.",
+      "form": {
+        "addButton": "토큰 추가",
+        "cancelButton": "취소",
+        "descriptionPlaceholder": "설명 (선택사항)",
+        "howToCreate": "GitHub Personal Access Token 생성 방법 →",
+        "namePlaceholder": "토큰 이름 (예: Personal Repos)",
+        "tokenPlaceholder": "GitHub Personal Access Token (ghp_...)"
+      },
+      "title": "GitHub 토큰"
+    },
+    "list": {
+      "created": "생성일:",
+      "lastUsed": "마지막 사용:"
+    },
+    "loading": "로딩 중...",
+    "newButton": "새 API 키",
+    "newKey": {
+      "alertMessage": "이 키는 지금만 볼 수 있습니다. 안전하게 보관하세요.",
+      "alertTitle": "⚠️ API 키를 저장하세요",
+      "iveSavedIt": "저장했습니다"
+    },
+    "status": {
+      "active": "활성",
+      "inactive": "비활성"
+    },
+    "title": "API 키",
+    "version": {
+      "updateAvailable": "업데이트 가능: v{{version}}"
     }
   },
   "appearance": {
-    "title": "외관",
-    "theme": "테마",
     "codeEditor": "코드 에디터",
     "editorTheme": "에디터 테마",
-    "wordWrap": "자동 줄바꿈",
-    "showMinimap": "미니맵 표시",
+    "fontSize": "글꼴 크기",
     "lineNumbers": "줄 번호",
-    "fontSize": "글꼴 크기"
-  },
-  "actions": {
-    "saveChanges": "변경사항 저장",
-    "resetToDefaults": "기본값으로 초기화",
-    "cancelChanges": "변경 취소"
-  },
-  "quickSettings": {
-    "title": "빠른 설정",
-    "sections": {
-      "appearance": "외관",
-      "toolDisplay": "도구 표시",
-      "inputSettings": "입력 설정"
-    },
-    "darkMode": "다크 모드",
-    "showRawParameters": "Raw 파라미터 표시",
-    "showThinking": "생각 과정 표시",
-    "sendByCtrlEnter": "Ctrl+Enter로 전송",
-    "sendByCtrlEnterDescription": "활성화하면 Enter 대신 Ctrl+Enter로 메시지를 전송합니다. IME 사용자가 실수로 전송하는 것을 방지하는 데 유용합니다.",
-    "dragHandle": {
-      "dragging": "드래그 핸들",
-      "closePanel": "설정 패널 닫기",
-      "openPanel": "설정 패널 열기",
-      "draggingStatus": "드래그 중...",
-      "toggleAndMove": "클릭하여 토글, 드래그하여 이동"
-    }
-  },
-  "terminalShortcuts": {
-    "title": "터미널 단축키",
-    "sectionKeys": "키",
-    "sectionNavigation": "탐색",
-    "escape": "Escape",
-    "tab": "Tab",
-    "shiftTab": "Shift+Tab",
-    "arrowUp": "위쪽 화살표",
-    "arrowDown": "아래쪽 화살표",
-    "scrollDown": "아래로 스크롤",
-    "handle": {
-      "closePanel": "단축키 패널 닫기",
-      "openPanel": "단축키 패널 열기"
-    }
-  },
-  "mainTabs": {
-    "label": "설정",
-    "agents": "에이전트",
-    "appearance": "외관",
-    "git": "Git",
-    "apiTokens": "API & 토큰",
-    "tasks": "작업",
-    "notifications": "알림",
-    "plugins": "플러그인",
-    "about": "정보"
-  },
-  "notifications": {
-    "title": "알림",
-    "description": "수신할 알림 이벤트를 설정합니다.",
-    "webPush": {
-      "title": "웹 푸시 알림",
-      "enable": "푸시 알림 활성화",
-      "disable": "푸시 알림 비활성화",
-      "enabled": "푸시 알림이 활성화되었습니다",
-      "loading": "업데이트 중...",
-      "unsupported": "이 브라우저에서는 푸시 알림이 지원되지 않습니다.",
-      "denied": "푸시 알림이 차단되었습니다. 브라우저 설정에서 허용해 주세요."
-    },
-    "sound": {
-      "title": "소리",
-      "description": "채팅 실행이 완료되면 짧은 알림음을 재생합니다.",
-      "enabled": "사용",
-      "test": "소리 테스트"
-    },
-    "events": {
-      "title": "이벤트 유형",
-      "actionRequired": "작업 필요",
-      "stop": "실행 중지",
-      "error": "실행 실패"
-    }
+    "showMinimap": "미니맵 표시",
+    "theme": "테마",
+    "title": "외관",
+    "wordWrap": "자동 줄바꿈"
   },
   "appearanceSettings": {
-    "darkMode": {
-      "label": "다크 모드",
-      "description": "라이트/다크 테마 전환"
-    },
-    "projectSorting": {
-      "label": "프로젝트 정렬",
-      "description": "사이드바에서 프로젝트 정렬 방식",
-      "alphabetical": "알파벳순",
-      "recentActivity": "최근 활동순"
-    },
     "codeEditor": {
-      "title": "코드 에디터",
-      "theme": {
-        "label": "에디터 테마",
-        "description": "코드 에디터의 기본 테마"
-      },
-      "wordWrap": {
-        "label": "자동 줄바꿈",
-        "description": "에디터에서 기본적으로 자동 줄바꿈 활성화"
-      },
-      "showMinimap": {
-        "label": "미니맵 표시",
-        "description": "Diff 보기에서 쉬운 탐색을 위한 미니맵 표시"
+      "fontSize": {
+        "description": "에디터 글꼴 크기 (픽셀)",
+        "label": "글꼴 크기"
       },
       "lineNumbers": {
-        "label": "줄 번호 표시",
-        "description": "에디터에 줄 번호 표시"
+        "description": "에디터에 줄 번호 표시",
+        "label": "줄 번호 표시"
       },
-      "fontSize": {
-        "label": "글꼴 크기",
-        "description": "에디터 글꼴 크기 (픽셀)"
+      "showMinimap": {
+        "description": "Diff 보기에서 쉬운 탐색을 위한 미니맵 표시",
+        "label": "미니맵 표시"
+      },
+      "theme": {
+        "description": "코드 에디터의 기본 테마",
+        "label": "에디터 테마"
+      },
+      "title": "코드 에디터",
+      "wordWrap": {
+        "description": "에디터에서 기본적으로 자동 줄바꿈 활성화",
+        "label": "자동 줄바꿈"
       }
+    },
+    "darkMode": {
+      "description": "라이트/다크 테마 전환",
+      "label": "다크 모드"
+    },
+    "projectSorting": {
+      "alphabetical": "알파벳순",
+      "description": "사이드바에서 프로젝트 정렬 방식",
+      "label": "프로젝트 정렬",
+      "recentActivity": "최근 활동순"
     }
   },
+  "browser": {
+    "checking": "확인 중...",
+    "description": "에이전트가 보호된 Playwright 브라우저 세션을 생성할 수 있도록 허용하며, 브라우저 탭에서 모니터링할 수 있습니다.",
+    "disabled": "비활성화됨",
+    "enableDescription": "지원되는 에이전트에 브라우저를 등록합니다. 에이전트는 브라우저 세션을 만들 수 있으며, 감시, 중지, 삭제할 수 있습니다.",
+    "enableLabel": "브라우저 활성화",
+    "installError": "브라우저 런타임을 설치하지 못했습니다",
+    "installRuntime": "런타임 설치",
+    "installed": "설치됨",
+    "installing": "설치 중...",
+    "loadError": "브라우저 설정을 불러오지 못했습니다",
+    "missing": "누락됨",
+    "ready": "준비됨",
+    "runtimeRequired": "브라우저 런타임 필요",
+    "runtimeRequiredHint": "에이전트가 브라우저 세션을 만들기 전에 브라우저 런타임을 설치하세요.",
+    "saveError": "브라우저 설정을 저장하지 못했습니다",
+    "setupRequired": "설정 필요",
+    "status": "상태",
+    "statusError": "브라우저 상태를 불러오지 못했습니다",
+    "title": "브라우저"
+  },
+  "footerActions": {
+    "cancel": "취소",
+    "save": "설정 저장"
+  },
+  "git": {
+    "actions": {
+      "save": "설정 저장",
+      "saving": "저장 중..."
+    },
+    "description": "커밋을 위한 Git 정보를 설정합니다. 이 설정은 git config --global로 전역 적용됩니다",
+    "email": {
+      "help": "Git 커밋에 사용될 이메일",
+      "label": "Git 이메일"
+    },
+    "name": {
+      "help": "Git 커밋에 사용될 이름",
+      "label": "Git 이름"
+    },
+    "status": {
+      "success": "저장 완료"
+    },
+    "title": "Git 설정"
+  },
+  "mainTabs": {
+    "about": "정보",
+    "agents": "에이전트",
+    "apiTokens": "API & 토큰",
+    "appearance": "외관",
+    "browser": "브라우저",
+    "git": "Git",
+    "label": "설정",
+    "notifications": "알림",
+    "plugins": "플러그인",
+    "tasks": "작업",
+    "voice": "음성"
+  },
+  "mcp": {
+    "addServer": "서버 추가",
+    "config": "설정",
+    "connected": "연결됨",
+    "deleteServer": "서버 삭제",
+    "disconnected": "연결 끊김",
+    "editServer": "서버 편집",
+    "scope": {
+      "label": "범위",
+      "project": "프로젝트",
+      "user": "사용자"
+    },
+    "serverName": "서버 이름",
+    "serverType": "서버 유형",
+    "status": "상태",
+    "testConnection": "연결 테스트",
+    "title": "MCP 서버"
+  },
   "mcpForm": {
-    "title": {
-      "add": "MCP 서버 추가",
-      "edit": "MCP 서버 편집"
+    "actions": {
+      "addServer": "서버 추가",
+      "cancel": "취소",
+      "saving": "저장 중...",
+      "updateServer": "서버 업데이트"
+    },
+    "configDetails": "설정 상세 ({{configFile}}에서)",
+    "fields": {
+      "arguments": "인수 (한 줄에 하나씩)",
+      "command": "명령어",
+      "envVars": "환경 변수 (KEY=value, 한 줄에 하나씩)",
+      "headers": "헤더 (KEY=value, 한 줄에 하나씩)",
+      "jsonConfig": "JSON 설정",
+      "selectProject": "프로젝트 선택...",
+      "serverName": "서버 이름",
+      "transportType": "전송 유형",
+      "url": "URL"
     },
     "importMode": {
       "form": "폼 입력",
       "json": "JSON 가져오기"
     },
-    "scope": {
-      "label": "범위",
-      "userGlobal": "사용자 (전역)",
-      "projectLocal": "프로젝트 (로컬)",
-      "userDescription": "사용자 범위: 모든 프로젝트에서 사용 가능",
-      "projectDescription": "로컬 범위: 선택한 프로젝트에서만 사용 가능",
-      "cannotChange": "기존 서버를 편집할 때는 범위를 변경할 수 없습니다"
-    },
-    "fields": {
-      "serverName": "서버 이름",
-      "transportType": "전송 유형",
-      "command": "명령어",
-      "arguments": "인수 (한 줄에 하나씩)",
-      "jsonConfig": "JSON 설정",
-      "url": "URL",
-      "envVars": "환경 변수 (KEY=value, 한 줄에 하나씩)",
-      "headers": "헤더 (KEY=value, 한 줄에 하나씩)",
-      "selectProject": "프로젝트 선택..."
-    },
     "placeholders": {
       "serverName": "my-server"
     },
+    "projectPath": "경로: {{path}}",
+    "scope": {
+      "cannotChange": "기존 서버를 편집할 때는 범위를 변경할 수 없습니다",
+      "label": "범위",
+      "projectDescription": "로컬 범위: 선택한 프로젝트에서만 사용 가능",
+      "projectLocal": "프로젝트 (로컬)",
+      "userDescription": "사용자 범위: 모든 프로젝트에서 사용 가능",
+      "userGlobal": "사용자 (전역)"
+    },
+    "title": {
+      "add": "MCP 서버 추가",
+      "edit": "MCP 서버 편집"
+    },
     "validation": {
-      "missingType": "필수 항목 누락: type",
-      "stdioRequiresCommand": "stdio 유형은 command 필드가 필요합니다",
       "httpRequiresUrl": "{{type}} 유형은 url 필드가 필요합니다",
       "invalidJson": "잘못된 JSON 형식",
-      "jsonHelp": "MCP 서버 설정을 JSON 형식으로 붙여넣으세요. 예시:",
+      "jsonExampleHttp": "• http/sse: {\"type\":\"http\",\"url\":\"https://api.example.com/mcp\"}",
       "jsonExampleStdio": "• stdio: {\"type\":\"stdio\",\"command\":\"npx\",\"args\":[\"@upstash/context7-mcp\"]}",
-      "jsonExampleHttp": "• http/sse: {\"type\":\"http\",\"url\":\"https://api.example.com/mcp\"}"
-    },
-    "configDetails": "설정 상세 ({{configFile}}에서)",
-    "projectPath": "경로: {{path}}",
-    "actions": {
-      "cancel": "취소",
-      "saving": "저장 중...",
-      "addServer": "서버 추가",
-      "updateServer": "서버 업데이트"
-    }
-  },
-  "saveStatus": {
-    "success": "설정이 저장되었습니다!",
-    "error": "설정 저장 실패",
-    "saving": "저장 중..."
-  },
-  "footerActions": {
-    "save": "설정 저장",
-    "cancel": "취소"
-  },
-  "git": {
-    "title": "Git 설정",
-    "description": "커밋을 위한 Git 정보를 설정합니다. 이 설정은 git config --global로 전역 적용됩니다",
-    "name": {
-      "label": "Git 이름",
-      "help": "Git 커밋에 사용될 이름"
-    },
-    "email": {
-      "label": "Git 이메일",
-      "help": "Git 커밋에 사용될 이메일"
-    },
-    "actions": {
-      "save": "설정 저장",
-      "saving": "저장 중..."
-    },
-    "status": {
-      "success": "저장 완료"
-    }
-  },
-  "apiKeys": {
-    "title": "API 키",
-    "description": "다른 애플리케이션에서 외부 API에 접근하기 위한 API 키를 생성합니다.",
-    "newKey": {
-      "alertTitle": "⚠️ API 키를 저장하세요",
-      "alertMessage": "이 키는 지금만 볼 수 있습니다. 안전하게 보관하세요.",
-      "iveSavedIt": "저장했습니다"
-    },
-    "form": {
-      "placeholder": "API 키 이름 (예: Production Server)",
-      "createButton": "생성",
-      "cancelButton": "취소"
-    },
-    "newButton": "새 API 키",
-    "empty": "생성된 API 키가 없습니다.",
-    "list": {
-      "created": "생성일:",
-      "lastUsed": "마지막 사용:"
-    },
-    "confirmDelete": "이 API 키를 삭제하시겠습니까?",
-    "status": {
-      "active": "활성",
-      "inactive": "비활성"
-    },
-    "github": {
-      "title": "GitHub 토큰",
-      "description": "외부 API를 통해 비공개 저장소를 clone하기 위한 GitHub Personal Access Token을 추가합니다.",
-      "descriptionAlt": "비공개 저장소를 clone하기 위한 GitHub Personal Access Token을 추가합니다. 저장하지 않고 API 요청에 직접 토큰을 전달할 수도 있습니다.",
-      "addButton": "토큰 추가",
-      "form": {
-        "namePlaceholder": "토큰 이름 (예: Personal Repos)",
-        "tokenPlaceholder": "GitHub Personal Access Token (ghp_...)",
-        "descriptionPlaceholder": "설명 (선택사항)",
-        "addButton": "토큰 추가",
-        "cancelButton": "취소",
-        "howToCreate": "GitHub Personal Access Token 생성 방법 →"
-      },
-      "empty": "추가된 GitHub 토큰이 없습니다.",
-      "added": "추가일:",
-      "confirmDelete": "이 GitHub 토큰을 삭제하시겠습니까?"
-    },
-    "apiDocsLink": "API 문서",
-    "documentation": {
-      "title": "외부 API 문서",
-      "description": "외부 API를 사용하여 애플리케이션에서 Claude/Cursor 세션을 트리거하는 방법을 알아보세요.",
-      "viewLink": "API 문서 보기 →"
-    },
-    "loading": "로딩 중...",
-    "version": {
-      "updateAvailable": "업데이트 가능: v{{version}}"
-    }
-  },
-  "tasks": {
-    "checking": "TaskMaster 설치 확인 중...",
-    "notInstalled": {
-      "title": "TaskMaster AI CLI가 설치되지 않았습니다",
-      "description": "작업 관리 기능을 사용하려면 TaskMaster CLI가 필요합니다. 시작하려면 설치하세요:",
-      "installCommand": "npm install -g task-master-ai",
-      "viewOnGitHub": "GitHub에서 보기",
-      "afterInstallation": "설치 후:",
-      "steps": {
-        "restart": "이 애플리케이션을 재시작하세요",
-        "autoAvailable": "TaskMaster 기능이 자동으로 활성화됩니다",
-        "initCommand": "프로젝트 디렉토리에서 task-master init을 사용하세요"
-      }
-    },
-    "settings": {
-      "enableLabel": "TaskMaster 통합 활성화",
-      "enableDescription": "인터페이스 전체에 TaskMaster 작업, 배너 및 사이드바 표시"
-    }
-  },
-  "agents": {
-    "authStatus": {
-      "checking": "확인 중...",
-      "connected": "연결됨",
-      "notConnected": "연결되지 않음",
-      "disconnected": "연결 끊김",
-      "checkingAuth": "인증 상태 확인 중...",
-      "loggedInAs": "{{email}}(으)로 로그인됨",
-      "authenticatedUser": "인증된 사용자"
-    },
-    "account": {
-      "claude": {
-        "description": "Anthropic Claude AI 어시스턴트"
-      },
-      "cursor": {
-        "description": "Cursor AI 기반 코드 에디터"
-      },
-      "codex": {
-        "description": "OpenAI Codex AI 어시스턴트"
-      }
-    },
-    "connectionStatus": "연결 상태",
-    "login": {
-      "title": "로그인",
-      "reAuthenticate": "재인증",
-      "description": "AI 기능을 활성화하려면 {{agent}} 계정에 로그인하세요",
-      "reAuthDescription": "다른 계정으로 로그인하거나 자격 증명을 새로고침하세요",
-      "button": "로그인",
-      "reLoginButton": "재로그인"
-    },
-    "error": "오류: {{error}}"
-  },
-  "permissions": {
-    "title": "권한 설정",
-    "skipPermissions": {
-      "label": "권한 확인 건너뛰기 (주의해서 사용)",
-      "claudeDescription": "--dangerously-skip-permissions 플래그와 동일",
-      "cursorDescription": "Cursor CLI의 -f 플래그와 동일"
-    },
-    "allowedTools": {
-      "title": "허용된 도구",
-      "description": "권한 확인 없이 자동으로 허용되는 도구",
-      "placeholder": "예: \"Bash(git log:*)\" 또는 \"Write\"",
-      "quickAdd": "자주 쓰는 도구 빠른 추가:",
-      "empty": "설정된 허용 도구 없음"
-    },
-    "blockedTools": {
-      "title": "차단된 도구",
-      "description": "권한 확인 없이 자동으로 차단되는 도구",
-      "placeholder": "예: \"Bash(rm:*)\"",
-      "empty": "설정된 차단 도구 없음"
-    },
-    "allowedCommands": {
-      "title": "허용된 Shell 명령어",
-      "description": "권한 확인 없이 자동으로 허용되는 Shell 명령어",
-      "placeholder": "예: \"Shell(ls)\" 또는 \"Shell(git status)\"",
-      "quickAdd": "자주 쓰는 명령어 빠른 추가:",
-      "empty": "설정된 허용 명령어 없음"
-    },
-    "blockedCommands": {
-      "title": "차단된 Shell 명령어",
-      "description": "자동으로 차단되는 Shell 명령어",
-      "placeholder": "예: \"Shell(rm -rf)\" 또는 \"Shell(sudo)\"",
-      "empty": "설정된 차단 명령어 없음"
-    },
-    "toolExamples": {
-      "title": "도구 패턴 예시:",
-      "bashGitLog": "- 모든 git log 명령어 허용",
-      "bashGitDiff": "- 모든 git diff 명령어 허용",
-      "write": "- 모든 Write 도구 사용 허용",
-      "bashRm": "- 모든 rm 명령어 차단 (위험)"
-    },
-    "shellExamples": {
-      "title": "Shell 명령어 예시:",
-      "ls": "- ls 명령어 허용",
-      "gitStatus": "- git status 허용",
-      "npmInstall": "- npm install 허용",
-      "rmRf": "- 재귀 삭제 차단"
-    },
-    "codex": {
-      "permissionMode": "권한 모드",
-      "description": "Codex가 파일 수정 및 명령어 실행을 처리하는 방식을 제어합니다",
-      "modes": {
-        "default": {
-          "title": "기본",
-          "description": "신뢰할 수 있는 명령어(ls, cat, grep, git status 등)만 자동 실행됩니다. 다른 명령어는 건너뜁니다. 워크스페이스에 쓰기 가능."
-        },
-        "acceptEdits": {
-          "title": "편집 허용",
-          "description": "워크스페이스 내에서 모든 명령어가 자동 실행됩니다. 샌드박스 내 완전 자동 모드."
-        },
-        "bypassPermissions": {
-          "title": "권한 우회",
-          "description": "제한 없는 전체 시스템 접근. 모든 명령어가 전체 디스크 및 네트워크 접근 권한으로 자동 실행됩니다. 주의해서 사용하세요."
-        }
-      },
-      "technicalDetails": "기술 상세",
-      "technicalInfo": {
-        "default": "sandboxMode=workspace-write, approvalPolicy=untrusted. 신뢰할 수 있는 명령어: cat, cd, grep, head, ls, pwd, tail, git status/log/diff/show, find(-exec 제외) 등.",
-        "acceptEdits": "sandboxMode=workspace-write, approvalPolicy=never. 프로젝트 디렉토리 내에서 모든 명령어 자동 실행.",
-        "bypassPermissions": "sandboxMode=danger-full-access, approvalPolicy=never. 전체 시스템 접근, 신뢰할 수 있는 환경에서만 사용하세요.",
-        "overrideNote": "채팅 인터페이스의 모드 버튼을 사용하여 세션별로 재정의할 수 있습니다."
-      }
-    },
-    "actions": {
-      "add": "추가"
+      "jsonHelp": "MCP 서버 설정을 JSON 형식으로 붙여넣으세요. 예시:",
+      "missingType": "필수 항목 누락: type",
+      "stdioRequiresCommand": "stdio 유형은 command 필드가 필요합니다"
     }
   },
   "mcpServers": {
-    "title": "MCP 서버",
-    "description": {
-      "claude": "Model Context Protocol 서버는 Claude에 추가 도구와 데이터 소스를 제공합니다",
-      "cursor": "Model Context Protocol 서버는 Cursor에 추가 도구와 데이터 소스를 제공합니다",
-      "codex": "Model Context Protocol 서버는 Codex에 추가 도구와 데이터 소스를 제공합니다"
+    "actions": {
+      "delete": "서버 삭제",
+      "edit": "서버 편집"
     },
     "addButton": "MCP 서버 추가",
+    "config": {
+      "args": "인수",
+      "command": "명령어",
+      "environment": "환경",
+      "url": "URL"
+    },
+    "description": {
+      "claude": "Model Context Protocol 서버는 Claude에 추가 도구와 데이터 소스를 제공합니다",
+      "codex": "Model Context Protocol 서버는 Codex에 추가 도구와 데이터 소스를 제공합니다",
+      "cursor": "Model Context Protocol 서버는 Cursor에 추가 도구와 데이터 소스를 제공합니다",
+      "opencode": "Model Context Protocol 서버가 OpenCode에 추가 도구와 데이터 소스를 제공합니다"
+    },
     "empty": "설정된 MCP 서버 없음",
-    "serverType": "유형",
+    "help": {
+      "description": "Codex는 stdio 기반 MCP 서버를 지원합니다. 추가 도구와 리소스로 Codex의 기능을 확장하는 서버를 추가할 수 있습니다.",
+      "title": "Codex MCP 정보"
+    },
+    "managed": {
+      "badge": "관리형",
+      "hint": "CloudCLI에서 관리합니다."
+    },
     "scope": {
       "local": "로컬",
       "user": "사용자"
     },
-    "config": {
-      "command": "명령어",
-      "url": "URL",
-      "args": "인수",
-      "environment": "환경"
-    },
+    "serverType": "유형",
+    "title": "MCP 서버",
     "tools": {
-      "title": "도구",
       "count": "({{count}}):",
-      "more": "+{{count}}개 더"
+      "more": "+{{count}}개 더",
+      "title": "도구"
+    }
+  },
+  "notifications": {
+    "description": "수신할 알림 이벤트를 설정합니다.",
+    "desktop": {
+      "disable": "알림 비활성화",
+      "enable": "알림 활성화",
+      "enabled": "이 데스크톱 앱에 대한 알림이 활성화되었습니다",
+      "title": "이 데스크톱 앱에 알림",
+      "unsupported": "이 시스템에서는 데스크톱 알림이 지원되지 않습니다."
     },
+    "events": {
+      "actionRequired": "작업 필요",
+      "error": "실행 실패",
+      "stop": "실행 중지",
+      "title": "이벤트 유형"
+    },
+    "sound": {
+      "description": "채팅 실행이 완료되면 짧은 알림음을 재생합니다.",
+      "enabled": "사용",
+      "test": "소리 테스트",
+      "title": "소리"
+    },
+    "title": "알림",
+    "webPush": {
+      "denied": "푸시 알림이 차단되었습니다. 브라우저 설정에서 허용해 주세요.",
+      "disable": "푸시 알림 비활성화",
+      "enable": "푸시 알림 활성화",
+      "enabled": "푸시 알림이 활성화되었습니다",
+      "loading": "업데이트 중...",
+      "title": "웹 푸시 알림",
+      "unsupported": "이 브라우저에서는 푸시 알림이 지원되지 않습니다."
+    }
+  },
+  "permissions": {
     "actions": {
-      "edit": "서버 편집",
-      "delete": "서버 삭제"
+      "add": "추가"
     },
-    "help": {
-      "title": "Codex MCP 정보",
-      "description": "Codex는 stdio 기반 MCP 서버를 지원합니다. 추가 도구와 리소스로 Codex의 기능을 확장하는 서버를 추가할 수 있습니다."
+    "allowedCommands": {
+      "description": "권한 확인 없이 자동으로 허용되는 Shell 명령어",
+      "empty": "설정된 허용 명령어 없음",
+      "placeholder": "예: \"Shell(ls)\" 또는 \"Shell(git status)\"",
+      "quickAdd": "자주 쓰는 명령어 빠른 추가:",
+      "title": "허용된 Shell 명령어"
+    },
+    "allowedTools": {
+      "description": "권한 확인 없이 자동으로 허용되는 도구",
+      "empty": "설정된 허용 도구 없음",
+      "placeholder": "예: \"Bash(git log:*)\" 또는 \"Write\"",
+      "quickAdd": "자주 쓰는 도구 빠른 추가:",
+      "title": "허용된 도구"
+    },
+    "blockedCommands": {
+      "description": "자동으로 차단되는 Shell 명령어",
+      "empty": "설정된 차단 명령어 없음",
+      "placeholder": "예: \"Shell(rm -rf)\" 또는 \"Shell(sudo)\"",
+      "title": "차단된 Shell 명령어"
+    },
+    "blockedTools": {
+      "description": "권한 확인 없이 자동으로 차단되는 도구",
+      "empty": "설정된 차단 도구 없음",
+      "placeholder": "예: \"Bash(rm:*)\"",
+      "title": "차단된 도구"
+    },
+    "codex": {
+      "description": "Codex가 파일 수정 및 명령어 실행을 처리하는 방식을 제어합니다",
+      "modes": {
+        "acceptEdits": {
+          "description": "워크스페이스 내에서 모든 명령어가 자동 실행됩니다. 샌드박스 내 완전 자동 모드.",
+          "title": "편집 허용"
+        },
+        "bypassPermissions": {
+          "description": "제한 없는 전체 시스템 접근. 모든 명령어가 전체 디스크 및 네트워크 접근 권한으로 자동 실행됩니다. 주의해서 사용하세요.",
+          "title": "권한 우회"
+        },
+        "default": {
+          "description": "신뢰할 수 있는 명령어(ls, cat, grep, git status 등)만 자동 실행됩니다. 다른 명령어는 건너뜁니다. 워크스페이스에 쓰기 가능.",
+          "title": "기본"
+        }
+      },
+      "permissionMode": "권한 모드",
+      "technicalDetails": "기술 상세",
+      "technicalInfo": {
+        "acceptEdits": "sandboxMode=workspace-write, approvalPolicy=never. 프로젝트 디렉토리 내에서 모든 명령어 자동 실행.",
+        "bypassPermissions": "sandboxMode=danger-full-access, approvalPolicy=never. 전체 시스템 접근, 신뢰할 수 있는 환경에서만 사용하세요.",
+        "default": "sandboxMode=workspace-write, approvalPolicy=untrusted. 신뢰할 수 있는 명령어: cat, cd, grep, head, ls, pwd, tail, git status/log/diff/show, find(-exec 제외) 등.",
+        "overrideNote": "채팅 인터페이스의 모드 버튼을 사용하여 세션별로 재정의할 수 있습니다."
+      }
+    },
+    "shellExamples": {
+      "gitStatus": "- git status 허용",
+      "ls": "- ls 명령어 허용",
+      "npmInstall": "- npm install 허용",
+      "rmRf": "- 재귀 삭제 차단",
+      "title": "Shell 명령어 예시:"
+    },
+    "skipPermissions": {
+      "claudeDescription": "--dangerously-skip-permissions 플래그와 동일",
+      "cursorDescription": "Cursor CLI의 -f 플래그와 동일",
+      "label": "권한 확인 건너뛰기 (주의해서 사용)"
+    },
+    "title": "권한 설정",
+    "toolExamples": {
+      "bashGitDiff": "- 모든 git diff 명령어 허용",
+      "bashGitLog": "- 모든 git log 명령어 허용",
+      "bashRm": "- 모든 rm 명령어 차단 (위험)",
+      "title": "도구 패턴 예시:",
+      "write": "- 모든 Write 도구 사용 허용"
     }
   },
   "pluginSettings": {
-    "title": "플러그인",
-    "description": "커스텀 플러그인으로 인터페이스를 확장하세요. git에서 설치하거나 ~/.claude-code-ui/plugins/ 폴더에 직접 추가할 수 있습니다.",
-    "installPlaceholder": "https://github.com/user/my-plugin",
-    "installButton": "설치",
-    "installing": "설치 중…",
-    "securityWarning": "소스 코드를 검토했거나 신뢰할 수 있는 작성자의 플러그인만 설치하세요.",
-    "scanningPlugins": "플러그인 스캔 중…",
-    "noPluginsInstalled": "설치된 플러그인이 없습니다",
-    "pullLatest": "git에서 최신 버전 가져오기",
-    "noGitRemote": "git 리모트가 없음 — 업데이트 불가",
-    "uninstallPlugin": "플러그인 삭제",
+    "buildYourOwn": "나만의 플러그인 만들기",
+    "cancel": "취소",
+    "claudeWatchPlugin": {
+      "badge": "비공식",
+      "description": "장시간 실행 중인 Claude Code 세션의 중단을 감시하고 프로세스 제어를 제공합니다.",
+      "install": "설치",
+      "name": "Claude Watch"
+    },
     "confirmUninstall": "다시 클릭하여 확인",
     "confirmUninstallMessage": "{{name}} 플러그인을 삭제하시겠습니까? 이 작업은 되돌릴 수 없습니다.",
-    "cancel": "취소",
-    "remove": "삭제",
-    "updateFailed": "업데이트 실패",
-    "installFailed": "설치 실패",
-    "uninstallFailed": "삭제 실패",
-    "toggleFailed": "토글 실패",
-    "buildYourOwn": "나만의 플러그인 만들기",
-    "starter": "스타터",
+    "description": "커스텀 플러그인으로 인터페이스를 확장하세요. git에서 설치하거나 ~/.claude-code-ui/plugins/ 폴더에 직접 추가할 수 있습니다.",
+    "disable": "비활성화",
     "docs": "문서",
+    "enable": "활성화",
+    "githubIssuesBoardPlugin": {
+      "badge": "비공식",
+      "description": "양방향 TaskMaster 동기화 및 /github-task CLI 스킬 자동 설치가 포함된 GitHub Issues 칸반 보드",
+      "install": "설치",
+      "name": "GitHub Issues 보드"
+    },
+    "installAriaLabel": "플러그인 git 저장소 URL",
+    "installButton": "설치",
+    "installFailed": "설치 실패",
+    "installPlaceholder": "https://github.com/user/my-plugin",
+    "installing": "설치 중…",
+    "morePlugins": "더 보기",
+    "noGitRemote": "git 리모트가 없음 — 업데이트 불가",
+    "noPluginsInstalled": "설치된 플러그인이 없습니다",
+    "prismCloudCLI": {
+      "badge": "비공식",
+      "description": "CloudCLI 내 Claude Code 세션 인텔리전스. 브라우저를 떠나지 않고 세션이 토큰을 소비하는 이유를 확인하세요.",
+      "install": "설치",
+      "name": "PRISM CloudCLI"
+    },
+    "pullLatest": "git에서 최신 버전 가져오기",
+    "remove": "삭제",
+    "runningStatus": "실행 중",
+    "scanningPlugins": "플러그인 스캔 중…",
+    "scheduledPromptPlugin": {
+      "badge": "비공식",
+      "description": "작업 공간 프롬프트를 예약하고, 실행 기록을 검토하며, 반복적인 로컬 작업을 관리합니다.",
+      "install": "설치",
+      "name": "예약 프롬프트"
+    },
+    "sections": {
+      "officialDescription": "CloudCLI 팀이 유지 관리하며 바로 설치할 수 있습니다.",
+      "officialTitle": "공식 플러그인",
+      "unofficialDescription": "다른 사용자의 비공식 플러그인 및 통합. 설치 전에 소스를 검토하세요.",
+      "unofficialTitle": "기타 플러그인"
+    },
+    "securityWarning": "소스 코드를 검토했거나 신뢰할 수 있는 작성자의 플러그인만 설치하세요.",
+    "sessionManagerPlugin": {
+      "badge": "비공식",
+      "description": "활성 Claude Code 세션을 보고, 관리하고, 종료합니다.",
+      "install": "설치",
+      "name": "세션"
+    },
+    "starter": "스타터",
     "starterPlugin": {
-      "name": "프로젝트 통계",
       "badge": "스타터",
       "description": "프로젝트의 파일 수, 코드 라인 수, 파일 유형별 분석 및 최근 활동을 확인합니다.",
-      "install": "설치"
+      "install": "설치",
+      "name": "프로젝트 통계"
     },
-    "morePlugins": "더 보기",
-    "enable": "활성화",
-    "disable": "비활성화",
-    "installAriaLabel": "플러그인 git 저장소 URL",
+    "starterPluginLabel": "스타터 플러그인",
     "tab": "탭",
-    "runningStatus": "실행 중"
+    "taskQueuePlugin": {
+      "badge": "비공식",
+      "description": "에이전트 작업을 보고, 필터링하고, 시작하는 작업 대기열 대시보드.",
+      "install": "설치",
+      "name": "작업 대기열"
+    },
+    "terminalPlugin": {
+      "badge": "공식",
+      "description": "인터페이스 내에서 직접 전체 셸 액세스가 가능한 통합 터미널.",
+      "install": "설치",
+      "name": "터미널"
+    },
+    "title": "플러그인",
+    "toggleFailed": "토글 실패",
+    "tokenCostCalculatorPlugin": {
+      "badge": "비공식",
+      "description": "모델 가격과 토큰 사용량으로 API 비용을 계산하며, 사전 설정된 모델 가격을 지원합니다.",
+      "install": "설치",
+      "name": "토큰 비용 계산기"
+    },
+    "uninstallFailed": "삭제 실패",
+    "uninstallPlugin": "플러그인 삭제",
+    "updateFailed": "업데이트 실패"
+  },
+  "quickSettings": {
+    "darkMode": "다크 모드",
+    "dragHandle": {
+      "closePanel": "설정 패널 닫기",
+      "dragging": "드래그 핸들",
+      "draggingStatus": "드래그 중...",
+      "openPanel": "설정 패널 열기",
+      "toggleAndMove": "클릭하여 토글, 드래그하여 이동"
+    },
+    "sections": {
+      "appearance": "외관",
+      "inputSettings": "입력 설정",
+      "toolDisplay": "도구 표시"
+    },
+    "sendByCtrlEnter": "Ctrl+Enter로 전송",
+    "sendByCtrlEnterDescription": "활성화하면 Enter 대신 Ctrl+Enter로 메시지를 전송합니다. IME 사용자가 실수로 전송하는 것을 방지하는 데 유용합니다.",
+    "showRawParameters": "Raw 파라미터 표시",
+    "showThinking": "생각 과정 표시",
+    "title": "빠른 설정",
+    "voiceEnabled": "음성 (마이크 + 읽어주기)"
+  },
+  "saveStatus": {
+    "error": "설정 저장 실패",
+    "saving": "저장 중...",
+    "success": "설정이 저장되었습니다!"
+  },
+  "tabs": {
+    "account": "계정",
+    "appearance": "외관",
+    "mcpServers": "MCP 서버",
+    "permissions": "권한",
+    "skills": "스킬"
+  },
+  "tasks": {
+    "checking": "TaskMaster 설치 확인 중...",
+    "notInstalled": {
+      "afterInstallation": "설치 후:",
+      "description": "작업 관리 기능을 사용하려면 TaskMaster CLI가 필요합니다. 시작하려면 설치하세요:",
+      "installCommand": "npm install -g task-master-ai",
+      "steps": {
+        "autoAvailable": "TaskMaster 기능이 자동으로 활성화됩니다",
+        "initCommand": "프로젝트 디렉토리에서 task-master init을 사용하세요",
+        "restart": "이 애플리케이션을 재시작하세요"
+      },
+      "title": "TaskMaster AI CLI가 설치되지 않았습니다",
+      "viewOnGitHub": "GitHub에서 보기"
+    },
+    "settings": {
+      "enableDescription": "인터페이스 전체에 TaskMaster 작업, 배너 및 사이드바 표시",
+      "enableLabel": "TaskMaster 통합 활성화"
+    }
+  },
+  "terminalShortcuts": {
+    "arrowDown": "아래쪽 화살표",
+    "arrowUp": "위쪽 화살표",
+    "escape": "Escape",
+    "handle": {
+      "closePanel": "단축키 패널 닫기",
+      "openPanel": "단축키 패널 열기"
+    },
+    "scrollDown": "아래로 스크롤",
+    "sectionKeys": "키",
+    "sectionNavigation": "탐색",
+    "shiftTab": "Shift+Tab",
+    "tab": "Tab",
+    "title": "터미널 단축키"
+  },
+  "title": "설정",
+  "voiceSettings": {
+    "apiKey": "API 키",
+    "backendDescription": "OpenAI, Groq 또는 로컬 서버(LocalAI, Speaches, Kokoro-FastAPI)를 지정합니다. 비워두면 서버 기본값을 사용합니다.",
+    "backendTitle": "백엔드",
+    "baseUrl": "기본 URL",
+    "description": "OpenAI 호환 오디오 백엔드를 통한 음성-텍스트 입력 및 읽어주기.",
+    "enable": "음성 활성화",
+    "enableDescription": "메시지에 마이크 버튼과 읽어주기 버튼을 표시합니다.",
+    "format": "오디오 형식",
+    "note": "사용자 정의 기본 URL은 브라우저에서 직접 호출되며 브라우저 CORS 요청을 허용해야 합니다. 비워두면 서버 구성 백엔드를 사용합니다.",
+    "sttModel": "음성-텍스트 모델",
+    "title": "음성",
+    "ttsModel": "텍스트-음성 모델",
+    "voice": "음성"
   }
 }

@@ -68,7 +68,10 @@
     "version": "버전",
     "select": "선택",
     "selectAll": "전체 선택",
-    "deselectAll": "전체 해제"
+    "deselectAll": "전체 해제",
+    "cancel": "취소",
+    "done": "완료",
+    "failed": "실패"
   },
   "time": {
     "justNow": "방금 전",

@@ -68,7 +68,10 @@
     "version": "Versione",
     "select": "Seleziona",
     "selectAll": "Seleziona tutto",
-    "deselectAll": "Deseleziona tutto"
+    "deselectAll": "Deseleziona tutto",
+    "cancel": "Annulla",
+    "done": "Fatto",
+    "failed": "Fallito"
   },
   "time": {
     "justNow": "Adesso",

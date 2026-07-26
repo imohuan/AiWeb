@@ -1,34 +1,42 @@
 {
-  "toolbar": {
-    "changes": "件の変更",
-    "previousChange": "前の変更",
-    "nextChange": "次の変更",
-    "hideDiff": "差分ハイライトを非表示",
-    "showDiff": "差分ハイライトを表示",
-    "settings": "エディタ設定",
-    "collapse": "エディタを折りたたむ",
-    "expand": "エディタを全幅に展開"
+  "actions": {
+    "close": "閉じる",
+    "download": "ファイルをダウンロード",
+    "editMarkdown": "Markdown を編集",
+    "exitFullscreen": "全画面を終了",
+    "fullscreen": "全画面",
+    "previewMarkdown": "Markdown をプレビュー",
+    "save": "保存",
+    "saved": "保存しました！",
+    "saving": "保存中...",
+    "previewHtml": "新しいタブで HTML プレビューを開く"
   },
-  "loading": "{{fileName}}を読み込んでいます...",
+  "binaryFile": {
+    "message": "ファイル \"{{fileName}}\" はバイナリファイルのため、テキストエディタで表示できません。",
+    "title": "バイナリファイル"
+  },
+  "filePreview": {
+    "error": "このファイルは表示できません。",
+    "loading": "プレビューを読み込み中...",
+    "openInNewTab": "新しいタブで開く"
+  },
+  "footer": {
+    "characters": "文字数:",
+    "lines": "行数:",
+    "shortcuts": "Ctrl+Sで保存 • Escで閉じる"
+  },
   "header": {
     "showingChanges": "変更を表示中"
   },
-  "actions": {
-    "download": "ファイルをダウンロード",
-    "save": "保存",
-    "saving": "保存中...",
-    "saved": "保存しました！",
-    "exitFullscreen": "全画面を終了",
-    "fullscreen": "全画面",
-    "close": "閉じる"
-  },
-  "footer": {
-    "lines": "行数:",
-    "characters": "文字数:",
-    "shortcuts": "Ctrl+Sで保存 • Escで閉じる"
-  },
-  "binaryFile": {
-    "title": "バイナリファイル",
-    "message": "ファイル \"{{fileName}}\" はバイナリファイルのため、テキストエディタで表示できません。"
+  "loading": "{{fileName}}を読み込んでいます...",
+  "toolbar": {
+    "changes": "件の変更",
+    "collapse": "エディタを折りたたむ",
+    "expand": "エディタを全幅に展開",
+    "hideDiff": "差分ハイライトを非表示",
+    "nextChange": "次の変更",
+    "previousChange": "前の変更",
+    "settings": "エディタ設定",
+    "showDiff": "差分ハイライトを表示"
   }
 }

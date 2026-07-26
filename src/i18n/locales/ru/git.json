@@ -1,0 +1,164 @@
+{
+  "branches": {
+    "ahead": "впереди",
+    "behind": "позади",
+    "clearSearch": "Очистить поиск",
+    "current": "текущая",
+    "delete": "Удалить",
+    "local": "Локальные",
+    "localRemoteCount": "{{local}} локальных{{remote}}",
+    "newBranch": "Новая ветка",
+    "noBranchesFound": "Ветки не найдены",
+    "noBranchesMatch": "Нет веток, соответствующих поиску",
+    "remote": "Удалённые",
+    "remoteCount": ", {{count}} удалённых",
+    "searchPlaceholder": "Поиск веток...",
+    "switch": "Переключить",
+    "switchTo": "Переключиться на",
+    "upToDate": "Актуально"
+  },
+  "changes": {
+    "allChangesStaged": "Все изменения проиндексированы",
+    "changes": "Изменения",
+    "commit": "Коммит",
+    "commitChanges": "Зафиксировать изменения",
+    "commitMobile": "Зафиксировать {{count}} файл",
+    "commitMobile_few": "Зафиксировать {{count}} файла",
+    "commitMobile_other": "Зафиксировать {{count}} файлов",
+    "commitPlaceholder": "Сообщение (Ctrl+Enter для фиксации)",
+    "committing": "Коммит...",
+    "filesSelected": "Выбран {{count}} файл",
+    "filesSelected_few": "Выбрано {{count}} файла",
+    "filesSelected_other": "Выбрано {{count}} файлов",
+    "generateCommitMessage": "Сгенерировать сообщение коммита",
+    "noChanges": "Изменений не обнаружено",
+    "noCommits": {
+      "createButton": "Создать начальный коммит",
+      "creatingButton": "Создание начального коммита...",
+      "description": "В этом репозитории ещё нет коммитов. Создайте первый коммит, чтобы начать отслеживание изменений.",
+      "title": "Коммитов пока нет"
+    },
+    "noProject": "Выберите проект для просмотра управления исходным кодом",
+    "noStagedFiles": "Нет проиндексированных файлов",
+    "stageAll": "Индексировать все",
+    "staged": "Проиндексировано",
+    "unstageAll": "Отменить индексацию"
+  },
+  "confirmModal": {
+    "actionLabels": {
+      "commit": "Подтвердить",
+      "delete": "Удалить",
+      "deleteBranch": "Удалить",
+      "discard": "Отменить",
+      "publish": "Опубликовать",
+      "pull": "Pull",
+      "push": "Push",
+      "revertLocalCommit": "Отменить коммит"
+    },
+    "cancel": "Отмена",
+    "commitFiles": "Зафиксировать {{count}} файл с сообщением: \"{{message}}\"?",
+    "commitFiles_few": "Зафиксировать {{count}} файла с сообщением: \"{{message}}\"?",
+    "commitFiles_other": "Зафиксировать {{count}} файлов с сообщением: \"{{message}}\"?",
+    "deleteBranch": "Удалить ветку \"{{branch}}\"? Это действие нельзя отменить.",
+    "deleteFile": "Удалить неотслеживаемый файл \"{{file}}\"? Это действие нельзя отменить.",
+    "discardFile": "Отменить все изменения в \"{{file}}\"? Это действие нельзя отменить.",
+    "publish": "Опубликовать ветку \"{{branch}}\" в {{remote}}?",
+    "pull": "Pull {{count}} коммита из {{remote}}?",
+    "pull_few": "Pull {{count}} коммитов из {{remote}}?",
+    "pull_other": "Pull {{count}} коммитов из {{remote}}?",
+    "push": "Push {{count}} коммита в {{remote}}?",
+    "push_few": "Push {{count}} коммитов в {{remote}}?",
+    "push_other": "Push {{count}} коммитов в {{remote}}?",
+    "revertLocalCommit": "Отменить последний локальный коммит? Коммит будет удалён, но изменения останутся в индексе.",
+    "switchBranch": "Переключиться на ветку \"{{branch}}\"? Убедитесь, что у вас нет незафиксированных изменений.",
+    "titles": {
+      "commit": "Подтвердить действие",
+      "delete": "Удалить файл",
+      "deleteBranch": "Удалить ветку",
+      "discard": "Отменить изменения",
+      "publish": "Опубликовать ветку",
+      "pull": "Подтвердить Pull",
+      "push": "Подтвердить Push",
+      "revertLocalCommit": "Отменить локальный коммит"
+    }
+  },
+  "diff": {
+    "noDiff": "Дифф недоступен",
+    "largePreview": "Предпросмотр большого диффа: рендеринг ограничен для сохранения отзывчивости вкладки."
+  },
+  "errorState": {
+    "initInstructions": "Запустите {{command}} в каталоге проекта для инициализации управления исходным кодом Git.",
+    "tip": "Совет"
+  },
+  "fileChange": {
+    "collapseDiff": "Свернуть дифф",
+    "expandDiff": "Развернуть дифф",
+    "clickToOpen": "Нажмите, чтобы открыть файл",
+    "deleteUntracked": "Удалить неотслеживаемый файл",
+    "discardChanges": "Отменить изменения",
+    "delete": "Удалить",
+    "discard": "Отменить",
+    "scroll": "Прокрутка",
+    "wrap": "Перенос",
+    "switchToScroll": "Переключить на горизонтальную прокрутку",
+    "switchToWrap": "Переключить на перенос текста"
+  },
+  "fileSelect": {
+    "selectedCount": "Выбрано {{selected}} из {{total}} файлов",
+    "selectAll": "Выбрать все",
+    "deselectAll": "Снять выбор",
+    "all": "Все",
+    "none": "Нет"
+  },
+  "fileStatus": {
+    "added": "Добавлен",
+    "deleted": "Удалён",
+    "legend": "Справочник статусов файлов",
+    "modified": "Изменён",
+    "untracked": "Не отслеживается"
+  },
+  "header": {
+    "clearSearch": "Очистить поиск",
+    "createNewBranch": "Создать новую ветку",
+    "dismissError": "Закрыть ошибку",
+    "fetch": "Получить",
+    "fetching": "Получение…",
+    "noMatchingBranches": "Нет подходящих веток",
+    "publish": "Опубликовать",
+    "publishing": "Публикация…",
+    "pull": "Pull",
+    "pulling": "Pull…",
+    "push": "Push",
+    "pushing": "Push…",
+    "refreshGitStatus": "Обновить статус Git",
+    "revertLocalCommit": "Отменить последний локальный коммит",
+    "searchBranches": "Поиск веток...",
+    "publishTo": "Опубликовать \"{{branch}}\" в {{remote}}",
+    "fetchFrom": "Получить из {{remote}}",
+    "pullCount": "Pull {{count}} из {{remote}}",
+    "pushCount": "Push {{count}} в {{remote}}"
+  },
+  "history": {
+    "added": "Добавлено",
+    "author": "Автор",
+    "changedFiles": "Изменённые файлы",
+    "date": "Дата",
+    "files": "Файлы",
+    "noCommits": "Коммиты не найдены",
+    "removed": "Удалено"
+  },
+  "newBranchModal": {
+    "branchName": "Название ветки",
+    "cancel": "Отмена",
+    "create": "Создать ветку",
+    "creating": "Создание...",
+    "description": "Будет создана новая ветка от текущей ({{branch}})",
+    "placeholder": "feature/новая-функция",
+    "title": "Создать новую ветку"
+  },
+  "tabs": {
+    "branches": "Ветки",
+    "changes": "Изменения",
+    "commits": "Коммиты"
+  }
+}

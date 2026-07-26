@@ -1,4 +1,5 @@
 import { useMemo } from 'react';
+import { useTranslation } from 'react-i18next';
 
 type GitDiffViewerProps = {
   diff: string | null;
@@ -29,6 +30,7 @@ function buildDiffPreview(diff: string): DiffPreview {
 }
 
 export default function GitDiffViewer({ diff, isMobile, wrapText }: GitDiffViewerProps) {
+  const { t } = useTranslation();
   // Render a bounded preview to keep huge commit diffs from freezing the UI thread.
   const preview = useMemo(() => buildDiffPreview(diff || ''), [diff]);
   const isPreviewTruncated = preview.isCharacterTruncated || preview.isLineTruncated;
@@ -36,7 +38,7 @@ export default function GitDiffViewer({ diff, isMobile, wrapText }: GitDiffViewe
   if (!diff) {
     return (
       <div className="p-4 text-center text-sm text-muted-foreground">
-        No diff available
+        {t('git:diff.noDiff')}
       </div>
     );
   }
@@ -65,7 +67,7 @@ export default function GitDiffViewer({ diff, isMobile, wrapText }: GitDiffViewe
     <div className="diff-viewer">
       {isPreviewTruncated && (
         <div className="mb-2 rounded-md border border-border bg-card px-3 py-2 text-xs text-muted-foreground">
-          Large diff preview: rendering is limited to keep the tab responsive.
+          {t('git:diff.largePreview')}
         </div>
       )}
       {preview.lines.map((line, index) => renderDiffLine(line, index))}

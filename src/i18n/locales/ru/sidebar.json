@@ -50,7 +50,9 @@
     "cancel": "Отмена",
     "clearSearch": "Очистить поиск",
     "openCommandPalette": "Открыть палитру команд",
-    "attentionRequiredIndicator": "Сессия требует внимания"
+    "attentionRequiredIndicator": "Сессия требует внимания",
+    "processingSessionIndicator": "Сеанс обрабатывается",
+    "deleteSessionOptions": "Архивировать или удалить навсегда"
   },
   "navigation": {
     "chat": "Чат",
@@ -133,7 +135,14 @@
     "projectsScanned_one": "{{count}} проект просканирован",
     "projectsScanned_few": "{{count}} проекта просканировано",
     "projectsScanned_many": "{{count}} проектов просканировано",
-    "projectsScanned_other": "{{count}} проектов просканировано"
+    "projectsScanned_other": "{{count}} проектов просканировано",
+    "modeRunning": "Выполняется",
+    "matches": "совпадений",
+    "projectsScanned": "проектов просканировано",
+    "archiveOnlyTooltip": "Только архив",
+    "archivedPlaceholder": "Поиск в архивированных сеансах...",
+    "runningPlaceholder": "Поиск в запущенных сеансах...",
+    "runningTooltip": "Запущенные сеансы"
   },
   "deleteConfirmation": {
     "deleteProject": "Убрать проект",
@@ -146,6 +155,29 @@
     "removeFromSidebar": "Убрать только из боковой панели",
     "deleteAllData": "Удалить все данные навсегда",
     "allConversationsDeleted": "Проект будет убран из боковой панели. Ваши файлы, воспоминания и данные сеансов сохранятся.",
-    "cannotUndo": "Вы сможете добавить проект позже."
+    "cannotUndo": "Вы сможете добавить проект позже.",
+    "archiveProject": "Архивировать проект",
+    "archivedSessionNotice": "Этот сеанс уже архивирован. Вы можете оставить его скрытым или удалить навсегда.",
+    "archiveSessionNotice": "Архивирование убирает сеанс из активного списка, сохраняя его историю.",
+    "archiveSession": "Архивировать сеанс",
+    "deleteSessionPermanently": "Удалить навсегда"
+  },
+  "running": {
+    "title": "Выполняется",
+    "emptyTitle": "Нет запущенных сеансов",
+    "emptyDescription": "Активная работа появится здесь во время обработки провайдером.",
+    "noMatchingSessions": "Нет соответствующих запущенных сеансов."
+  },
+  "archived": {
+    "loadingTitle": "Загрузка архива...",
+    "loadingDescription": "Получение скрытых рабочих областей и сеансов, которые можно восстановить позже.",
+    "emptyTitle": "Нет архивированных элементов",
+    "emptyDescription": "Архивированные рабочие области и сеансы появятся здесь, когда вы скроете их из активного списка.",
+    "noMatchingSessions": "Нет соответствующих архивированных элементов",
+    "tryDifferentSearch": "Попробуйте другой поисковый запрос.",
+    "projectArchived": "Проект архивирован",
+    "restoreProject": "Восстановить рабочую область",
+    "restore": "Восстановить сеанс",
+    "deletePermanently": "Удалить навсегда"
   }
 }

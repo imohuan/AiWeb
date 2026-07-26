@@ -1,36 +1,42 @@
 {
-  "toolbar": {
-    "changes": "Änderungen",
-    "previousChange": "Vorherige Änderung",
-    "nextChange": "Nächste Änderung",
-    "hideDiff": "Diff-Hervorhebung ausblenden",
-    "showDiff": "Diff-Hervorhebung anzeigen",
-    "settings": "Editor-Einstellungen",
-    "collapse": "Editor einklappen",
-    "expand": "Editor auf volle Breite erweitern"
+  "actions": {
+    "close": "Schließen",
+    "download": "Datei herunterladen",
+    "editMarkdown": "Markdown bearbeiten",
+    "exitFullscreen": "Vollbild beenden",
+    "fullscreen": "Vollbild",
+    "previewMarkdown": "Markdown-Vorschau",
+    "save": "Speichern",
+    "saved": "Gespeichert!",
+    "saving": "Wird gespeichert...",
+    "previewHtml": "HTML-Vorschau in neuem Tab öffnen"
   },
-  "loading": "{{fileName}} wird geladen...",
+  "binaryFile": {
+    "message": "Die Datei \"{{fileName}}\" kann im Texteditor nicht angezeigt werden, da es sich um eine Binärdatei handelt.",
+    "title": "Binärdatei"
+  },
+  "filePreview": {
+    "error": "Diese Datei kann nicht angezeigt werden.",
+    "loading": "Vorschau wird geladen...",
+    "openInNewTab": "In neuem Tab öffnen"
+  },
+  "footer": {
+    "characters": "Zeichen:",
+    "lines": "Zeilen:",
+    "shortcuts": "Strg+S zum Speichern • Esc zum Schließen"
+  },
   "header": {
     "showingChanges": "Änderungen werden angezeigt"
   },
-  "actions": {
-    "download": "Datei herunterladen",
-    "save": "Speichern",
-    "saving": "Wird gespeichert...",
-    "saved": "Gespeichert!",
-    "exitFullscreen": "Vollbild beenden",
-    "fullscreen": "Vollbild",
-    "close": "Schließen",
-    "previewMarkdown": "Markdown-Vorschau",
-    "editMarkdown": "Markdown bearbeiten"
-  },
-  "footer": {
-    "lines": "Zeilen:",
-    "characters": "Zeichen:",
-    "shortcuts": "Strg+S zum Speichern • Esc zum Schließen"
-  },
-  "binaryFile": {
-    "title": "Binärdatei",
-    "message": "Die Datei \"{{fileName}}\" kann im Texteditor nicht angezeigt werden, da es sich um eine Binärdatei handelt."
+  "loading": "{{fileName}} wird geladen...",
+  "toolbar": {
+    "changes": "Änderungen",
+    "collapse": "Editor einklappen",
+    "expand": "Editor auf volle Breite erweitern",
+    "hideDiff": "Diff-Hervorhebung ausblenden",
+    "nextChange": "Nächste Änderung",
+    "previousChange": "Vorherige Änderung",
+    "settings": "Editor-Einstellungen",
+    "showDiff": "Diff-Hervorhebung anzeigen"
   }
 }

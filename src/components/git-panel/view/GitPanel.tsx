@@ -1,4 +1,5 @@
 import { useCallback, useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import { useGitPanelController } from '../hooks/useGitPanelController';
 import { useRevertLocalCommit } from '../hooks/useRevertLocalCommit';
 import type { ConfirmationRequest, GitPanelProps, GitPanelView } from '../types/types';
@@ -16,6 +17,7 @@ export default function GitPanel({ selectedProject, isMobile = false, onFileOpen
   const [wrapText, setWrapText] = useState(true);
   const [hasExpandedFiles, setHasExpandedFiles] = useState(false);
   const [confirmAction, setConfirmAction] = useState<ConfirmationRequest | null>(null);
+  const { t } = useTranslation();
 
   const {
     gitStatus,
@@ -82,7 +84,7 @@ export default function GitPanel({ selectedProject, isMobile = false, onFileOpen
   if (!selectedProject) {
     return (
       <div className="flex h-full items-center justify-center text-muted-foreground">
-        <p>Select a project to view source control</p>
+        <p>{t('git:changes.noProject')}</p>
       </div>
     );
   }

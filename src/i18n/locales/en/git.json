@@ -1,0 +1,159 @@
+{
+  "header": {
+    "searchBranches": "Search branches...",
+    "clearSearch": "Clear search",
+    "noMatchingBranches": "No matching branches",
+    "createNewBranch": "Create new branch",
+    "publish": "Publish",
+    "publishing": "Publishing…",
+    "fetch": "Fetch",
+    "fetching": "Fetching…",
+    "pull": "Pull",
+    "pulling": "Pulling…",
+    "push": "Push",
+    "pushing": "Pushing…",
+    "revertLocalCommit": "Revert latest local commit",
+    "refreshGitStatus": "Refresh git status",
+    "dismissError": "Dismiss error",
+    "publishTo": "Publish \"{{branch}}\" to {{remote}}",
+    "fetchFrom": "Fetch from {{remote}}",
+    "pullCount": "Pull {{count}} from {{remote}}",
+    "pushCount": "Push {{count}} to {{remote}}"
+  },
+  "tabs": {
+    "changes": "Changes",
+    "commits": "Commits",
+    "branches": "Branches"
+  },
+  "changes": {
+    "noProject": "Select a project to view source control",
+    "noCommits": {
+      "title": "No commits yet",
+      "description": "This repository doesn't have any commits yet. Create your first commit to start tracking changes.",
+      "createButton": "Create Initial Commit",
+      "creatingButton": "Creating Initial Commit..."
+    },
+    "noChanges": "No changes detected",
+    "staged": "Staged",
+    "noStagedFiles": "No staged files",
+    "unstageAll": "Unstage All",
+    "changes": "Changes",
+    "allChangesStaged": "All changes staged",
+    "stageAll": "Stage All",
+    "commitChanges": "Commit Changes",
+    "commitPlaceholder": "Message (Ctrl+Enter to commit)",
+    "generateCommitMessage": "Generate commit message",
+    "filesSelected": "{{count}} file selected",
+    "filesSelected_other": "{{count}} files selected",
+    "commit": "Commit",
+    "committing": "Committing...",
+    "commitMobile": "Commit {{count}} file",
+    "commitMobile_other": "Commit {{count}} files"
+  },
+  "fileStatus": {
+    "legend": "File Status Guide",
+    "modified": "Modified",
+    "added": "Added",
+    "deleted": "Deleted",
+    "untracked": "Untracked"
+  },
+  "branches": {
+    "local": "Local",
+    "remote": "Remote",
+    "current": "current",
+    "ahead": "ahead",
+    "behind": "behind",
+    "upToDate": "Up to date",
+    "switchTo": "Switch to",
+    "delete": "Delete",
+    "switch": "Switch",
+    "newBranch": "New branch",
+    "noBranchesFound": "No branches found",
+    "noBranchesMatch": "No branches match your search",
+    "searchPlaceholder": "Search branches...",
+    "clearSearch": "Clear search",
+    "localRemoteCount": "{{local}} local{{remote}}",
+    "remoteCount": ", {{count}} remote"
+  },
+  "newBranchModal": {
+    "title": "Create New Branch",
+    "branchName": "Branch Name",
+    "placeholder": "feature/new-feature",
+    "description": "This will create a new branch from the current branch ({{branch}})",
+    "cancel": "Cancel",
+    "create": "Create Branch",
+    "creating": "Creating..."
+  },
+  "confirmModal": {
+    "cancel": "Cancel",
+    "titles": {
+      "discard": "Discard Changes",
+      "delete": "Delete File",
+      "commit": "Confirm Action",
+      "pull": "Confirm Pull",
+      "push": "Confirm Push",
+      "publish": "Publish Branch",
+      "revertLocalCommit": "Revert Local Commit",
+      "deleteBranch": "Delete Branch"
+    },
+    "actionLabels": {
+      "discard": "Discard",
+      "delete": "Delete",
+      "commit": "Confirm",
+      "pull": "Pull",
+      "push": "Push",
+      "publish": "Publish",
+      "revertLocalCommit": "Revert Commit",
+      "deleteBranch": "Delete"
+    },
+    "discardFile": "Discard all changes to \"{{file}}\"? This action cannot be undone.",
+    "deleteFile": "Delete untracked file \"{{file}}\"? This action cannot be undone.",
+    "commitFiles": "Commit {{count}} file with message: \"{{message}}\"?",
+    "commitFiles_other": "Commit {{count}} files with message: \"{{message}}\"?",
+    "pull": "Pull {{count}} commit from {{remote}}?",
+    "pull_other": "Pull {{count}} commits from {{remote}}?",
+    "push": "Push {{count}} commit to {{remote}}?",
+    "push_other": "Push {{count}} commits to {{remote}}?",
+    "publish": "Publish branch \"{{branch}}\" to {{remote}}?",
+    "revertLocalCommit": "Revert the latest local commit? This removes the commit but keeps its changes staged.",
+    "switchBranch": "Switch to branch \"{{branch}}\"? Make sure you have no uncommitted changes.",
+    "deleteBranch": "Delete branch \"{{branch}}\"? This cannot be undone."
+  },
+  "history": {
+    "noCommits": "No commits found",
+    "author": "Author",
+    "date": "Date",
+    "files": "Files",
+    "added": "Added",
+    "removed": "Removed",
+    "changedFiles": "Changed Files"
+  },
+  "errorState": {
+    "tip": "Tip",
+    "initInstructions": "Run {{command}} in your project directory to initialize git source control."
+  },
+  "fileChange": {
+    "collapseDiff": "Collapse diff",
+    "expandDiff": "Expand diff",
+    "clickToOpen": "Click to open file",
+    "deleteUntracked": "Delete untracked file",
+    "discardChanges": "Discard changes",
+    "delete": "Delete",
+    "discard": "Discard",
+    "scroll": "Scroll",
+    "wrap": "Wrap",
+    "switchToScroll": "Switch to horizontal scroll",
+    "switchToWrap": "Switch to text wrap"
+  },
+  "fileSelect": {
+    "selectedCount": "{{selected}} of {{total}} files selected",
+    "selectAll": "Select All",
+    "deselectAll": "Deselect All",
+    "all": "All",
+    "none": "None"
+  },
+  "diff": {
+    "noDiff": "No diff available",
+    "largePreview": "Large diff preview: rendering is limited to keep the tab responsive."
+  }
+}

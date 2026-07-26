@@ -1,36 +1,42 @@
 {
-  "toolbar": {
-    "changes": "modifiche",
-    "previousChange": "Modifica precedente",
-    "nextChange": "Modifica successiva",
-    "hideDiff": "Nascondi evidenziazione differenze",
-    "showDiff": "Mostra evidenziazione differenze",
-    "settings": "Impostazioni editor",
-    "collapse": "Comprimi editor",
-    "expand": "Espandi editor a larghezza piena"
+  "actions": {
+    "close": "Chiudi",
+    "download": "Scarica file",
+    "editMarkdown": "Modifica markdown",
+    "exitFullscreen": "Esci dalla modalità schermo intero",
+    "fullscreen": "Schermo intero",
+    "previewMarkdown": "Anteprima markdown",
+    "save": "Salva",
+    "saved": "Salvato!",
+    "saving": "Salvataggio...",
+    "previewHtml": "Apri anteprima HTML in una nuova scheda"
   },
-  "loading": "Caricamento {{fileName}}...",
+  "binaryFile": {
+    "message": "Il file \"{{fileName}}\" non può essere visualizzato nell'editor di testo perché è un file binario.",
+    "title": "File binario"
+  },
+  "filePreview": {
+    "error": "Impossibile visualizzare questo file.",
+    "loading": "Caricamento anteprima...",
+    "openInNewTab": "Apri in una nuova scheda"
+  },
+  "footer": {
+    "characters": "Caratteri:",
+    "lines": "Righe:",
+    "shortcuts": "Premi Ctrl+S per salvare • Esc per chiudere"
+  },
   "header": {
     "showingChanges": "Visualizzazione modifiche"
   },
-  "actions": {
-    "download": "Scarica file",
-    "save": "Salva",
-    "saving": "Salvataggio...",
-    "saved": "Salvato!",
-    "exitFullscreen": "Esci dalla modalità schermo intero",
-    "fullscreen": "Schermo intero",
-    "close": "Chiudi",
-    "previewMarkdown": "Anteprima markdown",
-    "editMarkdown": "Modifica markdown"
-  },
-  "footer": {
-    "lines": "Righe:",
-    "characters": "Caratteri:",
-    "shortcuts": "Premi Ctrl+S per salvare • Esc per chiudere"
-  },
-  "binaryFile": {
-    "title": "File binario",
-    "message": "Il file \"{{fileName}}\" non può essere visualizzato nell'editor di testo perché è un file binario."
+  "loading": "Caricamento {{fileName}}...",
+  "toolbar": {
+    "changes": "modifiche",
+    "collapse": "Comprimi editor",
+    "expand": "Espandi editor a larghezza piena",
+    "hideDiff": "Nascondi evidenziazione differenze",
+    "nextChange": "Modifica successiva",
+    "previousChange": "Modifica precedente",
+    "settings": "Impostazioni editor",
+    "showDiff": "Mostra evidenziazione differenze"
   }
 }

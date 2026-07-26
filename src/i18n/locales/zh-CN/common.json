@@ -68,7 +68,10 @@
     "version": "版本",
     "select": "选择",
     "selectAll": "全选",
-    "deselectAll": "取消全选"
+    "deselectAll": "取消全选",
+    "cancel": "取消",
+    "done": "完成",
+    "failed": "失败"
   },
   "time": {
     "justNow": "刚刚",

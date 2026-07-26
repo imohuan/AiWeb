@@ -1,5 +1,6 @@
 import { Check, GitBranch, Globe, Plus, RefreshCw, Search, Trash2, X } from 'lucide-react';
 import { useMemo, useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import type { ConfirmationRequest, GitRemoteStatus } from '../../types/types';
 import NewBranchModal from '../modals/NewBranchModal';
 
@@ -33,6 +34,8 @@ type BranchRowProps = {
 };
 
 function BranchRow({ name, isCurrent, isRemote, aheadCount, behindCount, isMobile, onSwitch, onDelete }: BranchRowProps) {
+  const { t } = useTranslation();
+
   return (
     <div
       className={`group flex items-center gap-3 border-b border-border/40 px-4 transition-colors hover:bg-accent/40 ${
@@ -58,12 +61,12 @@ function BranchRow({ name, isCurrent, isRemote, aheadCount, behindCount, isMobil
           </span>
           {isCurrent && (
             <span className="shrink-0 rounded-full bg-primary/15 px-1.5 py-0.5 text-xs font-semibold text-primary">
-              current
+              {t('git:branches.current')}
             </span>
           )}
           {isRemote && !isCurrent && (
             <span className="shrink-0 rounded-full bg-muted px-1.5 py-0.5 text-xs text-muted-foreground">
-              remote
+              {t('git:branches.remote')}
             </span>
           )}
         </div>
@@ -71,10 +74,10 @@ function BranchRow({ name, isCurrent, isRemote, aheadCount, behindCount, isMobil
         {isCurrent && (aheadCount > 0 || behindCount > 0) && (
           <div className="flex items-center gap-2 text-xs">
             {aheadCount > 0 && (
-              <span className="text-green-600 dark:text-green-400">↑{aheadCount} ahead</span>
+              <span className="text-green-600 dark:text-green-400">↑{aheadCount} {t('git:branches.ahead')}</span>
             )}
             {behindCount > 0 && (
-              <span className="text-primary">↓{behindCount} behind</span>
+              <span className="text-primary">↓{behindCount} {t('git:branches.behind')}</span>
             )}
           </div>
         )}
@@ -89,14 +92,14 @@ function BranchRow({ name, isCurrent, isRemote, aheadCount, behindCount, isMobil
             <button
               onClick={onSwitch}
               className="rounded-md px-2 py-1 text-xs font-medium text-muted-foreground transition-colors hover:bg-accent hover:text-foreground"
-              title={`Switch to ${name}`}
+              title={t('git:branches.switchTo', { name })}
             >
-              Switch
+              {t('git:branches.switch')}
             </button>
             <button
               onClick={onDelete}
               className="rounded-md p-1 text-muted-foreground transition-colors hover:bg-destructive/10 hover:text-destructive"
-              title={`Delete ${name}`}
+              title={t('git:branches.delete', { name })}
             >
               <Trash2 className="h-3.5 w-3.5" />
             </button>
@@ -137,6 +140,7 @@ export default function BranchesView({
   onDeleteBranch,
   onRequestConfirmation,
 }: BranchesViewProps) {
+  const { t } = useTranslation();
   const [showNewBranchModal, setShowNewBranchModal] = useState(false);
   const [branchSearchQuery, setBranchSearchQuery] = useState('');
 
@@ -156,7 +160,7 @@ export default function BranchesView({
   const requestSwitch = (branch: string) => {
     onRequestConfirmation({
       type: 'commit', // reuse neutral type for switch
-      message: `Switch to branch "${branch}"? Make sure you have no uncommitted changes.`,
+      message: t('git:confirmModal.switchBranch', { branch }),
       onConfirm: () => void onSwitchBranch(branch),
     });
   };
@@ -164,10 +168,16 @@ export default function BranchesView({
   const requestDelete = (branch: string) => {
     onRequestConfirmation({
       type: 'deleteBranch',
-      message: `Delete branch "${branch}"? This cannot be undone.`,
+      message: t('git:confirmModal.deleteBranch', { branch }),
       onConfirm: () => void onDeleteBranch(branch),
     });
   };
+
+  const localRemoteText = t('git:branches.localRemoteCount', {
+    local: localBranches.length,
+    remote: remoteBranches.length > 0 ? t('git:branches.remoteCount', { count: remoteBranches.length }) : '',
+    interpolation: { escapeValue: false },
+  });
 
   if (isLoading && localBranches.length === 0) {
     return (
@@ -182,14 +192,14 @@ export default function BranchesView({
       {/* Create branch button */}
       <div className="flex items-center justify-between border-b border-border/40 px-4 py-2.5">
         <span className="text-sm text-muted-foreground">
-          {localBranches.length} local{remoteBranches.length > 0 ? `, ${remoteBranches.length} remote` : ''}
+          {localRemoteText}
         </span>
         <button
           onClick={() => setShowNewBranchModal(true)}
           className="flex items-center gap-1.5 rounded-lg bg-primary/10 px-3 py-1.5 text-sm font-medium text-primary transition-colors hover:bg-primary/20"
         >
           <Plus className="h-3.5 w-3.5" />
-          New branch
+          {t('git:branches.newBranch')}
         </button>
       </div>
 
@@ -200,14 +210,14 @@ export default function BranchesView({
           type="text"
           value={branchSearchQuery}
           onChange={(event) => setBranchSearchQuery(event.target.value)}
-          placeholder="Search branches..."
+          placeholder={t('git:branches.searchPlaceholder')}
           className="w-full bg-transparent text-sm text-foreground placeholder:text-muted-foreground focus:outline-none"
         />
         {branchSearchQuery && (
           <button
             onClick={() => setBranchSearchQuery('')}
             className="shrink-0 text-muted-foreground transition-colors hover:text-foreground"
-            title="Clear search"
+            title={t('git:branches.clearSearch')}
           >
             <X className="h-3.5 w-3.5" />
           </button>
@@ -218,7 +228,7 @@ export default function BranchesView({
       <div className="flex-1 overflow-y-auto">
         {filteredLocalBranches.length > 0 && (
           <>
-            <SectionHeader label="Local" count={filteredLocalBranches.length} />
+            <SectionHeader label={t('git:branches.local')} count={filteredLocalBranches.length} />
             {filteredLocalBranches.map((branch) => (
               <BranchRow
                 key={`local:${branch}`}
@@ -237,7 +247,7 @@ export default function BranchesView({
 
         {filteredRemoteBranches.length > 0 && (
           <>
-            <SectionHeader label="Remote" count={filteredRemoteBranches.length} />
+            <SectionHeader label={t('git:branches.remote')} count={filteredRemoteBranches.length} />
             {filteredRemoteBranches.map((branch) => (
               <BranchRow
                 key={`remote:${branch}`}
@@ -257,7 +267,7 @@ export default function BranchesView({
         {filteredLocalBranches.length === 0 && filteredRemoteBranches.length === 0 && (
           <div className="flex h-32 flex-col items-center justify-center gap-2 text-muted-foreground">
             <GitBranch className="h-10 w-10 opacity-30" />
-            <p className="text-sm">{normalizedQuery ? 'No branches match your search' : 'No branches found'}</p>
+            <p className="text-sm">{normalizedQuery ? t('git:branches.noBranchesMatch') : t('git:branches.noBranchesFound')}</p>
           </div>
         )}
       </div>

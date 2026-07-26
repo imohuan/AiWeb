@@ -23,6 +23,7 @@ import enChat from './locales/en/chat.json';
 import enCodeEditor from './locales/en/codeEditor.json';
 // eslint-disable-next-line import-x/order
 import enTasks from './locales/en/tasks.json';
+import enGit from './locales/en/git.json';
 
 import koCommon from './locales/ko/common.json';
 import koSettings from './locales/ko/settings.json';
@@ -31,6 +32,9 @@ import koSidebar from './locales/ko/sidebar.json';
 import koChat from './locales/ko/chat.json';
 // eslint-disable-next-line import-x/order
 import koCodeEditor from './locales/ko/codeEditor.json';
+// eslint-disable-next-line import-x/order
+import koTasks from './locales/ko/tasks.json';
+import koGit from './locales/ko/git.json';
 
 import zhCommon from './locales/zh-CN/common.json';
 import zhSettings from './locales/zh-CN/settings.json';
@@ -39,6 +43,9 @@ import zhSidebar from './locales/zh-CN/sidebar.json';
 import zhChat from './locales/zh-CN/chat.json';
 // eslint-disable-next-line import-x/order
 import zhCodeEditor from './locales/zh-CN/codeEditor.json';
+// eslint-disable-next-line import-x/order
+import zhTasks from './locales/zh-CN/tasks.json';
+import zhGit from './locales/zh-CN/git.json';
 
 import jaCommon from './locales/ja/common.json';
 import jaSettings from './locales/ja/settings.json';
@@ -48,6 +55,7 @@ import jaChat from './locales/ja/chat.json';
 import jaCodeEditor from './locales/ja/codeEditor.json';
 // eslint-disable-next-line import-x/order
 import jaTasks from './locales/ja/tasks.json';
+import jaGit from './locales/ja/git.json';
 
 import ruCommon from './locales/ru/common.json';
 import ruSettings from './locales/ru/settings.json';
@@ -57,6 +65,7 @@ import ruChat from './locales/ru/chat.json';
 import ruCodeEditor from './locales/ru/codeEditor.json';
 // eslint-disable-next-line import-x/order
 import ruTasks from './locales/ru/tasks.json';
+import ruGit from './locales/ru/git.json';
 
 import deCommon from './locales/de/common.json';
 import deSettings from './locales/de/settings.json';
@@ -66,6 +75,7 @@ import deChat from './locales/de/chat.json';
 import deCodeEditor from './locales/de/codeEditor.json';
 // eslint-disable-next-line import-x/order
 import deTasks from './locales/de/tasks.json';
+import deGit from './locales/de/git.json';
 
 import trCommon from './locales/tr/common.json';
 import trSettings from './locales/tr/settings.json';
@@ -75,7 +85,18 @@ import trChat from './locales/tr/chat.json';
 import trCodeEditor from './locales/tr/codeEditor.json';
 // eslint-disable-next-line import-x/order
 import trTasks from './locales/tr/tasks.json';
+import trGit from './locales/tr/git.json';
 import itCommon from './locales/it/common.json';
+
+import frCommon from './locales/fr/common.json';
+import frSettings from './locales/fr/settings.json';
+import frAuth from './locales/fr/auth.json';
+import frSidebar from './locales/fr/sidebar.json';
+import frChat from './locales/fr/chat.json';
+import frCodeEditor from './locales/fr/codeEditor.json';
+// eslint-disable-next-line import-x/order
+import frTasks from './locales/fr/tasks.json';
+import frGit from './locales/fr/git.json';
 import itSettings from './locales/it/settings.json';
 import itAuth from './locales/it/auth.json';
 import itSidebar from './locales/it/sidebar.json';
@@ -83,6 +104,7 @@ import itChat from './locales/it/chat.json';
 import itCodeEditor from './locales/it/codeEditor.json';
 // eslint-disable-next-line import-x/order
 import itTasks from './locales/it/tasks.json';
+import itGit from './locales/it/git.json';
 
 import zhTWCommon from './locales/zh-TW/common.json';
 import zhTWSettings from './locales/zh-TW/settings.json';
@@ -92,6 +114,7 @@ import zhTWChat from './locales/zh-TW/chat.json';
 import zhTWCodeEditor from './locales/zh-TW/codeEditor.json';
 // eslint-disable-next-line import-x/order
 import zhTWTasks from './locales/zh-TW/tasks.json';
+import zhTWGit from './locales/zh-TW/git.json';
 
 // Import supported languages configuration
 import { languages } from './languages.js';
@@ -125,6 +148,7 @@ i18n
         chat: enChat,
         codeEditor: enCodeEditor,
         tasks: enTasks,
+        git: enGit,
       },
       ko: {
         common: koCommon,
@@ -133,6 +157,8 @@ i18n
         sidebar: koSidebar,
         chat: koChat,
         codeEditor: koCodeEditor,
+        tasks: koTasks,
+        git: koGit,
       },
       'zh-CN': {
         common: zhCommon,
@@ -141,6 +167,8 @@ i18n
         sidebar: zhSidebar,
         chat: zhChat,
         codeEditor: zhCodeEditor,
+        tasks: zhTasks,
+        git: zhGit,
       },
       ja: {
         common: jaCommon,
@@ -150,6 +178,7 @@ i18n
         chat: jaChat,
         codeEditor: jaCodeEditor,
         tasks: jaTasks,
+        git: jaGit,
       },
       ru: {
         common: ruCommon,
@@ -159,6 +188,7 @@ i18n
         chat: ruChat,
         codeEditor: ruCodeEditor,
         tasks: ruTasks,
+        git: ruGit,
       },
       de: {
         common: deCommon,
@@ -168,6 +198,17 @@ i18n
         chat: deChat,
         codeEditor: deCodeEditor,
         tasks: deTasks,
+        git: deGit,
+      },
+      fr: {
+        common: frCommon,
+        settings: frSettings,
+        auth: frAuth,
+        sidebar: frSidebar,
+        chat: frChat,
+        codeEditor: frCodeEditor,
+        tasks: frTasks,
+        git: frGit,
       },
       tr: {
         common: trCommon,
@@ -177,6 +218,7 @@ i18n
         chat: trChat,
         codeEditor: trCodeEditor,
         tasks: trTasks,
+        git: trGit,
       },
       it: {
         common: itCommon,
@@ -186,6 +228,7 @@ i18n
         chat: itChat,
         codeEditor: itCodeEditor,
         tasks: itTasks,
+        git: itGit,
       },
       'zh-TW': {
         common: zhTWCommon,
@@ -195,6 +238,7 @@ i18n
         chat: zhTWChat,
         codeEditor: zhTWCodeEditor,
         tasks: zhTWTasks,
+        git: zhTWGit,
       },
     },
 
@@ -208,7 +252,7 @@ i18n
     debug: false,
 
     // Namespaces - load only what's needed
-    ns: ['common', 'settings', 'auth', 'sidebar', 'chat', 'codeEditor', 'tasks'],
+    ns: ['common', 'settings', 'auth', 'sidebar', 'chat', 'codeEditor', 'tasks', 'git'],
     defaultNS: 'common',
 
     // Key separator for nested keys (default: '.')

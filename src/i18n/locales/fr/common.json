@@ -68,7 +68,10 @@
     "version": "Version",
     "select": "Sélectionner",
     "selectAll": "Tout sélectionner",
-    "deselectAll": "Tout désélectionner"
+    "deselectAll": "Tout désélectionner",
+    "cancel": "Annuler",
+    "done": "Terminé",
+    "failed": "Échoué"
   },
   "time": {
     "justNow": "À l'instant",

@@ -1,0 +1,159 @@
+{
+  "branches": {
+    "ahead": "avanti",
+    "behind": "indietro",
+    "clearSearch": "Cancella ricerca",
+    "current": "corrente",
+    "delete": "Elimina",
+    "local": "Locale",
+    "localRemoteCount": "{{local}} locale/i{{remote}}",
+    "newBranch": "Nuovo branch",
+    "noBranchesFound": "Nessun branch trovato",
+    "noBranchesMatch": "Nessun branch corrisponde alla ricerca",
+    "remote": "Remoto",
+    "remoteCount": ", {{count}} remoto/i",
+    "searchPlaceholder": "Cerca branch...",
+    "switch": "Passa",
+    "switchTo": "Passa a",
+    "upToDate": "Aggiornato"
+  },
+  "changes": {
+    "allChangesStaged": "Tutte le modifiche in stage",
+    "changes": "Modifiche",
+    "commit": "Commit",
+    "commitChanges": "Commit delle modifiche",
+    "commitMobile": "Commit {{count}} file",
+    "commitMobile_other": "Commit {{count}} file",
+    "commitPlaceholder": "Messaggio (Ctrl+Invio per commit)",
+    "committing": "Commit in corso...",
+    "filesSelected": "{{count}} file selezionato",
+    "filesSelected_other": "{{count}} file selezionati",
+    "generateCommitMessage": "Genera messaggio di commit",
+    "noChanges": "Nessuna modifica rilevata",
+    "noCommits": {
+      "createButton": "Crea commit iniziale",
+      "creatingButton": "Creazione commit iniziale...",
+      "description": "Questo repository non ha ancora commit. Crea il tuo primo commit per iniziare a tracciare le modifiche.",
+      "title": "Nessun commit"
+    },
+    "noProject": "Seleziona un progetto per visualizzare il controllo del codice sorgente",
+    "noStagedFiles": "Nessun file in stage",
+    "stageAll": "Stage a tutti",
+    "staged": "In stage",
+    "unstageAll": "Rimuovi stage a tutti"
+  },
+  "confirmModal": {
+    "actionLabels": {
+      "commit": "Conferma",
+      "delete": "Elimina",
+      "deleteBranch": "Elimina",
+      "discard": "Scarta",
+      "publish": "Pubblica",
+      "pull": "Pull",
+      "push": "Push",
+      "revertLocalCommit": "Annulla commit"
+    },
+    "cancel": "Annulla",
+    "commitFiles": "Commit di {{count}} file con messaggio: \"{{message}}\"?",
+    "commitFiles_other": "Commit di {{count}} file con messaggio: \"{{message}}\"?",
+    "deleteBranch": "Eliminare il branch \"{{branch}}\"? Questa azione non può essere annullata.",
+    "deleteFile": "Eliminare il file non tracciato \"{{file}}\"? Questa azione non può essere annullata.",
+    "discardFile": "Scartare tutte le modifiche a \"{{file}}\"? Questa azione non può essere annullata.",
+    "publish": "Pubblicare il branch \"{{branch}}\" su {{remote}}?",
+    "pull": "Pull di {{count}} commit da {{remote}}?",
+    "pull_other": "Pull di {{count}} commit da {{remote}}?",
+    "push": "Push di {{count}} commit su {{remote}}?",
+    "push_other": "Push di {{count}} commit su {{remote}}?",
+    "revertLocalCommit": "Annullare l'ultimo commit locale? Questo rimuove il commit ma mantiene le modifiche in stage.",
+    "switchBranch": "Passare al branch \"{{branch}}\"? Assicurati di non avere modifiche non committate.",
+    "titles": {
+      "commit": "Conferma azione",
+      "delete": "Elimina file",
+      "deleteBranch": "Elimina branch",
+      "discard": "Scarta modifiche",
+      "publish": "Pubblica branch",
+      "pull": "Conferma pull",
+      "push": "Conferma push",
+      "revertLocalCommit": "Annulla commit locale"
+    }
+  },
+  "diff": {
+    "noDiff": "Nessun diff disponibile",
+    "largePreview": "Anteprima diff grande: il rendering è limitato per mantenere reattiva la scheda."
+  },
+  "errorState": {
+    "initInstructions": "Esegui {{command}} nella directory del progetto per inizializzare il controllo del codice sorgente Git.",
+    "tip": "Suggerimento"
+  },
+  "fileChange": {
+    "collapseDiff": "Comprimi diff",
+    "expandDiff": "Espandi diff",
+    "clickToOpen": "Clicca per aprire il file",
+    "deleteUntracked": "Elimina file non tracciato",
+    "discardChanges": "Scarta modifiche",
+    "delete": "Elimina",
+    "discard": "Scarta",
+    "scroll": "Scorrimento",
+    "wrap": "A capo",
+    "switchToScroll": "Passa allo scorrimento orizzontale",
+    "switchToWrap": "Passa al ritorno a capo"
+  },
+  "fileSelect": {
+    "selectedCount": "{{selected}} di {{total}} file selezionati",
+    "selectAll": "Seleziona tutto",
+    "deselectAll": "Deseleziona tutto",
+    "all": "Tutto",
+    "none": "Nessuno"
+  },
+  "fileStatus": {
+    "added": "Aggiunto",
+    "deleted": "Eliminato",
+    "legend": "Guida allo stato dei file",
+    "modified": "Modificato",
+    "untracked": "Non tracciato"
+  },
+  "header": {
+    "clearSearch": "Cancella ricerca",
+    "createNewBranch": "Crea nuovo branch",
+    "dismissError": "Chiudi errore",
+    "fetch": "Fetch",
+    "fetching": "Fetch in corso…",
+    "noMatchingBranches": "Nessun branch corrispondente",
+    "publish": "Pubblica",
+    "publishing": "Pubblicazione…",
+    "pull": "Pull",
+    "pulling": "Pull in corso…",
+    "push": "Push",
+    "pushing": "Push in corso…",
+    "refreshGitStatus": "Aggiorna stato Git",
+    "revertLocalCommit": "Annulla ultimo commit locale",
+    "searchBranches": "Cerca branch...",
+    "publishTo": "Pubblica \"{{branch}}\" su {{remote}}",
+    "fetchFrom": "Fetch da {{remote}}",
+    "pullCount": "Pull {{count}} da {{remote}}",
+    "pushCount": "Push {{count}} su {{remote}}"
+  },
+  "history": {
+    "added": "Aggiunto",
+    "author": "Autore",
+    "changedFiles": "File modificati",
+    "date": "Data",
+    "files": "File",
+    "noCommits": "Nessun commit trovato",
+    "removed": "Rimosso"
+  },
+  "newBranchModal": {
+    "branchName": "Nome branch",
+    "cancel": "Annulla",
+    "create": "Crea branch",
+    "creating": "Creazione...",
+    "description": "Questo creerà un nuovo branch dal branch corrente ({{branch}})",
+    "placeholder": "feature/nuova-funzionalità",
+    "title": "Crea nuovo branch"
+  },
+  "tabs": {
+    "branches": "Branch",
+    "changes": "Modifiche",
+    "commits": "Commit"
+  }
+}

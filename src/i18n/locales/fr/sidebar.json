@@ -50,7 +50,9 @@
     "cancel": "Annuler",
     "clearSearch": "Effacer la recherche",
     "openCommandPalette": "Ouvrir la palette de commandes",
-    "attentionRequiredIndicator": "La session nécessite votre attention"
+    "attentionRequiredIndicator": "La session nécessite votre attention",
+    "processingSessionIndicator": "Session en cours de traitement",
+    "deleteSessionOptions": "Archiver ou supprimer définitivement cette session"
   },
   "navigation": {
     "chat": "Chat",
@@ -129,7 +131,14 @@
     "matches_one": "{{count}} résultat",
     "matches_other": "{{count}} résultats",
     "projectsScanned_one": "{{count}} projet analysé",
-    "projectsScanned_other": "{{count}} projets analysés"
+    "projectsScanned_other": "{{count}} projets analysés",
+    "modeRunning": "En cours",
+    "matches": "correspondances",
+    "projectsScanned": "projets analysés",
+    "archiveOnlyTooltip": "Archive uniquement",
+    "archivedPlaceholder": "Rechercher dans les sessions archivées...",
+    "runningPlaceholder": "Rechercher dans les sessions en cours...",
+    "runningTooltip": "Sessions en cours"
   },
   "deleteConfirmation": {
     "deleteProject": "Supprimer le projet",
@@ -140,6 +149,29 @@
     "removeFromSidebar": "Retirer de la barre latérale uniquement",
     "deleteAllData": "Supprimer toutes les données définitivement",
     "allConversationsDeleted": "Le projet sera retiré de la barre latérale. Vos fichiers, mémoires et données de session seront conservés.",
-    "cannotUndo": "Vous pourrez rajouter le projet ultérieurement."
+    "cannotUndo": "Vous pourrez rajouter le projet ultérieurement.",
+    "archiveProject": "Archiver le projet",
+    "archivedSessionNotice": "Cette session est déjà archivée. Vous pouvez la garder masquée ou la supprimer définitivement.",
+    "archiveSessionNotice": "L'archivage retire la session de la liste active tout en préservant son historique.",
+    "archiveSession": "Archiver la session",
+    "deleteSessionPermanently": "Supprimer définitivement"
+  },
+  "running": {
+    "title": "En cours",
+    "emptyTitle": "Aucune session en cours",
+    "emptyDescription": "Le travail actif apparaîtra ici pendant qu'un fournisseur traite.",
+    "noMatchingSessions": "Aucune session en cours ne correspond."
+  },
+  "archived": {
+    "loadingTitle": "Chargement de l'archive...",
+    "loadingDescription": "Récupération des espaces de travail et sessions masqués que vous pouvez restaurer plus tard.",
+    "emptyTitle": "Aucun élément archivé",
+    "emptyDescription": "Les espaces de travail et sessions archivés apparaîtront ici lorsque vous les masquerez de la liste active.",
+    "noMatchingSessions": "Aucun élément archivé correspondant",
+    "tryDifferentSearch": "Essayez un autre terme de recherche.",
+    "projectArchived": "Projet archivé",
+    "restoreProject": "Restaurer l'espace de travail",
+    "restore": "Restaurer la session",
+    "deletePermanently": "Supprimer définitivement"
   }
 }
