@@ -2,10 +2,9 @@ import express from 'express';
 // cross-spawn: drop-in spawn with Windows .cmd/PATHEXT resolution.
 import spawn from 'cross-spawn';
 import path from 'path';
+import os from 'os';
 import { promises as fs } from 'fs';
 import { projectsDb } from '../modules/database/index.js';
-import { queryClaudeSDK } from '../claude-sdk.js';
-import { spawnCursor } from '../cursor-cli.js';
 
 const router = express.Router();
 const COMMIT_DIFF_CHARACTER_LIMIT = 500_000;
@@ -130,11 +129,11 @@ function stripDiffHeaders(diff) {
   for (const line of lines) {
     // Skip all header lines including diff --git, index, file mode, and --- / +++ file paths
     if (line.startsWith('diff --git') ||
-        line.startsWith('index ') ||
-        line.startsWith('new file mode') ||
-        line.startsWith('deleted file mode') ||
-        line.startsWith('---') ||
-        line.startsWith('+++')) {
+      line.startsWith('index ') ||
+      line.startsWith('new file mode') ||
+      line.startsWith('deleted file mode') ||
+      line.startsWith('---') ||
+      line.startsWith('+++')) {
       continue;
     }
 
@@ -408,14 +407,14 @@ router.get('/status', async (req, res) => {
 // Get diff for a specific file
 router.get('/diff', async (req, res) => {
   const { project, file } = req.query;
-  
+
   if (!project || !file) {
     return res.status(400).json({ error: 'Project id and file path are required' });
   }
 
   try {
     const projectPath = await getActualProjectPath(project);
-    
+
     // Validate git repository
     await validateGitRepository(projectPath);
 
@@ -446,7 +445,7 @@ router.get('/diff', async (req, res) => {
         const fileContent = await fs.readFile(filePath, 'utf-8');
         const lines = fileContent.split('\n');
         diff = `--- /dev/null\n+++ b/${repositoryRelativeFilePath}\n@@ -0,0 +1,${lines.length} @@\n` +
-               lines.map(line => `+${line}`).join('\n');
+          lines.map(line => `+${line}`).join('\n');
       }
     } else if (isDeleted) {
       // For deleted files, show the entire file content from HEAD as deletions
@@ -457,7 +456,7 @@ router.get('/diff', async (req, res) => {
       );
       const lines = fileContent.split('\n');
       diff = `--- a/${repositoryRelativeFilePath}\n+++ /dev/null\n@@ -1,${lines.length} +0,0 @@\n` +
-             lines.map(line => `-${line}`).join('\n');
+        lines.map(line => `-${line}`).join('\n');
     } else {
       // Get diff for tracked files
       // First check for unstaged changes (working tree vs index)
@@ -615,18 +614,18 @@ router.post('/initial-commit', async (req, res) => {
 // Commit changes
 router.post('/commit', async (req, res) => {
   const { project, message, files } = req.body;
-  
+
   if (!project || !message || !files || files.length === 0) {
     return res.status(400).json({ error: 'Project name, commit message, and files are required' });
   }
 
   try {
     const projectPath = await getActualProjectPath(project);
-    
+
     // Validate git repository
     await validateGitRepository(projectPath);
     const repositoryRootPath = await getRepositoryRootPath(projectPath);
-    
+
     // Stage selected files
     for (const file of files) {
       const { repositoryRelativeFilePath } = await resolveRepositoryFilePath(projectPath, file);
@@ -635,7 +634,7 @@ router.post('/commit', async (req, res) => {
 
     // Commit with message
     const { stdout } = await spawnAsync('git', ['commit', '-m', message], { cwd: repositoryRootPath });
-    
+
     res.json({ success: true, output: stdout });
   } catch (error) {
     console.error('Git commit error:', error);
@@ -751,17 +750,17 @@ router.post('/revert-local-commit', async (req, res) => {
 // Get list of branches
 router.get('/branches', async (req, res) => {
   const { project } = req.query;
-  
+
   if (!project) {
     return res.status(400).json({ error: 'Project id is required' });
   }
 
   try {
     const projectPath = await getActualProjectPath(project);
-    
+
     // Validate git repository
     await validateGitRepository(projectPath);
-    
+
     // Get all branches
     const { stdout } = await spawnAsync('git', ['branch', '-a'], { cwd: projectPath });
 
@@ -795,18 +794,18 @@ router.get('/branches', async (req, res) => {
 // Checkout branch
 router.post('/checkout', async (req, res) => {
   const { project, branch } = req.body;
-  
+
   if (!project || !branch) {
     return res.status(400).json({ error: 'Project id and branch are required' });
   }
 
   try {
     const projectPath = await getActualProjectPath(project);
-    
+
     // Checkout the branch
     validateBranchName(branch);
     const { stdout } = await spawnAsync('git', ['checkout', branch], { cwd: projectPath });
-    
+
     res.json({ success: true, output: stdout });
   } catch (error) {
     console.error('Git checkout error:', error);
@@ -817,18 +816,18 @@ router.post('/checkout', async (req, res) => {
 // Create new branch
 router.post('/create-branch', async (req, res) => {
   const { project, branch } = req.body;
-  
+
   if (!project || !branch) {
     return res.status(400).json({ error: 'Project id and branch name are required' });
   }
 
   try {
     const projectPath = await getActualProjectPath(project);
-    
+
     // Create and checkout new branch
     validateBranchName(branch);
     const { stdout } = await spawnAsync('git', ['checkout', '-b', branch], { cwd: projectPath });
-    
+
     res.json({ success: true, output: stdout });
   } catch (error) {
     console.error('Git create branch error:', error);
@@ -955,7 +954,7 @@ router.get('/commits', async (req, res) => {
 // Get diff for a specific commit
 router.get('/commit-diff', async (req, res) => {
   const { project, commit } = req.query;
-  
+
   if (!project || !commit) {
     return res.status(400).json({ error: 'Project id and commit hash are required' });
   }
@@ -992,11 +991,8 @@ router.post('/generate-commit-message', async (req, res) => {
     return res.status(400).json({ error: 'Project id and files are required' });
   }
 
-  // Validate provider
-  if (!['claude', 'cursor'].includes(provider)) {
-    return res.status(400).json({ error: 'provider must be "claude" or "cursor"' });
-  }
-
+  // provider is forwarded but no longer validated — the backend now uses
+  // direct HTTP API calls and does not depend on the provider parameter.
   try {
     const projectPath = await getActualProjectPath(project);
     await validateGitRepository(projectPath);
@@ -1058,97 +1054,168 @@ router.post('/generate-commit-message', async (req, res) => {
  * @param {string} projectPath - Project directory path
  * @returns {Promise<string>} Generated commit message
  */
-async function generateCommitMessageWithAI(files, diffContext, provider, projectPath) {
-  // Create the prompt
-  const prompt = `Generate a conventional commit message for these changes.
-
-REQUIREMENTS:
-- Format: type(scope): subject
-- Include body explaining what changed and why
-- Types: feat, fix, docs, style, refactor, perf, test, build, ci, chore
-- Subject under 50 chars, body wrapped at 72 chars
-- Focus on user-facing changes, not implementation details
-- Consider what's being added AND removed
-- Return ONLY the commit message (no markdown, explanations, or code blocks)
-
-FILES CHANGED:
-${files.map(f => `- ${f}`).join('\n')}
-
-DIFFS:
-${diffContext.substring(0, 4000)}
-
-Generate the commit message:`;
-
+async function generateCommitMessageWithAI(files, diffContext, _provider, projectPath) {
+  // --- 读取项目 commit 规范文件 ---
+  let commitGuide = '';
   try {
-    // Create a simple writer that collects the response
-    let responseText = '';
-    const writer = {
-      send: (data) => {
-        try {
-          const parsed = typeof data === 'string' ? JSON.parse(data) : data;
-          console.log('🔍 Writer received message type:', parsed.type);
+    const guidePath = path.join(projectPath, 'docs', 'commit-guide.md');
+    commitGuide = await fs.readFile(guidePath, 'utf-8');
+  } catch {
+    // 没有规范文件就用默认规则
+  }
 
-          // Handle different message formats from Claude SDK and Cursor CLI
-          // Claude SDK sends: {type: 'claude-response', data: {message: {content: [...]}}}
-          if (parsed.type === 'claude-response' && parsed.data) {
-            const message = parsed.data.message || parsed.data;
-            console.log('📦 Claude response message:', JSON.stringify(message, null, 2).substring(0, 500));
-            if (message.content && Array.isArray(message.content)) {
-              // Extract text from content array
-              for (const item of message.content) {
-                if (item.type === 'text' && item.text) {
-                  console.log('✅ Extracted text chunk:', item.text.substring(0, 100));
-                  responseText += item.text;
-                }
-              }
+  // --- 解析 API 配置 ---
+  let settingsEnv = {};
+  try {
+    const settingsPath = path.join(os.homedir(), '.claude', 'settings.json');
+    const settingsContent = await fs.readFile(settingsPath, 'utf8');
+    const settings = JSON.parse(settingsContent);
+    settingsEnv = settings.env || {};
+  } catch (e) {
+    console.log(e);
+    // settings.json 不存在就用环境变量
+  }
+
+  const apiKey =
+    process.env.ANTHROPIC_API_KEY?.trim() ||
+    process.env.ANTHROPIC_AUTH_TOKEN?.trim() ||
+    settingsEnv.ANTHROPIC_API_KEY?.trim() ||
+    settingsEnv.ANTHROPIC_AUTH_TOKEN?.trim() ||
+    '';
+
+  if (!apiKey) {
+    console.error('No Anthropic API key found');
+    return `chore: update ${files.length} file${files.length !== 1 ? 's' : ''}`;
+  }
+
+  const baseUrl =
+    process.env.ANTHROPIC_BASE_URL?.trim() ||
+    settingsEnv.ANTHROPIC_BASE_URL?.trim() ||
+    'https://api.anthropic.com';
+
+  // commit message 是简单任务，用 haiku（最快最便宜）
+  const model =
+    process.env.ANTHROPIC_SMALL_FAST_MODEL?.trim() ||
+    settingsEnv.ANTHROPIC_SMALL_FAST_MODEL?.trim() ||
+    process.env.ANTHROPIC_DEFAULT_HAIKU_MODEL?.trim() ||
+    settingsEnv.ANTHROPIC_DEFAULT_HAIKU_MODEL?.trim() ||
+    'haiku';
+
+  // --- 构建系统提示词 ---
+  const systemPrompt = commitGuide
+    ? [
+      'You are a commit message generator. Follow these rules strictly:',
+      '',
+      commitGuide,
+      '',
+      'IMPORTANT: Return ONLY the commit message. No markdown, no explanations.',
+    ].join('\n')
+    : [
+      'You are a commit message generator. Generate a conventional commit message.',
+      'Format: type(scope): subject. Types: feat, fix, docs, style, refactor, perf, test, build, ci, chore.',
+      'Return ONLY the commit message. No markdown, no explanations.',
+    ].join('\n');
+  // --- 均衡截断 diff 到 ~10000 字符 ---
+  const MAX_DIFF_CHARS = 10000;
+  const MIN_PER_FILE = 500;
+
+  let truncatedDiff = diffContext;
+  if (diffContext.length > MAX_DIFF_CHARS) {
+    const fileSections = diffContext.split(/\n(?=--- )/).filter(Boolean);
+    const fileCount = fileSections.length;
+
+    if (fileCount <= 1) {
+      // 单文件：头尾各保留一部分
+      const headSize = Math.floor(MAX_DIFF_CHARS * 0.6);
+      const tailSize = MAX_DIFF_CHARS - headSize;
+      truncatedDiff = diffContext.substring(0, headSize)
+        + '\n\n... (truncated) ...\n\n'
+        + diffContext.substring(diffContext.length - tailSize);
+    } else {
+      // 多文件：均分配额，每文件至少 MIN_PER_FILE
+      let remaining = MAX_DIFF_CHARS;
+      const allocations = new Array(fileCount).fill(0);
+
+      for (let i = 0; i < fileCount; i++) {
+        allocations[i] = Math.min(MIN_PER_FILE, fileSections[i].length);
+        remaining -= allocations[i];
+      }
+
+      if (remaining > 0) {
+        const totalNeed = fileSections.reduce((sum, s, i) => sum + Math.max(0, s.length - allocations[i]), 0);
+        if (totalNeed > 0) {
+          for (let i = 0; i < fileCount && remaining > 0; i++) {
+            const need = fileSections[i].length - allocations[i];
+            if (need > 0) {
+              const extra = Math.min(need, Math.ceil(remaining * need / totalNeed));
+              allocations[i] += extra;
+              remaining -= extra;
             }
           }
-          // Cursor CLI sends: {type: 'cursor-output', output: '...'}
-          else if (parsed.type === 'cursor-output' && parsed.output) {
-            console.log('✅ Cursor output:', parsed.output.substring(0, 100));
-            responseText += parsed.output;
-          }
-          // Also handle direct text messages
-          else if (parsed.type === 'text' && parsed.text) {
-            console.log('✅ Direct text:', parsed.text.substring(0, 100));
-            responseText += parsed.text;
-          }
-        } catch (e) {
-          // Ignore parse errors
-          console.error('Error parsing writer data:', e);
         }
-      },
-      setSessionId: () => {}, // No-op for this use case
-    };
+      }
 
-    console.log('🚀 Calling AI agent with provider:', provider);
-    console.log('📝 Prompt length:', prompt.length);
-
-    // Call the appropriate agent
-    if (provider === 'claude') {
-      await queryClaudeSDK(prompt, {
-        cwd: projectPath,
-        permissionMode: 'bypassPermissions',
-        model: 'sonnet'
-      }, writer);
-    } else if (provider === 'cursor') {
-      await spawnCursor(prompt, {
-        cwd: projectPath,
-        skipPermissions: true
-      }, writer);
+      truncatedDiff = fileSections.map((section, i) => {
+        const limit = allocations[i];
+        if (section.length <= limit) return section;
+        const headSize = Math.floor(limit * 0.7);
+        const tailSize = limit - headSize;
+        return section.substring(0, headSize)
+          + '\n... (truncated) ...\n'
+          + section.substring(section.length - tailSize);
+      }).join('\n');
     }
 
-    console.log('📊 Total response text collected:', responseText.length, 'characters');
-    console.log('📄 Response preview:', responseText.substring(0, 200));
+    if (truncatedDiff.length > MAX_DIFF_CHARS + 1000) {
+      truncatedDiff = truncatedDiff.substring(0, MAX_DIFF_CHARS);
+    }
+  }
 
-    // Clean up the response
-    const cleanedMessage = cleanCommitMessage(responseText);
-    console.log('🧹 Cleaned message:', cleanedMessage.substring(0, 200));
+  // --- 构建用户消息 ---
+  const userMessage = [
+    'Generate a commit message based on the diff below.',
+    '',
+    'FILES CHANGED:',
+    ...files.map((f) => `- ${f}`),
+    '',
+    '```diff',
+    truncatedDiff,
+    '```',
+  ].join('\n');
 
-    return cleanedMessage || 'chore: update files';
+  // --- 调用 Anthropic Messages API ---
+  try {
+    const response = await fetch(`${baseUrl}/v1/messages`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'x-api-key': apiKey,
+        'anthropic-version': '2023-06-01',
+      },
+      body: JSON.stringify({
+        model,
+        max_tokens: 500,
+        system: systemPrompt,
+        messages: [{ role: 'user', content: userMessage }],
+      }),
+    });
+
+    if (!response.ok) {
+      const errText = await response.text();
+      console.error(`Anthropic API error ${response.status}: ${errText.substring(0, 200)}`);
+      return `chore: update ${files.length} file${files.length !== 1 ? 's' : ''}`;
+    }
+
+    const data = await response.json();
+    const text = (data.content || [])
+      .filter((c) => c.type === 'text')
+      .map((c) => c.text)
+      .join('')
+      .trim();
+
+    return cleanCommitMessage(text) || `chore: update ${files.length} file${files.length !== 1 ? 's' : ''}`;
   } catch (error) {
-    console.error('Error generating commit message with AI:', error);
-    // Fallback to simple message
+    console.error('Error calling Anthropic API:', error.message);
     return `chore: update ${files.length} file${files.length !== 1 ? 's' : ''}`;
   }
 }
@@ -1188,11 +1255,9 @@ function cleanCommitMessage(text) {
 
   return cleaned.trim();
 }
-
-// Get remote status (ahead/behind commits with smart remote detection)
 router.get('/remote-status', async (req, res) => {
   const { project } = req.query;
-  
+
   if (!project) {
     return res.status(400).json({ error: 'Project id is required' });
   }
@@ -1248,7 +1313,7 @@ router.get('/remote-status', async (req, res) => {
       'git', ['rev-list', '--count', '--left-right', `${trackingBranch}...HEAD`],
       { cwd: projectPath }
     );
-    
+
     const [behind, ahead] = countOutput.trim().split('\t').map(Number);
 
     res.json({
@@ -1270,7 +1335,7 @@ router.get('/remote-status', async (req, res) => {
 // Fetch from remote (using smart remote detection)
 router.post('/fetch', async (req, res) => {
   const { project } = req.body;
-  
+
   if (!project) {
     return res.status(400).json({ error: 'Project id is required' });
   }
@@ -1297,13 +1362,13 @@ router.post('/fetch', async (req, res) => {
     res.json({ success: true, output: stdout || 'Fetch completed successfully', remoteName });
   } catch (error) {
     console.error('Git fetch error:', error);
-    res.status(500).json({ 
-      error: 'Fetch failed', 
-      details: error.message.includes('Could not resolve hostname') 
+    res.status(500).json({
+      error: 'Fetch failed',
+      details: error.message.includes('Could not resolve hostname')
         ? 'Unable to connect to remote repository. Check your internet connection.'
         : error.message.includes('fatal: \'origin\' does not appear to be a git repository')
-        ? 'No remote repository configured. Add a remote with: git remote add origin <url>'
-        : error.message
+          ? 'No remote repository configured. Add a remote with: git remote add origin <url>'
+          : error.message
     });
   }
 });
@@ -1311,7 +1376,7 @@ router.post('/fetch', async (req, res) => {
 // Pull from remote (fetch + merge using smart remote detection)
 router.post('/pull', async (req, res) => {
   const { project } = req.body;
-  
+
   if (!project) {
     return res.status(400).json({ error: 'Project id is required' });
   }
@@ -1351,12 +1416,12 @@ router.post('/pull', async (req, res) => {
     // Enhanced error handling for common pull scenarios
     let errorMessage = 'Pull failed';
     let details = error.message;
-    
+
     if (error.message.includes('CONFLICT')) {
       errorMessage = 'Merge conflicts detected';
       details = 'Pull created merge conflicts. Please resolve conflicts manually in the editor, then commit the changes.';
     } else if (error.message.includes('Please commit your changes or stash them')) {
-      errorMessage = 'Uncommitted changes detected';  
+      errorMessage = 'Uncommitted changes detected';
       details = 'Please commit or stash your local changes before pulling.';
     } else if (error.message.includes('Could not resolve hostname')) {
       errorMessage = 'Network error';
@@ -1368,9 +1433,9 @@ router.post('/pull', async (req, res) => {
       errorMessage = 'Branches have diverged';
       details = 'Your local branch and remote branch have diverged. Consider fetching first to review changes.';
     }
-    
-    res.status(500).json({ 
-      error: errorMessage, 
+
+    res.status(500).json({
+      error: errorMessage,
       details: details
     });
   }
@@ -1379,7 +1444,7 @@ router.post('/pull', async (req, res) => {
 // Push commits to remote repository
 router.post('/push', async (req, res) => {
   const { project } = req.body;
-  
+
   if (!project) {
     return res.status(400).json({ error: 'Project id is required' });
   }
@@ -1415,11 +1480,11 @@ router.post('/push', async (req, res) => {
     });
   } catch (error) {
     console.error('Git push error:', error);
-    
+
     // Enhanced error handling for common push scenarios
     let errorMessage = 'Push failed';
     let details = error.message;
-    
+
     if (error.message.includes('rejected')) {
       errorMessage = 'Push rejected';
       details = 'The remote has newer commits. Pull first to merge changes before pushing.';
@@ -1439,9 +1504,9 @@ router.post('/push', async (req, res) => {
       errorMessage = 'No upstream branch';
       details = 'No upstream branch configured. Use: git push --set-upstream origin <branch>';
     }
-    
-    res.status(500).json({ 
-      error: errorMessage, 
+
+    res.status(500).json({
+      error: errorMessage,
       details: details
     });
   }
@@ -1450,7 +1515,7 @@ router.post('/push', async (req, res) => {
 // Publish branch to remote (set upstream and push)
 router.post('/publish', async (req, res) => {
   const { project, branch } = req.body;
-  
+
   if (!project || !branch) {
     return res.status(400).json({ error: 'Project id and branch are required' });
   }
@@ -1491,20 +1556,20 @@ router.post('/publish', async (req, res) => {
     // Publish the branch (set upstream and push)
     validateRemoteName(remoteName);
     const { stdout } = await spawnAsync('git', ['push', '--set-upstream', remoteName, branch], { cwd: projectPath });
-    
-    res.json({ 
-      success: true, 
-      output: stdout || 'Branch published successfully', 
+
+    res.json({
+      success: true,
+      output: stdout || 'Branch published successfully',
       remoteName,
       branch
     });
   } catch (error) {
     console.error('Git publish error:', error);
-    
+
     // Enhanced error handling for common publish scenarios
     let errorMessage = 'Publish failed';
     let details = error.message;
-    
+
     if (error.message.includes('rejected')) {
       errorMessage = 'Publish rejected';
       details = 'The remote branch already exists and has different commits. Use push instead.';
@@ -1518,9 +1583,9 @@ router.post('/publish', async (req, res) => {
       errorMessage = 'Remote not configured';
       details = 'Remote repository not properly configured. Check your remote URL.';
     }
-    
-    res.status(500).json({ 
-      error: errorMessage, 
+
+    res.status(500).json({
+      error: errorMessage,
       details: details
     });
   }
@@ -1529,7 +1594,7 @@ router.post('/publish', async (req, res) => {
 // Discard changes for a specific file
 router.post('/discard', async (req, res) => {
   const { project, file } = req.body;
-  
+
   if (!project || !file) {
     return res.status(400).json({ error: 'Project id and file path are required' });
   }
@@ -1572,7 +1637,7 @@ router.post('/discard', async (req, res) => {
       // Added file - unstage it
       await spawnAsync('git', ['reset', 'HEAD', '--', repositoryRelativeFilePath], { cwd: repositoryRootPath });
     }
-    
+
     res.json({ success: true, message: `Changes discarded for ${repositoryRelativeFilePath}` });
   } catch (error) {
     console.error('Git discard error:', error);
@@ -1583,7 +1648,7 @@ router.post('/discard', async (req, res) => {
 // Delete untracked file
 router.post('/delete-untracked', async (req, res) => {
   const { project, file } = req.body;
-  
+
   if (!project || !file) {
     return res.status(400).json({ error: 'Project id and file path are required' });
   }
@@ -1602,13 +1667,13 @@ router.post('/delete-untracked', async (req, res) => {
       ['status', '--porcelain', '--', repositoryRelativeFilePath],
       { cwd: repositoryRootPath },
     );
-    
+
     if (!statusOutput.trim()) {
       return res.status(400).json({ error: 'File is not untracked or does not exist' });
     }
 
     const status = statusOutput.substring(0, 2);
-    
+
     if (status !== '??') {
       return res.status(400).json({ error: 'File is not untracked. Use discard for tracked files.' });
     }
