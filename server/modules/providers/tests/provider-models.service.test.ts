@@ -111,27 +111,27 @@ test('provider models are cached for the three-day ttl', async () => {
       }),
     });
 
-    const first = await service.getProviderModels('codex');
-    const cached = await service.getProviderModels('codex');
+    const first = await service.getProviderModels('cursor');
+    const cached = await service.getProviderModels('cursor');
     assert.equal(loadCount, 1);
     assert.equal(cached.models.DEFAULT, first.models.DEFAULT);
     assert.equal(cached.cache.source, 'memory');
 
     currentTime += PROVIDER_MODELS_CACHE_TTL_MS - 1;
-    await service.getProviderModels('codex');
+    await service.getProviderModels('cursor');
     assert.equal(loadCount, 1);
 
     currentTime += 2;
-    const refreshed = await service.getProviderModels('codex');
+    const refreshed = await service.getProviderModels('cursor');
     assert.equal(loadCount, 2);
-    assert.equal(refreshed.models.DEFAULT, 'codex-2');
+    assert.equal(refreshed.models.DEFAULT, 'cursor-2');
   } finally {
     await rm(tempRoot, { recursive: true, force: true });
   }
 });
 
-test('claude provider models are always loaded directly from the provider', async () => {
-  const tempRoot = await mkdtemp(path.join(os.tmpdir(), 'provider-model-cache-claude-direct-'));
+test('claude and codex provider models are always loaded directly from the provider', async () => {
+  const tempRoot = await mkdtemp(path.join(os.tmpdir(), 'provider-model-cache-direct-'));
   let loadCount = 0;
 
   try {
@@ -149,13 +149,18 @@ test('claude provider models are always loaded directly from the provider', asyn
       }),
     });
 
-    const first = await service.getProviderModels('claude');
-    const second = await service.getProviderModels('claude');
+    const firstClaude = await service.getProviderModels('claude');
+    const secondClaude = await service.getProviderModels('claude');
+    const firstCodex = await service.getProviderModels('codex');
+    const secondCodex = await service.getProviderModels('codex');
 
-    assert.equal(loadCount, 2);
-    assert.equal(first.models.DEFAULT, 'claude-1');
-    assert.equal(second.models.DEFAULT, 'claude-2');
-    assert.equal(second.cache.source, 'fresh');
+    assert.equal(loadCount, 4);
+    assert.equal(firstClaude.models.DEFAULT, 'claude-1');
+    assert.equal(secondClaude.models.DEFAULT, 'claude-2');
+    assert.equal(secondClaude.cache.source, 'fresh');
+    assert.equal(firstCodex.models.DEFAULT, 'codex-3');
+    assert.equal(secondCodex.models.DEFAULT, 'codex-4');
+    assert.equal(secondCodex.cache.source, 'fresh');
   } finally {
     await rm(tempRoot, { recursive: true, force: true });
   }

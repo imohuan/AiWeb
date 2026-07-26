@@ -19,36 +19,6 @@ import {
   writeProviderSessionActiveModelChange,
 } from '@/shared/utils.js';
 
-export const CODEX_FALLBACK_MODELS: ProviderModelsDefinition = {
-  OPTIONS: [
-    {
-      value: 'gpt-5.5',
-      label: 'gpt-5.5',
-      effort: {
-        default: 'medium',
-        values: [{ value: 'low' }, { value: 'medium' }, { value: 'high' }, { value: 'xhigh' }],
-      },
-    },
-    {
-      value: 'gpt-5.4',
-      label: 'gpt-5.4',
-      effort: {
-        default: 'medium',
-        values: [{ value: 'low' }, { value: 'medium' }, { value: 'high' }, { value: 'xhigh' }],
-      },
-    },
-    {
-      value: 'gpt-5.4-mini',
-      label: 'gpt-5.4-mini',
-      effort: {
-        default: 'medium',
-        values: [{ value: 'low' }, { value: 'medium' }, { value: 'high' }, { value: 'xhigh' }],
-      },
-    },
-  ],
-  DEFAULT: 'gpt-5.4',
-};
-
 type CodexCachedModel = {
   slug?: string;
   display_name?: string;
@@ -63,8 +33,13 @@ type CodexCachedModel = {
   }>;
 };
 
-const CODEX_MODELS_CACHE_PATH = path.join(os.homedir(), '.codex', 'models_cache.json');
-const CODEX_CONFIG_PATH = path.join(os.homedir(), '.codex', 'config.toml');
+type CodexProviderModelsOptions = {
+  configPath?: string;
+  fallbackCatalogPath?: string;
+};
+
+const getDefaultConfigPath = (): string => path.join(os.homedir(), '.codex', 'config.toml');
+const getDefaultFallbackCatalogPath = (): string => path.join(os.homedir(), '.codex', 'models_cache.json');
 
 const isCodexCachedModel = (value: unknown): value is CodexCachedModel => {
   const record = readObjectRecord(value);
@@ -123,34 +98,64 @@ const buildCodexModelsDefinition = (models: CodexCachedModel[]): ProviderModelsD
     options.push(mappedModel);
   }
 
-  if (options.length === 0) {
-    return CODEX_FALLBACK_MODELS;
-  }
-
   return {
     OPTIONS: options,
-    DEFAULT: options[0]?.value ?? CODEX_FALLBACK_MODELS.DEFAULT,
+    DEFAULT: options[0]?.value ?? '',
   };
 };
 
+/**
+ * Read config.toml and resolve the model catalog JSON path.
+ * Priority:
+ *  1. config.toml → model_catalog_json field
+ *  2. fallback to ~/.codex/models_cache.json
+ */
+const resolveCatalogPath = async (configPath: string, fallbackCatalogPath: string): Promise<string> => {
+  try {
+    const raw = await readFile(configPath, 'utf8');
+    const parsed = readObjectRecord(TOML.parse(raw));
+    const catalogPath = readOptionalString(parsed?.model_catalog_json);
+    if (catalogPath) {
+      return catalogPath;
+    }
+  } catch {
+    // config.toml not found or unreadable, fall through
+  }
+
+  return fallbackCatalogPath;
+};
+
+const loadModelsFromCatalog = async (catalogPath: string): Promise<CodexCachedModel[]> => {
+  const raw = await readFile(catalogPath, 'utf8');
+  const parsed = readObjectRecord(JSON.parse(raw));
+  return Array.isArray(parsed?.models)
+    ? parsed.models.filter(isCodexCachedModel)
+    : [];
+};
+
 export class CodexProviderModels implements IProviderModels {
+  private readonly configPath: string;
+
+  private readonly fallbackCatalogPath: string;
+
+  constructor(options: CodexProviderModelsOptions = {}) {
+    this.configPath = options.configPath ?? getDefaultConfigPath();
+    this.fallbackCatalogPath = options.fallbackCatalogPath ?? getDefaultFallbackCatalogPath();
+  }
+
   async getSupportedModels(): Promise<ProviderModelsDefinition> {
     try {
-      const raw = await readFile(CODEX_MODELS_CACHE_PATH, 'utf8');
-      const parsed = readObjectRecord(JSON.parse(raw));
-      const models = Array.isArray(parsed?.models)
-        ? parsed.models.filter(isCodexCachedModel)
-        : [];
-
+      const catalogPath = await resolveCatalogPath(this.configPath, this.fallbackCatalogPath);
+      const models = await loadModelsFromCatalog(catalogPath);
       return buildCodexModelsDefinition(models);
     } catch {
-      return CODEX_FALLBACK_MODELS;
+      return { OPTIONS: [], DEFAULT: '' };
     }
   }
 
   async getCurrentActiveModel(): Promise<ProviderCurrentActiveModel> {
     try {
-      const raw = await readFile(CODEX_CONFIG_PATH, 'utf8');
+      const raw = await readFile(this.configPath, 'utf8');
       const parsed = readObjectRecord(TOML.parse(raw));
       const model = readOptionalString(parsed?.model);
       if (!model) {
