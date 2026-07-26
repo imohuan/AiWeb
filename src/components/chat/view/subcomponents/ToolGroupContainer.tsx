@@ -17,6 +17,7 @@ type DiffLine = {
 interface ToolGroupContainerProps {
   group: ToolGroupItem;
   prevMessage: ChatMessage | null;
+  hideCopyControl?: boolean;
   createDiff: (oldStr: string, newStr: string) => DiffLine[];
   getMessageKey: (message: ChatMessage) => string;
   onFileOpen?: (filePath: string, diffInfo?: unknown) => void;
@@ -60,6 +61,7 @@ function getToolGroupIcon(icon: string | undefined, toolName: string): string {
 export default function ToolGroupContainer({
   group,
   prevMessage,
+  hideCopyControl,
   createDiff,
   getMessageKey,
   onFileOpen,
@@ -127,6 +129,7 @@ export default function ToolGroupContainer({
               key={getMessageKey(message)}
               message={message}
               prevMessage={index > 0 ? group.messages[index - 1] : prevMessage}
+              hideCopyControl={hideCopyControl}
               createDiff={createDiff}
               onFileOpen={onFileOpen}
               onShowSettings={onShowSettings}

@@ -1,6 +1,6 @@
 import { useTranslation } from 'react-i18next';
 import { memo, useCallback, useMemo } from 'react';
-import type { Dispatch, RefObject, SetStateAction } from 'react';
+import type { Dispatch, ReactNode, RefObject, SetStateAction } from 'react';
 
 import type { ChatMessage } from '../../types/types';
 import type {
@@ -11,11 +11,56 @@ import type {
 } from '../../../../types/app';
 import { getIntrinsicMessageKey } from '../../utils/messageKeys';
 import { groupConsecutiveTools, isToolGroupItem } from '../../utils/toolGrouping';
+import type { MessageListItem } from '../../utils/toolGrouping';
+import { formatUsageLimitText } from '../../utils/chatFormatting';
 
 import MessageComponent from './MessageComponent';
 import ProviderSelectionEmptyState from './ProviderSelectionEmptyState';
 import ToolGroupContainer from './ToolGroupContainer';
 import LoadAllMessagesOverlay from './LoadAllMessagesOverlay';
+import MessageCopyControl from './MessageCopyControl';
+import MessageSpeakControl from './MessageSpeakControl';
+
+// Extracts the copyable text from a single ChatMessage, mirroring the logic
+// in MessageComponent so a round-level copy produces the same content as the
+// per-message copy would have.
+function getMessageCopyText(message: ChatMessage): string {
+  if (message.isToolUse) {
+    return String(message.displayText || message.content || '');
+  }
+  return formatUsageLimitText(String(message.content || ''));
+}
+
+// Collects the text from every message in an AI turn (assistant/tool/error),
+// flattening tool-group items so a single copy captures the whole turn.
+function collectRoundTextContent(items: MessageListItem[]): string {
+  const parts: string[] = [];
+  for (const item of items) {
+    if (isToolGroupItem(item)) {
+      for (const message of item.messages) {
+        const text = getMessageCopyText(message);
+        if (text.trim().length > 0) {
+          parts.push(text);
+        }
+      }
+    } else {
+      const text = getMessageCopyText(item);
+      if (text.trim().length > 0) {
+        parts.push(text);
+      }
+    }
+  }
+  return parts.join('\n\n');
+}
+
+// Whether a list item belongs to an AI turn (assistant/tool/error). Tool
+// group items always belong to AI turns since they group tool messages.
+function isAIRoundItem(item: MessageListItem): boolean {
+  if (isToolGroupItem(item)) {
+    return true;
+  }
+  return item.type === 'assistant' || item.type === 'tool' || item.type === 'error';
+}
 
 interface ChatMessagesPaneProps {
   scrollContainerRef: RefObject<HTMLDivElement>;
@@ -244,9 +289,15 @@ function ChatMessagesPane({
           )}
 
           {(() => {
+            // Group consecutive AI messages (assistant/tool/error) into a single
+            // "AI turn". The per-message copy controls inside a turn are hidden,
+            // and one round-level copy/speak control row is appended at the end
+            // of the turn copying the concatenated text of the whole turn.
             let prevMessage: ChatMessage | null = null;
+            const rendered: ReactNode[] = [];
+            let aiRoundItems: MessageListItem[] = [];
 
-            return groupedVisibleMessages.map((item) => {
+            const renderRoundItem = (item: MessageListItem, hideCopyControl: boolean) => {
               if (isToolGroupItem(item)) {
                 const groupPrevMessage = prevMessage;
                 prevMessage = item.messages[item.messages.length - 1] || prevMessage;
@@ -256,6 +307,7 @@ function ChatMessagesPane({
                     key={`tool-group-${getMessageKey(item.messages[0])}`}
                     group={item}
                     prevMessage={groupPrevMessage}
+                    hideCopyControl={hideCopyControl}
                     createDiff={createDiff}
                     getMessageKey={getMessageKey}
                     onFileOpen={onFileOpen}
@@ -269,14 +321,18 @@ function ChatMessagesPane({
                 );
               }
 
+              // `item` is a single ChatMessage here, but TypeScript sees the
+              // union; narrow through unknown so we can pass it to MessageComponent.
+              const message = item as unknown as ChatMessage;
               const messagePrevMessage = prevMessage;
-              prevMessage = item;
+              prevMessage = message;
 
               return (
                 <MessageComponent
-                  key={getMessageKey(item)}
-                  message={item}
+                  key={getMessageKey(message)}
+                  message={message}
                   prevMessage={messagePrevMessage}
+                  hideCopyControl={hideCopyControl}
                   createDiff={createDiff}
                   onFileOpen={onFileOpen}
                   onShowSettings={onShowSettings}
@@ -287,7 +343,51 @@ function ChatMessagesPane({
                   provider={provider}
                 />
               );
-            });
+            };
+
+            const flushAIRound = () => {
+              if (aiRoundItems.length === 0) return;
+
+              aiRoundItems.forEach((roundItem) => {
+                rendered.push(renderRoundItem(roundItem, true));
+              });
+
+              const roundContent = collectRoundTextContent(aiRoundItems);
+              const roundKey = `ai-round-copy-${aiRoundItems
+                .map((roundItem) =>
+                  isToolGroupItem(roundItem)
+                    ? getMessageKey(roundItem.messages[0])
+                    : getMessageKey(roundItem as unknown as ChatMessage),
+                )
+                .join('__')}`;
+
+              if (roundContent.trim().length > 0) {
+                rendered.push(
+                  <div key={roundKey} className="px-3 sm:px-0">
+                    <div className="mt-1 flex w-full items-center gap-2 text-[11px] text-gray-400 dark:text-gray-500">
+                      <MessageCopyControl content={roundContent} messageType="assistant" />
+                      <MessageSpeakControl content={roundContent} />
+                    </div>
+                  </div>,
+                );
+              }
+
+              aiRoundItems = [];
+            };
+
+            for (const item of groupedVisibleMessages) {
+              if (isAIRoundItem(item)) {
+                aiRoundItems.push(item);
+                continue;
+              }
+
+              flushAIRound();
+              rendered.push(renderRoundItem(item, false));
+            }
+
+            flushAIRound();
+
+            return rendered;
           })()}
         </>
       )}
