@@ -367,7 +367,7 @@ function ChatInterface({
           selectedProject={selectedProject}
         />
 
-        <UserMessagesNav messages={chatMessages} scrollContainerRef={scrollContainerRef} />
+        <UserMessagesNav key={currentSessionId} messages={visibleMessages} scrollContainerRef={scrollContainerRef} />
 
 
         <div className="relative flex-shrink-0">
@@ -475,6 +475,8 @@ function ChatInterface({
 }
 
 export default React.memo(ChatInterface);
+
+
 
 
 
