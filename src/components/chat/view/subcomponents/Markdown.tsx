@@ -163,6 +163,9 @@ const markdownComponents = {
   // react-markdown (and Tailwind Typography) from wrapping it in a second,
   // dark-themed <pre> shell that would frame the block.
   pre: ({ children }: { children?: React.ReactNode }) => <>{children}</>,
+  hr: () => (
+    <hr className="my-[5px] border-gray-200 dark:border-gray-700" />
+  ),
   blockquote: ({ children }: { children?: React.ReactNode }) => (
     <blockquote className="my-2 border-l-4 border-gray-300 pl-4 italic text-gray-600 dark:border-gray-600 dark:text-gray-400">
       {children}
