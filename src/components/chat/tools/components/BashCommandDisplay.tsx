@@ -102,7 +102,7 @@ export const BashCommandDisplay: React.FC<BashCommandDisplayProps> = ({
         <code
           className={cn(
             'min-w-0 flex-1 font-mono text-xs text-foreground',
-            open ? 'whitespace-pre-wrap break-all' : 'truncate',
+            open ? 'whitespace-pre-wrap break-all' : 'truncate !whitespace-nowrap',
           )}
         >
           {command}

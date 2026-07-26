@@ -782,7 +782,8 @@
   /* Force wrap long URLs and code */
   .chat-message pre,
   .chat-message code {
-    white-space: pre-wrap !important;
+    /* white-space: pre-wrap !important; */
+    white-space: pre-wrap;
     word-break: break-all;
     overflow-wrap: break-word;
   }
