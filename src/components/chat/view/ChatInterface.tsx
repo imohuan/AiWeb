@@ -16,6 +16,7 @@ import { useSessionStore } from '../../../stores/useSessionStore';
 import ChatMessagesPane from './subcomponents/ChatMessagesPane';
 import ChatComposer from './subcomponents/ChatComposer';
 import CommandResultModal from './subcomponents/CommandResultModal';
+import UserMessagesNav from './subcomponents/UserMessagesNav';
 
 function ChatInterface({
   selectedProject,
@@ -317,7 +318,7 @@ function ChatInterface({
 
   return (
     <PermissionContext.Provider value={permissionContextValue}>
-      <div className="flex h-full min-h-0 flex-col">
+      <div className="flex h-full min-h-0 flex-col relative">
         <ChatMessagesPane
           scrollContainerRef={scrollContainerRef}
           onWheel={handleScroll}
@@ -365,6 +366,9 @@ function ChatInterface({
           showThinking={showThinking}
           selectedProject={selectedProject}
         />
+
+        <UserMessagesNav messages={chatMessages} scrollContainerRef={scrollContainerRef} />
+
 
         <div className="relative flex-shrink-0">
           {isUserScrolledUp && chatMessages.length > 0 && (
@@ -471,3 +475,8 @@ function ChatInterface({
 }
 
 export default React.memo(ChatInterface);
+
+
+
+
+
