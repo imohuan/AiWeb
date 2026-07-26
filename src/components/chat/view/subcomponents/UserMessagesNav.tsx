@@ -2,8 +2,6 @@ import { useCallback, useMemo, useState } from "react";
 
 import type { ChatMessage } from "../../types/types";
 
-const LOG_PREFIX = "[UserMessagesNav]";
-
 interface UserMessagesNavProps {
   messages: ChatMessage[];
   scrollContainerRef: React.RefObject<HTMLDivElement>;
@@ -15,19 +13,11 @@ const UserMessagesNav: React.FC<UserMessagesNavProps> = ({
   messages,
   scrollContainerRef,
 }) => {
-  // --- debug: log incoming messages ---
-  console.log(LOG_PREFIX, "render, messages count:", messages.length);
-  console.log(LOG_PREFIX, "messages types:", JSON.stringify(messages.map((m) => ({ type: m.type, content: String(m.content ?? "").slice(0, 30) }))));
-
   const userMessages = useMemo(
-    () => {
-      const filtered = messages.filter(
+    () =>
+      messages.filter(
         (m) => m.type === "user" && (m.content ?? "").trim().length > 0,
-      );
-      console.log(LOG_PREFIX, "filtered userMessages count:", filtered.length);
-      console.log(LOG_PREFIX, "filtered userMessages:", JSON.stringify(filtered.map((m) => ({ timestamp: m.timestamp, content: String(m.content ?? "").slice(0, 40) }))));
-      return filtered;
-    },
+      ),
     [messages],
   );
 
@@ -35,18 +25,13 @@ const UserMessagesNav: React.FC<UserMessagesNavProps> = ({
 
   const handleClick = useCallback(
     (msg: ChatMessage) => {
-      if (!scrollContainerRef.current) {
-        console.log(LOG_PREFIX, "handleClick: scrollContainerRef is null");
-        return;
-      }
+      if (!scrollContainerRef.current) return;
       const ts =
         typeof msg.timestamp === "string"
           ? msg.timestamp
           : String(msg.timestamp ?? "");
       const selector = `[data-message-timestamp="${CSS.escape(ts)}"]`;
-      console.log(LOG_PREFIX, "handleClick, selector:", selector);
       const el = scrollContainerRef.current.querySelector(selector);
-      console.log(LOG_PREFIX, "handleClick, found element:", !!el);
       if (el) {
         el.scrollIntoView({ behavior: "smooth", block: "center" });
       }
@@ -54,12 +39,7 @@ const UserMessagesNav: React.FC<UserMessagesNavProps> = ({
     [scrollContainerRef],
   );
 
-  console.log(LOG_PREFIX, "userMessages.length:", userMessages.length);
-
-  if (userMessages.length === 0) {
-    console.log(LOG_PREFIX, "returning null (no user messages)");
-    return null;
-  }
+  if (userMessages.length === 0) return null;
 
   return (
     <div className="pointer-events-auto absolute left-3 top-5 z-30 flex max-h-[calc(100%-1.5rem)] flex-col overflow-visible">
