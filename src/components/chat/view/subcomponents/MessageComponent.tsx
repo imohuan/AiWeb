@@ -114,11 +114,13 @@ const MessageComponent = memo(({ message, prevMessage, hideCopyControl, createDi
               </div>
             )}
           </div>
-          {!isGrouped && (
+
+          {/* hide the user icon */}
+          {/* {!isGrouped && (
             <div className="hidden h-8 w-8 flex-shrink-0 items-center justify-center rounded-full bg-blue-600 text-sm text-white sm:flex">
               U
             </div>
-          )}
+          )} */}
         </div>
       ) : message.isTaskNotification ? (
         /* Compact task notification on the left */
@@ -152,12 +154,12 @@ const MessageComponent = memo(({ message, prevMessage, hideCopyControl, createDi
                   : message.type === 'tool'
                     ? t('messageTypes.tool')
                     : (provider === 'cursor'
-                        ? t('messageTypes.cursor')
-                        : provider === 'codex'
-                          ? t('messageTypes.codex')
-                          : provider === 'opencode'
-                              ? t('messageTypes.opencode', { defaultValue: 'OpenCode' })
-                              : t('messageTypes.claude'))}
+                      ? t('messageTypes.cursor')
+                      : provider === 'codex'
+                        ? t('messageTypes.codex')
+                        : provider === 'opencode'
+                          ? t('messageTypes.opencode', { defaultValue: 'OpenCode' })
+                          : t('messageTypes.claude'))}
               </div>
             </div>
           )}
