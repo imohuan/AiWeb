@@ -60,7 +60,7 @@ async function copyNodeModule(packageName) {
 
   const target = path.join(stageDir, 'node_modules', ...parts);
   await fs.mkdir(path.dirname(target), { recursive: true });
-  await fs.cp(source, target, { recursive: true });
+  await fs.cp(source, target, { recursive: true, dereference: true });
   return true;
 }
 
