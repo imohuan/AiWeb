@@ -59,20 +59,20 @@ export const CLAUDE_FALLBACK_MODELS: ProviderModelsDefinition = {
         ],
       },
     },
-    {
-      value: 'sonnet[1m]',
-      label: 'Sonnet (1M context)',
-      description: 'Sonnet 4.6 for long sessions · $3/$15 per Mtok',
-      effort: {
-        default: 'high',
-        values: [
-          { value: 'low' },
-          { value: 'medium' },
-          { value: 'high' },
-          { value: 'max' },
-        ],
-      },
-    },
+    // {
+    //   value: 'sonnet[1m]',
+    //   label: 'Sonnet (1M context)',
+    //   description: 'Sonnet 4.6 for long sessions · $3/$15 per Mtok',
+    //   effort: {
+    //     default: 'high',
+    //     values: [
+    //       { value: 'low' },
+    //       { value: 'medium' },
+    //       { value: 'high' },
+    //       { value: 'max' },
+    //     ],
+    //   },
+    // },
     {
       value: 'opus',
       label: 'Opus',
@@ -88,21 +88,21 @@ export const CLAUDE_FALLBACK_MODELS: ProviderModelsDefinition = {
         ],
       },
     },
-    {
-      value: 'opus[1m]',
-      label: 'Opus 4.8 (1M context)',
-      description: 'Opus 4.8 with 1M context · Most capable for complex work · $5/$25 per Mtok',
-      effort: {
-        default: 'high',
-        values: [
-          { value: 'low' },
-          { value: 'medium' },
-          { value: 'high' },
-          { value: 'xhigh' },
-          { value: 'max' },
-        ],
-      },
-    },
+    // {
+    //   value: 'opus[1m]',
+    //   label: 'Opus 4.8 (1M context)',
+    //   description: 'Opus 4.8 with 1M context · Most capable for complex work · $5/$25 per Mtok',
+    //   effort: {
+    //     default: 'high',
+    //     values: [
+    //       { value: 'low' },
+    //       { value: 'medium' },
+    //       { value: 'high' },
+    //       { value: 'xhigh' },
+    //       { value: 'max' },
+    //     ],
+    //   },
+    // },
     {
       value: 'haiku',
       label: 'Haiku',
