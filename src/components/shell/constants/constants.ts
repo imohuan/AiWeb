@@ -14,7 +14,7 @@ export const PROMPT_MIN_OPTIONS = 2;
 export const TERMINAL_OPTIONS: ITerminalOptions = {
   cursorBlink: true,
   fontSize: 14,
-  fontFamily: 'Menlo, Monaco, "Courier New", monospace',
+  fontFamily: 'ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace',
   allowProposedApi: true,
   allowTransparency: false,
   convertEol: true,
